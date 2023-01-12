@@ -8,7 +8,6 @@ export default function Header(){
         setActiveMenu(!activeMenu);
     }
 
-
     return (
         <header className={styles.header}>
             <Link href="/">
