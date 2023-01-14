@@ -1,0 +1,21 @@
+.container{
+    margin: 0 auto;
+    max-width: 950px;
+    height: auto;
+    margin-top: 10vh;
+    justify-content: center;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.post{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20rem;
+    padding: 1rem;
+    height: 20rem;
+    border-radius: 16px;
+    background: var(--yellow-200);
+}
