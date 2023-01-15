@@ -31,15 +31,6 @@ export default function Home({postsPagination}) {
         setNextPage(data.next_page);
       })
   }
-  // const handlePagination = () => {
-  //   fetch(nextPage)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       data.results.map(post =>{
-  //         console.log(post.data.title)
-  //       })
-  //     })
-  // }
   return (
     <>
       <Header />
@@ -56,10 +47,13 @@ export default function Home({postsPagination}) {
               </div>
             </div>
           ))}
-          <button onClick={()=>handlePagination()}>Ver mais</button>
         </section>
+        {nextPage && (
+          <div className={styles.button_more_posts}>
+            <button onClick={()=>handlePagination()}>Ver mais</button>
+          </div>
+        )}
       </main>
-      {/* <Posts /> */}
     </>
   )
 }
@@ -98,6 +92,7 @@ export async function getStaticProps() {
   return {
     props: {
       postsPagination
-    }
+    },
+    revalidate: 60 * 30,
   }
 } 

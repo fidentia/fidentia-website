@@ -25,6 +25,19 @@
     background: var(--yellow-200);
 }
 
+.button_more_posts{
+    margin: 20px auto;
+    text-align: center;
+    justify-items: center;        
+}
+
+.button_more_posts button{
+    border-radius: 8px;
+    width: 5rem;
+    background: none;
+    height: 2rem;
+}
+
 @media (max-width: 650px) {
     .container_posts{
         justify-items: center;
