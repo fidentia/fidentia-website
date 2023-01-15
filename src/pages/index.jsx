@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import * as prismic from '@prismicio/client'
 import { getPrismicClient } from '../services/prismic';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { useState } from "react";
@@ -35,6 +35,7 @@ export default function Home({postsPagination}) {
     <>
       <Header />
       <main className={styles.container}>
+        <h2>Artigos</h2>
         <section className={styles.container_posts}>
           {posts.map(post => (
             <div key={post.uid} className={styles.post}>
