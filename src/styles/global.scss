@@ -11,6 +11,7 @@
   --green-500: #00875f;
   --yellow-200: #FDF69A;
   --purple-500: #071C5B;
+  --blue-200: #8BEDF4;
 
   --red-500: #F75A68;
 }
@@ -37,6 +38,7 @@ ul {
 }
 
 body{
+  scroll-behavior: smooth;
   background-color: var(--white);
   color: var(--gray-900);
   -webkit-font-smoothing: antialiased;
@@ -53,4 +55,10 @@ body, input, textarea, button {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 1rem;
+}
+
+@media (max-width: 720px){
+  html{
+      font-size: 87.5%;
+  }
 }

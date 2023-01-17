@@ -35,25 +35,40 @@ export default function Home({postsPagination}) {
     <>
       <Header />
       <main className={styles.container}>
-        <h2>Artigos</h2>
-        <section className={styles.container_posts}>
-          {posts.map(post => (
-            <div key={post.uid} className={styles.post}>
-              <div>
-                  <h3>{post.data.title}</h3>
-                  <p>{post.first_publication_date}</p>
-              </div>
-              <div>
-                  <button>Ver artigo</button>
-              </div>
+        <article className={styles.container_main}>
+            <div>
+              <h1>Apoiando você, <b>sempre</b></h1>
             </div>
-          ))}
+            
+            <div>
+              <h3>Soluções completas em seguros para pesquisas clínicas</h3>
+              <p>Tudo que você precisa dominar seguros para o setor de pesquisas clínicas. <br/></p>
+              <p>Destaque-se em ambientes competitivos, blindar seu negócio e   alavancar seu sucesso profissional.</p>
+            </div>
+        </article>
+
+        {/* <h2 className={styles.title_articles}>Artigos</h2> */}
+        <section id="posts">
+          <article className={styles.container_posts}>
+            {posts.map(post => (
+              <article key={post.uid} className={styles.post}>
+                <div>
+                    <h3>{post.data.title}</h3>
+                    <p>{post.first_publication_date}</p>
+                </div>
+                <div>
+                    <button>Ver artigo</button>
+                </div>
+              </article>
+            ))}
+          </article>
+          {nextPage && (
+            <div className={styles.button_more_posts}>
+              <button onClick={()=>handlePagination()}>Ver mais</button>
+            </div>
+          )}
         </section>
-        {nextPage && (
-          <div className={styles.button_more_posts}>
-            <button onClick={()=>handlePagination()}>Ver mais</button>
-          </div>
-        )}
+        
       </main>
     </>
   )

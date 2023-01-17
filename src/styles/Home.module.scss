@@ -1,22 +1,60 @@
 .container{
     margin: 0 auto;
     max-width: 1500px;
-    h2{
-        font-size: 2rem;
-        margin-top: 2rem;
+    transition: all 1s ease-in-out;
+
+    
+}
+
+.container_main{
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    margin-top: 10rem;
+    margin-bottom: 20rem;
+    justify-content: center;
+    div:nth-child(1){
         text-align: center;
+        align-items: center;
+        height: 20rem;
+        h1{
+            font-size: 6rem;
+            
+            b{
+                color: var(--blue-200);
+            }
+        }
     }
+    div:nth-child(2){
+        h3{
+            font-weight: 400;
+            font-size: 2rem;
+        }
+        p{
+            margin-top: 0.9rem;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+    }
+   
 }
 
 .container_posts{
+    transition: all 2s ease-in-out;
     margin: 0 auto;
     max-width: 1200px;
-    height: auto;
     margin-top: 10vh;
     justify-content: center;
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.title_articles {
+    font-size: 2rem;
+    margin-top: 2rem;
+    text-align: center;
 }
 
 .post{
@@ -29,26 +67,144 @@
     border-radius: 16px;
     font-size: 0.9rem;
     background: var(--yellow-200);
+    button {
+        font-size: 0.8rem;
+        color: black;
+        border-radius: 15px;
+        border-style: none;
+        width: 5rem;
+        background-color: var(--white);
+        height: 2rem;
+    }
 }
 
 .button_more_posts{
     margin: 20px auto;
+    align-self: center;
+    justify-content: center;
     text-align: center;
-    justify-items: center;  
+    
     button{
         font-size: 1.2rem;
-        color: var(--white);
+        color: black;
+        border-style: none;
         border-radius: 10px;
-        // border: 2px solid black;
+        border: 1px solid black;
         width: 7rem;
-        background-color: var(--gray-600);
+        background-color: var(--white);
         height: 2rem;
     }      
 }
 
 @media (max-width: 650px) {
+    .container_main{
+        justify-items: center;
+        grid-template-columns: 1fr;
+        gap:  5rem;
+        padding: 2rem;
+    }
     .container_posts{
         justify-items: center;
         grid-template-columns: 1fr;
     }
 }
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    /* CSS */
+    .container_main{
+        justify-content: center;
+        justify-items: center;
+        grid-template-columns: 1fr;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* CSS */
+    .container_main{
+        justify-content: center;
+        justify-items: center;
+        grid-template-columns: 1fr;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    /* CSS */
+    .container_main{
+        justify-content: center;
+        justify-items: center;
+        grid-template-columns: 1fr;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    /* CSS */
+    .container_main{
+        justify-content: center;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        div:nth-child(1){
+            h1{
+                font-size: 4rem;
+            }
+        }
+        
+    }
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+    .container_main{
+        div:nth-child(1){
+            h1{
+                font-size: 3.8rem;
+            }
+        }
+        
+    }
+    
+  }
