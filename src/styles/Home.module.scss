@@ -1,9 +1,6 @@
 .container{
     margin: 0 auto;
     max-width: 1500px;
-    transition: all 1s ease-in-out;
-
-    
 }
 
 .container_main{
@@ -11,13 +8,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
-    margin-top: 10rem;
-    margin-bottom: 20rem;
+    margin-top: 8rem;
+    height: 100vh;
     justify-content: center;
     div:nth-child(1){
         text-align: center;
         align-items: center;
-        height: 20rem;
+        height: 1rem;
         h1{
             font-size: 6rem;
             
@@ -27,6 +24,8 @@
         }
     }
     div:nth-child(2){
+        text-align: center;
+        align-items: center;
         h3{
             font-weight: 400;
             font-size: 2rem;
@@ -40,15 +39,7 @@
    
 }
 
-.container_posts{
-    visibility: hidden;
-    display: none;
-    transform: scale(2);
-}
-
-.visible{
-    transform: scale(1);
-    transition: all 2s ease-in-out;
+.posts{
     margin: 0 auto;
     max-width: 1200px;
     margin-top: 10vh;
@@ -59,8 +50,14 @@
 }
 
 
+.animation_posts{
+    animation-duration: 5s;
+    animation-name: animate-rocket;
+}
+
 
 .title_articles {
+    // display: inline-block;
     font-size: 2rem;
     margin-top: 2rem;
     text-align: center;
@@ -105,6 +102,27 @@
     }      
 }
 
+@keyframes animate-rocket {
+    0%{
+        transform: scale(1) rotate(10deg);
+    }
+    5%{
+        transform: scale(1.25) rotate(-15deg);
+    }
+    10%{
+        transform: scale(1.5) rotate(5deg);
+    }
+    15%{
+        transform: scale(1.75) rotate(-10deg);
+    }
+    20%{
+        transform: scale(2) rotate(0);
+    }
+    100%{
+        transform: scale(20) translate3D(100vw, -100vh, 0) rotate(0);
+    }
+}
+
 @media (max-width: 650px) {
     .container_main{
         justify-items: center;
@@ -112,7 +130,7 @@
         gap:  5rem;
         padding: 2rem;
     }
-    .container_posts{
+    .posts{
         justify-items: center;
         grid-template-columns: 1fr;
     }

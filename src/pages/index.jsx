@@ -5,14 +5,16 @@ import styles from '../styles/Home.module.scss';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { use, useCallback, useEffect, useRef, useState } from "react";
+import { useInView } from 'react-intersection-observer';
 
 export default function Home({postsPagination}) {
   
   const [nextPage, setNextPage] = useState(postsPagination.next_page)
   const [posts, setPosts] = useState(postsPagination?.results);
-  const [postsVisible, setPostsVisible] = useState(false);
+  
+  const { ref: postsRef, inView: postsVisible} = useInView();
 
-  const postsRef = useRef(false);
+
   const handlePagination = () => {
     fetch(nextPage)
       .then(res => res.json())
@@ -34,26 +36,26 @@ export default function Home({postsPagination}) {
       })
   }
 
-  useEffect(()=>{
-    const intersectionObserver = new IntersectionObserver((entries)=>{  
-      entries.forEach(element => {
-          if(element.target.id == 'sentinela' && element.isIntersecting){
-            // isVisible.current = true;
+  // useEffect(()=>{
+  //   const intersectionObserver = new IntersectionObserver((entries)=>{  
+  //     entries.forEach(element => {
+  //         if(element.target.id == 'sentinela' && element.isIntersecting){
+  //           // isVisible.current = true;
             
-            // setPostsVisible(() => postsRef.current = true);
-            console.log(element, postsRef);
-          }else{
-            setPostsVisible(() => false);
-          }
-        });
-    });
+  //           // setPostsVisible(() => postsRef.current = true);
+  //           console.log(element, postsRef);
+  //         }else{
+  //           setPostsVisible(() => false);
+  //         }
+  //       });
+  //   });
 
-    // console.log(postsVisible);
+  //   // console.log(postsVisible);
 
-    intersectionObserver.observe(document.querySelector('#sentinela'));
-    return () => intersectionObserver.disconnect();
+  //   intersectionObserver.observe(document.querySelector('#sentinela'));
+  //   return () => intersectionObserver.disconnect();
     
-  }, [])
+  // }, [])
 
   return (
     <>
@@ -72,9 +74,9 @@ export default function Home({postsPagination}) {
             </div>
         </article>
 
-        {/* <h2 className={styles.title_articles}>Artigos</h2> */}
-        <section id="sentinela">
-          <article className={`${postsVisible ? '' : styles.container_posts} ${postsVisible ? styles.visible : ''}`}>
+        <section className={styles.container_posts} ref={postsRef}>
+            <h2 className={`${styles.title_articles} ${postsVisible ? styles.animation_posts : ''}`}>{postsVisible ? 'Artigos 🚀' : 'Artigos'}</h2>
+          <article className={styles.posts}>
             {posts.map(post => (
               <article key={post.uid} className={styles.post}>
                 <div>
