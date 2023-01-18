@@ -41,6 +41,13 @@
 }
 
 .container_posts{
+    visibility: hidden;
+    display: none;
+    transform: scale(2);
+}
+
+.visible{
+    transform: scale(1);
     transition: all 2s ease-in-out;
     margin: 0 auto;
     max-width: 1200px;
@@ -50,6 +57,8 @@
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+
 
 .title_articles {
     font-size: 2rem;
