@@ -4,16 +4,13 @@ import { getPrismicClient } from '../services/prismic';
 import styles from '../styles/Home.module.scss';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
-import { use, useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from 'react-intersection-observer';
 
 export default function Home({postsPagination}) {
   
   const [nextPage, setNextPage] = useState(postsPagination.next_page)
   const [posts, setPosts] = useState(postsPagination?.results);
-  
   const { ref: postsRef, inView: postsVisible} = useInView();
-
 
   const handlePagination = () => {
     fetch(nextPage)
@@ -36,27 +33,6 @@ export default function Home({postsPagination}) {
       })
   }
 
-  // useEffect(()=>{
-  //   const intersectionObserver = new IntersectionObserver((entries)=>{  
-  //     entries.forEach(element => {
-  //         if(element.target.id == 'sentinela' && element.isIntersecting){
-  //           // isVisible.current = true;
-            
-  //           // setPostsVisible(() => postsRef.current = true);
-  //           console.log(element, postsRef);
-  //         }else{
-  //           setPostsVisible(() => false);
-  //         }
-  //       });
-  //   });
-
-  //   // console.log(postsVisible);
-
-  //   intersectionObserver.observe(document.querySelector('#sentinela'));
-  //   return () => intersectionObserver.disconnect();
-    
-  // }, [])
-
   return (
     <>
       
@@ -74,8 +50,9 @@ export default function Home({postsPagination}) {
             </div>
         </article>
 
-        <section className={styles.container_posts} ref={postsRef}>
-            <h2 className={`${styles.title_articles} ${postsVisible ? styles.animation_posts : ''}`}>{postsVisible ? 'Artigos 🚀' : 'Artigos'}</h2>
+
+        <section ref={postsRef} className={styles.container_posts}>
+        <h2 className={styles.title_articles}>{postsVisible ? 'Artigo Visivel' : 'Artigo não visivel'}</h2>
           <article className={styles.posts}>
             {posts.map(post => (
               <article key={post.uid} className={styles.post}>
