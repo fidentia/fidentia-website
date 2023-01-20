@@ -1,8 +1,8 @@
 .container{
     margin: 0 auto;
     max-width: 1500px;
+    height: 100vh;
     // background: url('/images/backgroundMain.png') 0 0 repeat;
-    // background-size: 100%;
     
     
 }
@@ -13,7 +13,7 @@
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
     margin-top: 8rem;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     div:nth-child(1){
         text-align: center;
