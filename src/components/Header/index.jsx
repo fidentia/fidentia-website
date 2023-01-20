@@ -11,24 +11,31 @@ export default function Header(){
     return (
         <header className={styles.header}>
             <Link href="/">
-                <span><img className={styles.logo} src="/images/fidentia_logo.png" alt="logomarca fidentia" /></span> 
+                <span>
+                    <img className={styles.logo} src="/images/fidentiaLogo.svg" alt="logomarca fidentia" />
+                </span> 
             </Link>
           <nav className={styles.nav}>
             <button className={styles.button_mobile} onClick={()=>handleToggle()}>
                 <img src="/images/hamburguer.svg" alt="hamburguer logo" />
             </button>
             <ul className={activeMenu ? styles.active : styles.menu}>
+                {activeMenu ? (
+                    <figure>
+                        <img className={styles.logo_menu} src="/images/fidentiaLogoMenu.svg" alt="logomarca fidentia" />
+                    </figure>
+                ) : null}
                 <Link href="/">
-                    <li>Sobre</li>
+                    <li>Home</li>
                 </Link>
                 <Link href="/">
-                    <li>Produtos</li>
+                    <li>Soluções</li>
                 </Link>
                 <Link href="/">
-                    <li>Portfólio</li>
+                    <li>Artigos</li>
                 </Link>
                 <Link href="/">
-                    <li>Contato</li>
+                    <li>A fidentia</li>
                 </Link>
             </ul>
           </nav>

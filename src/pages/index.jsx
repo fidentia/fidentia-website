@@ -5,6 +5,8 @@ import styles from '../styles/Home.module.scss';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { useInView } from 'react-intersection-observer';
+import { useState } from "react";
+
 
 export default function Home({postsPagination}) {
   
