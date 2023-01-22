@@ -6,9 +6,6 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { useInView } from 'react-intersection-observer';
 import { useState } from "react";
-import FullPage, {FullPageSections, FullpageSection, FullpageNavigation } from '@ap.cx/react-fullpage';
-
-
 
 export default function Home({postsPagination}) {
   
@@ -37,102 +34,48 @@ export default function Home({postsPagination}) {
       })
   }
 
-  const SectionStyle ={
-    height: '100vh',
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-
+ 
   return (
     <>
-      
-      {/* <Header /> */}
-      <FullPage>
-        <FullpageNavigation />
-         <FullPageSections>
-            <FullpageSection>
-              <article className={styles.container_main}>
+    <Header />
+    <main className={styles.container}>
+      <article className={styles.container_main}>
+          <div>
+            <h1>Apoiando você, <b>sempre</b></h1>
+          </div>
+          
+          <div>
+            <h3>Soluções completas em seguros para pesquisas clínicas</h3>
+            <p>Tudo que você precisa dominar seguros para o setor de pesquisas clínicas. <br/></p>
+            <p>Destaque-se em ambientes competitivos, blindar seu negócio e   alavancar seu sucesso profissional.</p>
+          </div>
+      </article>
+
+
+      <section ref={postsRef} className={styles.container_posts}>
+      <h2 className={styles.title_articles}>{postsVisible ? 'Artigo Visivel' : 'Artigo não visivel'}</h2>
+        <article className={styles.posts}>
+          {posts.map(post => (
+            <article key={post.uid} className={styles.post}>
               <div>
-                <h1>Apoiando você, <b>sempre</b></h1>
+                  <h3>{post.data.title}</h3>
+                  <p>{post.first_publication_date}</p>
               </div>
-              
               <div>
-                <h3>Soluções completas em seguros para pesquisas clínicas</h3>
-                <p>Tudo que você precisa dominar seguros para o setor de pesquisas clínicas. <br/></p>
-                <p>Destaque-se em ambientes competitivos, blindar seu negócio e   alavancar seu sucesso profissional.</p>
+                  <button>Ver artigo</button>
               </div>
             </article>
-            </FullpageSection>
-
-            <FullpageSection style={SectionStyle}>
-              <section ref={postsRef} className={styles.container_posts}>
-              <h2 className={styles.title_articles}>{postsVisible ? 'Artigo Visivel' : 'Artigo não visivel'}</h2>
-            <article className={styles.posts}>
-              {posts.map(post => (
-                <article key={post.uid} className={styles.post}>
-                  <div>
-                      <h3>{post.data.title}</h3>
-                      <p>{post.first_publication_date}</p>
-                  </div>
-                  <div>
-                      <button>Ver artigo</button>
-                  </div>
-                </article>
-              ))}
-            </article>
-            {nextPage && (
-              <div className={styles.button_more_posts}>
-                <button onClick={()=>handlePagination()}>Ver mais</button>
-              </div>
-          )}
-            </section>
-            </FullpageSection>
-
-            <FullpageSection style={SectionStyle}>
-              <h1>Screnn 3</h1>
-            </FullpageSection>
-         </FullPageSections>
-      </FullPage>
-      {/* <main className={styles.container}>
-        <article className={styles.container_main}>
-            <div>
-              <h1>Apoiando você, <b>sempre</b></h1>
-            </div>
-            
-            <div>
-              <h3>Soluções completas em seguros para pesquisas clínicas</h3>
-              <p>Tudo que você precisa dominar seguros para o setor de pesquisas clínicas. <br/></p>
-              <p>Destaque-se em ambientes competitivos, blindar seu negócio e   alavancar seu sucesso profissional.</p>
-            </div>
+          ))}
         </article>
-
-
-        <section ref={postsRef} className={styles.container_posts}>
-        <h2 className={styles.title_articles}>{postsVisible ? 'Artigo Visivel' : 'Artigo não visivel'}</h2>
-          <article className={styles.posts}>
-            {posts.map(post => (
-              <article key={post.uid} className={styles.post}>
-                <div>
-                    <h3>{post.data.title}</h3>
-                    <p>{post.first_publication_date}</p>
-                </div>
-                <div>
-                    <button>Ver artigo</button>
-                </div>
-              </article>
-            ))}
-          </article>
-          {nextPage && (
-            <div className={styles.button_more_posts}>
-              <button onClick={()=>handlePagination()}>Ver mais</button>
-            </div>
-          )}
-        </section>
-        
-      </main> */}
-    </>
+        {nextPage && (
+          <div className={styles.button_more_posts}>
+            <button onClick={()=>handlePagination()}>Ver mais</button>
+          </div>
+        )}
+      </section>
+      
+    </main>
+  </>
   )
 }
 
