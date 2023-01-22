@@ -5,13 +5,25 @@ import styles from '../styles/Home.module.scss';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { useInView } from 'react-intersection-observer';
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import Image from "next/image";
 
 export default function Home({postsPagination}) {
   
   const [nextPage, setNextPage] = useState(postsPagination.next_page)
   const [posts, setPosts] = useState(postsPagination?.results);
-  const { ref: postsRef, inView: postsVisible} = useInView();
+
+  const section1 = useRef();
+  const section2 = useRef();
+  const section3 = useRef();
+  
+
+  function scrollTo(section){
+    section.current.scrollIntoView({
+      behavior: "smooth"
+    })
+  }
 
   const handlePagination = () => {
     fetch(nextPage)
@@ -34,48 +46,52 @@ export default function Home({postsPagination}) {
       })
   }
 
+
  
   return (
     <>
-    <Header />
-    <main className={styles.container}>
-      <article className={styles.container_main}>
-          <div>
-            <h1>Apoiando você, <b>sempre</b></h1>
+    
+    <main className={`container ${styles.container}`}>
+    {/* <Header /> */}
+      <section className={styles.section} ref={section1}>
+          <div className={styles.copy}>
+            <h2>Lorem ipsum</h2>
           </div>
-          
-          <div>
-            <h3>Soluções completas em seguros para pesquisas clínicas</h3>
-            <p>Tudo que você precisa dominar seguros para o setor de pesquisas clínicas. <br/></p>
-            <p>Destaque-se em ambientes competitivos, blindar seu negócio e   alavancar seu sucesso profissional.</p>
-          </div>
-      </article>
-
-
-      <section ref={postsRef} className={styles.container_posts}>
-      <h2 className={styles.title_articles}>{postsVisible ? 'Artigo Visivel' : 'Artigo não visivel'}</h2>
-        <article className={styles.posts}>
-          {posts.map(post => (
-            <article key={post.uid} className={styles.post}>
-              <div>
-                  <h3>{post.data.title}</h3>
-                  <p>{post.first_publication_date}</p>
-              </div>
-              <div>
-                  <button>Ver artigo</button>
-              </div>
-            </article>
-          ))}
-        </article>
-        {nextPage && (
-          <div className={styles.button_more_posts}>
-            <button onClick={()=>handlePagination()}>Ver mais</button>
-          </div>
-        )}
+          <Image 
+            src={`/images/austin-neill-Be7DMcK7k3o-unsplash.jpg`} 
+            fill={true}
+            />
+            <button
+          className={styles.downarrow}
+          onClick={() => scrollTo(section2)}
+        ></button>
       </section>
-      
-    </main>
-  </>
+
+      <section className={styles.section} ref={section2}>
+          <div className={styles.copy}>
+            <h2> Lorem ipsum</h2>
+          </div>
+          <Image 
+            src={`/images/chris-chan-wA-dbT3FJnE-unsplash.jpg`} 
+            fill={true}
+            />
+            <button
+          className={styles.downarrow}
+          onClick={() => scrollTo(section3)}
+        ></button>
+      </section>
+
+      <section className={styles.section} ref={section3}>
+          <div className={styles.copy}>
+            <h2>Lorem ipsum</h2>
+          </div>
+          <Image 
+            src={`/images/michael-olsen--djS1aPrSr4-unsplash.jpg`} 
+            fill={true}
+            />
+      </section>
+      </main>
+    </>
   )
 }
 

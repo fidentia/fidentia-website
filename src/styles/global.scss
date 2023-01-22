@@ -38,13 +38,14 @@ ul {
 }
 
 body{
-  scroll-behavior: smooth;
   background-color: var(--white);
   color: var(--gray-900);
   -webkit-font-smoothing: antialiased;
+  overflow-y: hidden;
 }
 
 button{
+  
   cursor: pointer;
   transition: 300ms;
   &:hover{

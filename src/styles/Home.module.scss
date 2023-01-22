@@ -1,240 +1,58 @@
-.container{
-    margin: 0 auto;
-    max-width: 1500px;
+.container {
+  position: relative;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.section {
     height: 100vh;
-    // background: url('/images/backgroundMain.png') 0 0 repeat;
-    
-    
-}
-
-.container_main{
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0 auto;
-    margin-top: 8rem;
-    min-height: 100vh;
-    justify-content: center;
-    div:nth-child(1){
-        text-align: center;
-        align-items: center;
-        height: 1rem;
-        h1{
-            font-size: 6rem;
-            
-            b{
-                color: var(--blue-200);
-            }
-        }
-    }
-    div:nth-child(2){
-        text-align: center;
-        align-items: center;
-        h3{
-            font-weight: 400;
-            font-size: 2rem;
-        }
-        p{
-            margin-top: 0.9rem;
-            font-size: 1rem;
-            font-weight: 400;
-        }
-    }
-   
-}
-
-.posts{
-  transition: all 2s ease-in-out;
-    margin: 0 auto;
-    max-width: 1200px;
-    margin-top: 10vh;
-    justify-content: center;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.animation_posts{
-    animation-duration: 5s;
-    animation-name: animate-rocket;
-}
-
-.title_articles {
-    // display: inline-block;
-    font-size: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.post{
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 15rem;
-    padding: 1rem;
-    height: 15rem;
-    border-radius: 16px;
-    font-size: 0.9rem;
-    background: var(--yellow-200);
-    button {
-        font-size: 0.8rem;
-        color: black;
-        border-radius: 15px;
-        border-style: none;
-        width: 5rem;
-        background-color: var(--white);
-        height: 2rem;
-    }
-}
-
-.button_more_posts{
-    margin: 20px auto;
-    align-self: center;
     justify-content: center;
-    text-align: center;
-    
-    button{
-        font-size: 1.2rem;
-        color: black;
-        border-style: none;
-        border-radius: 10px;
-        border: 1px solid black;
-        width: 7rem;
-        background-color: var(--white);
-        height: 2rem;
-    }      
-}
-
-@keyframes animate-rocket {
-    0%{
-        transform: scale(1) rotate(10deg);
+    align-items: center;
+    scroll-snap-align: center;
+    position: relative;
+    img {
+      position: relative;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
     }
-    5%{
-        transform: scale(1.25) rotate(-15deg);
-    }
-    10%{
-        transform: scale(1.5) rotate(5deg);
-    }
-    15%{
-        transform: scale(1.75) rotate(-10deg);
-    }
-    20%{
-        transform: scale(2) rotate(0);
-    }
-    100%{
-        transform: scale(20) translate3D(100vw, -100vh, 0) rotate(0);
-    }
-}
-
-@media (max-width: 650px) {
-    .container_main{
-        justify-items: center;
-        grid-template-columns: 1fr;
-        gap:  5rem;
-        padding: 2rem;
-    }
-    .posts{
-        justify-items: center;
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
-
-@media (min-width: 1281px) {
-  
-    /* CSS */
-    
-  }
-  
-  /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-  
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    
-    /* CSS */
-    .container_main{
-        justify-content: center;
-        justify-items: center;
-        grid-template-columns: 1fr;
-    }
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    
-    /* CSS */
-    .container_main{
-        justify-content: center;
-        justify-items: center;
-        grid-template-columns: 1fr;
-    }
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
-    /* CSS */
-    .container_main{
-        justify-content: center;
-        justify-items: center;
-        grid-template-columns: 1fr;
-    }
-    
-  }
-  
-  /* 
-    ##Device = Low Resolution Tablets, Mobiles (Landscape)
-    ##Screen = B/w 481px to 767px
-  */
-  
-  @media (min-width: 481px) and (max-width: 767px) {
-    
-    /* CSS */
-    .container_main{
-        justify-content: center;
-        justify-items: center;
-        grid-template-columns: 1fr;
-        div:nth-child(1){
-            h1{
-                font-size: 4rem;
-            }
+    .copy {
+      h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        @media (min-width: 768px) {
+          font-size: 3rem;
         }
-        
+      }
     }
-    
-  }
-  
-  /* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-  
-  @media (min-width: 320px) and (max-width: 480px) {
-    
-    .container_main{
-        div:nth-child(1){
-            h1{
-                font-size: 3.8rem;
-            }
-        }
-        
+    .downarrow {
+    background: none;
+    border: 0;
+      position: absolute;
+      bottom: 8rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-image: url("/images/downarrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
     }
-    
   }
