@@ -52,8 +52,9 @@ export default function Home({postsPagination}) {
     <>
     
     <main className={`container ${styles.container}`}>
-    {/* <Header /> */}
+      
       <section className={styles.section1} ref={section1}>
+          <Header />
           <div className={styles.content}>
           <Image 
             src={`/images/section1.png`} 

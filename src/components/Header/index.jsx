@@ -26,16 +26,19 @@ export default function Header(){
                     </figure>
                 ) : null}
                 <Link href="/">
-                    <li>Home</li>
+                    <li>Início</li>
                 </Link>
                 <Link href="/">
                     <li>Soluções</li>
                 </Link>
                 <Link href="/">
-                    <li>Artigos</li>
+                    <li>Fale conosco</li>
                 </Link>
                 <Link href="/">
-                    <li>A fidentia</li>
+                    <li>Cote agora</li>
+                </Link>
+                <Link href="/">
+                    <li>a fidentia</li>
                 </Link>
                 {activeMenu ? (
                     <section className={styles.social_medias_logos}>
