@@ -12,7 +12,64 @@
   }
 }
 
-.section {
+.section1 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    position: relative;
+    // img {
+    //   position: relative;
+    //   width: 100%;
+    //   height: 100%;
+    // }
+    .content {
+      max-width: 1250px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      .title{
+        position: relative;
+        // border: 1px solid red;
+        width: 700px;
+        font-size: 3.6rem;
+        h2{
+          color: var(--purple-800);
+          span{
+            color: var(--coral-300);
+          }
+        }
+      }
+      .subtitle{
+        margin-top: 100%;
+        position: relative;
+        p{
+          font-size: 2.12rem;
+          font-weight: 500;
+          color: var(--purple-800);
+        }
+      }
+    }
+    .downarrow {
+    background: none;
+    border: 0;
+      position: absolute;
+      bottom: 8rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-image: url("/images/downarrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+    }
+  }
+
+  .section2 {
     height: 100vh;
     width: 100%;
     display: flex;
@@ -27,7 +84,280 @@
       width: 100%;
       height: 100%;
     }
-    .copy {
+    .content {
+      h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        @media (min-width: 768px) {
+          font-size: 3rem;
+        }
+      }
+    }
+    .downarrow {
+    background: none;
+    border: 0;
+      position: absolute;
+      bottom: 8rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-image: url("/images/downarrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+    }
+  }
+
+  .section3 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    position: relative;
+    img {
+      position: relative;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+    .content {
+      h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        @media (min-width: 768px) {
+          font-size: 3rem;
+        }
+      }
+    }
+    .downarrow {
+    background: none;
+    border: 0;
+      position: absolute;
+      bottom: 8rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-image: url("/images/downarrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+    }
+  }
+
+  .section4 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    position: relative;
+    img {
+      position: relative;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+    .content {
+      .title{
+        h2 {
+          position: relative;
+          z-index: 1;
+          font-size: 1.4rem;
+          font-weight: bold;
+          color: #160544;
+          text-align: center;
+          @media (min-width: 768px) {
+            font-size: 3rem;
+          }
+        }
+      }
+      
+    }
+    .downarrow {
+    background: none;
+    border: 0;
+      position: absolute;
+      bottom: 8rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-image: url("/images/downarrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+    }
+  }
+
+  .section5 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    position: relative;
+    img {
+      position: relative;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+    .content {
+      h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        @media (min-width: 768px) {
+          font-size: 3rem;
+        }
+      }
+    }
+    .downarrow {
+    background: none;
+    border: 0;
+      position: absolute;
+      bottom: 8rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-image: url("/images/downarrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+    }
+  }
+
+  .section6 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    position: relative;
+    img {
+      position: relative;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+    .content {
+      h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        @media (min-width: 768px) {
+          font-size: 3rem;
+        }
+      }
+    }
+    .downarrow {
+    background: none;
+    border: 0;
+      position: absolute;
+      bottom: 8rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-image: url("/images/downarrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+    }
+  }
+
+  .section7 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    position: relative;
+    img {
+      position: relative;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+    .content {
+      h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        @media (min-width: 768px) {
+          font-size: 3rem;
+        }
+      }
+    }
+    .downarrow {
+    background: none;
+    border: 0;
+      position: absolute;
+      bottom: 8rem;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-image: url("/images/downarrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
+    }
+  }
+
+  .section8 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: center;
+    position: relative;
+    img {
+      position: relative;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+    .content {
       h2 {
         position: relative;
         z-index: 1;

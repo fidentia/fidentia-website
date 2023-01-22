@@ -53,21 +53,27 @@ export default function Home({postsPagination}) {
     
     <main className={`container ${styles.container}`}>
     {/* <Header /> */}
-      <section className={styles.section} ref={section1}>
-          <div className={styles.copy}>
-            <h2>Lorem ipsum</h2>
-          </div>
+      <section className={styles.section1} ref={section1}>
+          <div className={styles.content}>
           <Image 
-            src={`/images/austin-neill-Be7DMcK7k3o-unsplash.jpg`} 
+            src={`/images/section1.png`} 
             fill={true}
             />
+            <div className={styles.title}>
+              <h2>Apoiando você, <span>sempre</span></h2>
+            </div>
+            <div className={styles.subtitle}>
+              <p >Soluções completas em seguros para pesquisas clínicas</p>
+            </div>
+
+          </div>
             <button
           className={styles.downarrow}
           onClick={() => scrollTo(section2)}
         ></button>
       </section>
 
-      <section className={styles.section} ref={section2}>
+      <section className={styles.section2} ref={section2}>
           <div className={styles.copy}>
             <h2> Lorem ipsum</h2>
           </div>
@@ -81,7 +87,7 @@ export default function Home({postsPagination}) {
         ></button>
       </section>
 
-      <section className={styles.section} ref={section3}>
+      <section className={styles.section3} ref={section3}>
           <div className={styles.copy}>
             <h2>Lorem ipsum</h2>
           </div>
