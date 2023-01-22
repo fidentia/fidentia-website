@@ -79,7 +79,7 @@ export default function Home({postsPagination}) {
             <h2> Lorem ipsum</h2>
           </div>
           <Image 
-            src={`/images/chris-chan-wA-dbT3FJnE-unsplash.jpg`} 
+            src={`/images/section2.png`} 
             fill={true}
             />
             <button
