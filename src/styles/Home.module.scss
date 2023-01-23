@@ -464,20 +464,160 @@
     }
   }
 
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
 
-
-@media (max-width: 1250px) {
+@media (min-width: 1281px) {
   
-    /* CSS */
-    .section1{
-      .content{
-        grid-template-columns: 1fr;
-        .title{
-          margin-top: 8rem;
-        }
-        .subtitle{
-          margin-top: 10rem;
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  .section1{
+    .content{
+      grid-template-columns: 1fr;
+      .title{
+        margin-top: 8rem;
+      }
+      .subtitle{
+        margin-top: 10rem;
+      }
+    }
+  }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .section1{
+    .content{
+      grid-template-columns: 1fr;
+      .title{
+        margin-top: 8rem;
+      }
+      .subtitle{
+        margin-top: 10rem;
+      }
+    }
+  }
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  .section1{
+    .content{
+      grid-template-columns: 1fr;
+      .title{
+        margin-top: 8rem;
+      }
+      .subtitle{
+        margin-top: 10rem;
+      }
+    }
+  }
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  .section1{
+    .content{
+      max-width: 300px;
+      grid-template-columns: 1fr;
+      .title{
+        width: 25rem;
+        font-size: 2.18rem;
+        margin: 8rem auto;
+      }
+      .subtitle{
+        justify-content: center;
+        align-items: center;
+        margin-top: 8rem;
+        width: 19rem;
+        p{
+          font-size: 1.30rem;
         }
       }
     }
   }
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .section1{
+    .content{
+      max-width: 300px;
+      grid-template-columns: 1fr;
+      .title{
+        width: 25rem;
+        font-size: 2.18rem;
+        margin: 8rem auto;
+      }
+      .subtitle{
+        justify-content: center;
+        align-items: center;
+        margin-top: 8rem;
+        width: 19rem;
+        p{
+          font-size: 1.30rem;
+        }
+      }
+    }
+  }
+  
+}
+
+// @media (min-width: 380px) and (max-width: 400px) {
+//   .section1{
+//     .content{
+//       max-width: 410px;
+//       grid-template-columns: 1fr;
+//       .title{
+//         width: 25rem;
+//         font-size: 2.18rem;
+//         margin: 8rem auto;
+//       }
+//       .subtitle{
+//         justify-content: center;
+//         align-items: center;
+//         margin: 8rem auto;
+//         width: 19rem;
+//         p{
+//           font-size: 1.30rem;
+//         }
+//       }
+//     }
+//   }
+// }
+
