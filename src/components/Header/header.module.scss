@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row-reverse;
     max-width: 1350px;
+    min-width: 14rem;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box; 
@@ -26,11 +27,11 @@
 .menu{
     display: flex;
     gap: .5rem;   
-
     li{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         display: block;
         padding: .5rem;
+        line-height: 1.4rem;
     }
 }
 
@@ -45,6 +46,8 @@
 .button_mobile{
     display: none;
 }
+
+
 
 
 @media (max-width: 640px){
@@ -77,6 +80,10 @@
             &:hover{
                 filter: opacity(0.7);
             }   
+        }
+        .logo_menu{
+            width: 15rem;
+            height: auto;
         }
     }
 

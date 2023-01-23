@@ -13,11 +13,12 @@ export default function Home({postsPagination}) {
   
   const [nextPage, setNextPage] = useState(postsPagination.next_page)
   const [posts, setPosts] = useState(postsPagination?.results);
+  const { ref: homeSection, inView: homeSectionVisible} = useInView();
+  const { ref: subSection, inView: subSectionVisible} = useInView();
 
   const section1 = useRef();
   const section2 = useRef();
   const section3 = useRef();
-  
 
   function scrollTo(section){
     section.current.scrollIntoView({
@@ -59,7 +60,7 @@ export default function Home({postsPagination}) {
             src={`/images/section1.png`} 
             fill={true}
             />
-          <div className={styles.content}>
+          <div className={styles.content} ref={homeSection}>
             <div className={styles.title}>
               <h2>Apoiando você, <span>sempre</span></h2>
             </div>
@@ -79,7 +80,7 @@ export default function Home({postsPagination}) {
             src={`/images/section2.png`} 
             fill={true}
             />
-          <div className={styles.content}>
+          <div className={styles.content} ref={subSection}>
             <div className={styles.title}>
                 <div>
                   <h2>Conheça nossas soluções exclusivas</h2>
