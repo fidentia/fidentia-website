@@ -55,11 +55,11 @@ export default function Home({postsPagination}) {
       
       <section className={styles.section1} ref={section1}>
           <Header />
-          <div className={styles.content}>
           <Image 
             src={`/images/section1.png`} 
             fill={true}
             />
+          <div className={styles.content}>
             <div className={styles.title}>
               <h2>Apoiando você, <span>sempre</span></h2>
             </div>
@@ -75,14 +75,55 @@ export default function Home({postsPagination}) {
       </section>
 
       <section className={styles.section2} ref={section2}>
-          <div className={styles.copy}>
-            <h2> Lorem ipsum</h2>
-          </div>
           <Image 
             src={`/images/section2.png`} 
             fill={true}
             />
-            <button
+          <div className={styles.content}>
+            <div className={styles.title}>
+                <div>
+                  <h2>Conheça nossas soluções exclusivas</h2>
+                </div>
+                <p>Oferecemos uma suíte completa de soluções e serviços com tudo o que você precisa sobre seguro para o mundo das pesquisas clínicas.</p>
+            </div>
+            <div className={styles.cards}>
+                <div className={styles.card}>
+                  <h3>Seguros para</h3>
+                  <p>Pesquisas Clínicas</p>
+                  <p>Profissionais de pesquisas clínicas</p>
+                  <p>Transportes de materiais para o estabelecimento</p>
+                  <p>Seguro de vida para pacientes</p>
+                  <div className={styles.button}>
+                    <button>Saiba mais</button>
+                  </div>
+                </div>
+
+                <div className={styles.card}>
+                  <h3>Cursos</h3>
+                  <p>Seguros para pesquisas clínicas</p>
+                  <p>Venda de seguros</p>
+                  <p>Palestras</p>
+                  <p>Cursos de curta duração</p>
+                  <p>Cursos in-company</p>
+                  <div className={styles.button}>
+                    <button>Saiba mais</button>
+                  </div>
+                </div>
+
+                <div className={styles.card}>
+                  <h3>Consultoria</h3>
+                  <p>Para corretores, seguradoras e brokers</p>
+                  <p>Análise e gestão de riscos</p>
+                  <p>Subscroção de riscos</p>
+                  <p>Suporte técnico e comercial completo</p>
+                  <div className={styles.button}>
+                    <button>Saiba mais</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+          
+          <button
           className={styles.downarrow}
           onClick={() => scrollTo(section3)}
         ></button>

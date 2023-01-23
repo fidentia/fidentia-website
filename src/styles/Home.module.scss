@@ -30,7 +30,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      
       .title{
         position: relative;
         width: 700px;
@@ -86,17 +85,95 @@
       height: 100%;
     }
     .content {
-      h2 {
-        position: relative;
-        z-index: 1;
-        font-size: 1.4rem;
-        font-weight: bold;
-        color: #fff;
-        text-align: center;
-        @media (min-width: 768px) {
-          font-size: 3rem;
+      width: 100%; 
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10rem;
+      .title{
+        width: 35rem;
+        margin-left: 10rem;
+        flex-direction: column;
+        h2 {
+          justify-content: flex-start;
+          justify-self: start;
+          position: relative;
+          z-index: 1;
+          font-size: 3.4rem;
+          font-weight: 400;
+          color: #fff;
+          @media (min-width: 768px) {
+            font-size: 3rem;
+          }
+        }
+        p{
+          font-size: 1.5rem;
+          position: relative;
+          color: #FFFFFF;
+          line-height: 1.8rem;
+          margin-top: 1rem;
         }
       }
+      .cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 2rem;
+        justify-content: center;;
+        margin: 0 auto;
+        gap: 16rem;
+        .card{
+          box-sizing: border-box;
+          padding: 2rem;
+          width: 21.5rem;
+          height: 26rem;
+          background-color: #FFFFFF;
+          border: 2.10766px solid #FFFFFF;
+          box-shadow: 0px 3.16967px 20.6028px rgba(0, 0, 0, 0.25);
+          border-radius: 30px;
+          h3{
+            font-size: 1.5rem;
+            color: var(--purple-800);
+            font-weight: 500;
+            line-height: 1.8rem;
+            position: relative;
+            &::after{
+              position: absolute;
+              content:"";
+              border: 1px solid rgba(22, 5, 68, 0.3);
+              width: 15.43rem;
+              height: 0px;
+              top: 2.4rem;
+              bottom: 0;
+              left: 0;
+            }
+          }
+          p{
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.3rem;
+            letter-spacing: 0.04em;
+            margin-top: 0.8rem;
+            &:first-of-type{
+              margin-top: 2.8rem;
+            }
+            &:last-of-type{
+              margin-bottom: 5rem;
+            }
+          }
+          .button{
+            text-align: center;
+            button{
+              width: 14rem;
+              color: #FFFFFF;
+              height: 2.31rem;
+              background: var(--coral-300);    
+              border: 0;    
+              border-radius: 22.5644px;
+            }
+          }
+        }
+      }
+      
     }
     .downarrow {
     background: none;
