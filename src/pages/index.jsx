@@ -13,6 +13,7 @@ export default function Home({postsPagination}) {
   
   const [nextPage, setNextPage] = useState(postsPagination.next_page)
   const [posts, setPosts] = useState(postsPagination?.results);
+  const [mobileWidth, setMobileWidth] = useState(false);
   const { ref: homeSection, inView: homeSectionVisible} = useInView();
   const { ref: subSection, inView: subSectionVisible} = useInView();
 
@@ -47,7 +48,23 @@ export default function Home({postsPagination}) {
       })
   }
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 600) {
+        setMobileWidth(true);
+      } else {
+        setMobileWidth(false);
+      }
+    };
 
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
  
   return (
     <>
@@ -57,7 +74,7 @@ export default function Home({postsPagination}) {
       <section className={styles.section1} ref={section1}>
           <Header />
           <Image 
-            src={`/images/section1.png`} 
+            src={`${mobileWidth ? '/images/section1_mobile.png' : '/images/section1.png'}`} 
             fill={true}
             />
           <div className={styles.content} ref={homeSection}>
