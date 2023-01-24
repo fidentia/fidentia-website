@@ -61,12 +61,12 @@
         bottom: 0;
         left: 10rem;
         right: 0;
-        top: 200%;
+        top: 150%;
         margin: 0 auto;
         background-image: url("/images/downarrow.svg");
         background-repeat: no-repeat;
         background-size: contain;
-        width: 40px;
+        width: 2rem;
         height: 40px;
         z-index: 2;
       }
@@ -483,7 +483,7 @@
   ##Screen = B/w 1025px to 1280px
 */
 
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1025px) and (max-width: 1180px) {
   
   .section1{
     .content{
@@ -540,6 +540,10 @@
         margin: 8rem;
       }
     }
+    .downarrow {
+      width: 5rem;  
+      height: auto;
+    }
   }
   
 }
@@ -553,7 +557,9 @@
   .section1{
     .content{
       grid-template-columns: 1fr;
+      border: 1px solid blue;
       padding: 2rem;
+      gap: 6rem;
       .title{
         font-size: 3rem;
         margin: 8rem auto;
@@ -561,12 +567,14 @@
       .subtitle{
         justify-content: center;
         align-items: center;
-        margin-top: 8rem;
-        width: 25rem;
+        margin: 8rem auto;
         p{
           font-size: 1.50rem;
         }
       }
+    }
+    .downarrow {
+      width: 1.6rem;  
     }
   }
   
@@ -582,20 +590,26 @@
   .section1{
     .content{
       grid-template-columns: 1fr;
+      padding: 2rem;
+      gap: 1.2rem;
       .title{
-        width: 25rem;
-        font-size: 2.18rem;
-        margin: 8rem auto;
+        width: 23rem;
+        font-size: 2.40rem;
+        margin: 6rem auto;
       }
       .subtitle{
         justify-content: center;
         align-items: center;
-        margin: 8rem auto;
+        margin: 4rem auto;
         width: 19rem;
         p{
           font-size: 1.30rem;
         }
       }
+    }
+    .downarrow {
+      width: 1.6rem;  
+      
     }
   }
   
@@ -607,6 +621,7 @@
     .content{
       grid-template-columns: 1fr;
       padding: 1rem;
+      gap: 6rem;
       .title{
         width: 20rem;
         font-size: 2.5rem;
