@@ -547,7 +547,7 @@
   
   .section1{
     .content{
-      max-width: 300px;
+      border: 1px solid red;
       grid-template-columns: 1fr;
       .title{
         width: 25rem;
@@ -557,7 +557,7 @@
       .subtitle{
         justify-content: center;
         align-items: center;
-        margin-top: 8rem;
+        margin: 8rem auto;
         width: 19rem;
         p{
           font-size: 1.30rem;
@@ -577,7 +577,7 @@
   
   .section1{
     .content{
-      max-width: 300px;
+      border: 1px solid red;
       grid-template-columns: 1fr;
       .title{
         width: 25rem;
@@ -587,7 +587,32 @@
       .subtitle{
         justify-content: center;
         align-items: center;
-        margin-top: 8rem;
+        margin: 8rem auto;
+        width: 19rem;
+        p{
+          font-size: 1.30rem;
+        }
+      }
+    }
+  }
+  
+}
+
+@media (max-width: 350px) {
+  
+  .section1{
+    .content{
+      border: 1px solid blue;
+      grid-template-columns: 1fr;
+      .title{
+        width: 20rem;
+        font-size: 1.5rem;
+        margin: 8rem auto;
+      }
+      .subtitle{
+        justify-content: center;
+        align-items: center;
+        margin: 8rem auto;
         width: 19rem;
         p{
           font-size: 1.30rem;
