@@ -484,12 +484,14 @@
   
   .section1{
     .content{
+      padding: 3rem;
       grid-template-columns: 1fr;
+      border: 1px solid black;
       .title{
         margin-top: 8rem;
       }
       .subtitle{
-        margin-top: 10rem;
+        margin-top: 8rem;
       }
     }
   }
@@ -506,11 +508,13 @@
   .section1{
     .content{
       grid-template-columns: 1fr;
+      border: 1px solid blueviolet;
+      padding: 3rem;
       .title{
         margin-top: 8rem;
       }
       .subtitle{
-        margin-top: 10rem;
+        margin-top: 8rem;
       }
     }
   }
@@ -527,11 +531,13 @@
   .section1{
     .content{
       grid-template-columns: 1fr;
+
       .title{
         margin-top: 8rem;
+        
       }
       .subtitle{
-        margin-top: 10rem;
+        margin: 8rem;
       }
     }
   }
@@ -542,25 +548,25 @@
   ##Device = Low Resolution Tablets, Mobiles (Landscape)
   ##Screen = B/w 481px to 767px
 */
-
 @media (min-width: 481px) and (max-width: 767px) {
   
   .section1{
     .content{
-      border: 1px solid red;
       grid-template-columns: 1fr;
+      border: 1px solid yellow;
+      padding: 2rem;
       .title{
         width: 25rem;
-        font-size: 2.18rem;
-        margin: 8rem auto;
+        font-size: 3rem;
+        margin: 6rem auto;
       }
       .subtitle{
         justify-content: center;
         align-items: center;
-        margin: 8rem auto;
-        width: 19rem;
+        margin: 6rem auto;
+        width: 25rem;
         p{
-          font-size: 1.30rem;
+          font-size: 1.50rem;
         }
       }
     }
@@ -602,20 +608,20 @@
   
   .section1{
     .content{
-      border: 1px solid blue;
       grid-template-columns: 1fr;
+      padding: 1rem;
       .title{
         width: 20rem;
-        font-size: 1.5rem;
-        margin: 8rem auto;
+        font-size: 2.5rem;
+        margin: 7rem auto;
       }
       .subtitle{
         justify-content: center;
         align-items: center;
-        margin: 8rem auto;
+        margin: 7rem auto;
         width: 19rem;
         p{
-          font-size: 1.30rem;
+          font-size: 1.25rem;
         }
       }
     }
@@ -623,26 +629,4 @@
   
 }
 
-// @media (min-width: 380px) and (max-width: 400px) {
-//   .section1{
-//     .content{
-//       max-width: 410px;
-//       grid-template-columns: 1fr;
-//       .title{
-//         width: 25rem;
-//         font-size: 2.18rem;
-//         margin: 8rem auto;
-//       }
-//       .subtitle{
-//         justify-content: center;
-//         align-items: center;
-//         margin: 8rem auto;
-//         width: 19rem;
-//         p{
-//           font-size: 1.30rem;
-//         }
-//       }
-//     }
-//   }
-// }
 
