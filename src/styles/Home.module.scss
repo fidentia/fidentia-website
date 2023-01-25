@@ -592,7 +592,6 @@
   .section1{
     .content{
       height: 100%;
-      border: 1px solid red;
       padding: 2rem;
       margin-top: 0.5rem;
       .title{
@@ -601,6 +600,7 @@
       }
       .subtitle{
         width: 20rem;
+        margin-bottom: 8.5rem;
         p{
           font-size: 1.80rem;
         }
