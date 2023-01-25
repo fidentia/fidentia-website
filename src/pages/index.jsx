@@ -50,7 +50,7 @@ export default function Home({postsPagination}) {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 600) {
+      if (window.innerWidth < 630) {
         setMobileWidth(true);
       } else {
         setMobileWidth(false);
