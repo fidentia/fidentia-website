@@ -76,6 +76,7 @@ export default function Home({postsPagination}) {
           <Image 
             src={`${mobileWidth ? '/images/section1_mobile.png' : '/images/section1.png'}`} 
             fill={true}
+            alt="background image"
             />
           <div className={styles.content} ref={homeSection}>
             <div className={styles.title}>
@@ -96,6 +97,7 @@ export default function Home({postsPagination}) {
           <Image 
             src={`/images/section2.png`} 
             fill={true}
+            alt="background image"
             />
           <div className={styles.content} ref={subSection}>
             <div className={styles.title}>
