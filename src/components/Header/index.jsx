@@ -18,8 +18,8 @@ export default function Header(){
                 <span>
                 <Image 
                     src={`/images/fidentiaLogo.svg`} 
-                    width={20}
-                    height={20}
+                    width={150}
+                    height={100}
                     alt="background image"
                  />
                 </span> 
@@ -35,7 +35,7 @@ export default function Header(){
                             <img className={styles.logo_menu} src="/images/fidentiaLogoMenu.svg" alt="logomarca fidentia" />
                         </figure>
                         <span onClick={()=>handleClose()}>
-                            <img src="/images/closeIcon.svg" alt="ícone para fechar menu" />
+                            <img src="/images/closeIcon.svg" alt="ícone para fechar menu" title='Fechar menu' />
                         </span>
                     </div>
                 ) : null}

@@ -1,25 +1,19 @@
 .header{
     display: flex;
-
+    max-width: 1500px;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box; 
     height: 4.3rem;
-
+    padding: 2rem;
     align-self: center;
     position: relative;
     background: none;
     border: 0;
     z-index: 1;
+    
 }
 
-.logo{
-    justify-items: center;
-    padding: 1rem;
-    width: 5rem;
-    border: 1px solid red;
-    height: auto;
-}
 .icons_menu{
     display: none;
 }
@@ -53,11 +47,10 @@
     .menu{
         display: none;
     }
-
     .active{
         display: block;
         position: absolute;
-        width: 21rem;
+        width: 90vw;
         border-radius: 8px 28px 28px 16px;
         top: 0;
         right: 500px;
@@ -73,8 +66,8 @@
             position: relative;
             cursor: pointer;
             display: block;
-            padding: 1rem 0;
-            margin: 0 1rem;
+            padding: 0.8rem 0;
+            margin: 0 2rem;
             color: white;
             line-height: 1.5rem;
             border-bottom: 2px solid rgba(0, 0, 0, .05);
@@ -137,7 +130,7 @@
         background: none;
         cursor: pointer;
         img{
-            width: 1.4rem;
+            width: 2.8rem;
         }
     }
 
@@ -166,6 +159,15 @@
     
 }
 
+
+@media (min-width: 220px) and (max-width: 369px) {
+  
+    .header{
+
+        padding: 0.5rem;
+    }
+    
+}
 
 
   
