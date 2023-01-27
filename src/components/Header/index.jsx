@@ -40,19 +40,19 @@ export default function Header(){
                     </div>
                 ) : null}
                 <Link href="/">
-                    <li>Home</li>
+                    <li>início</li>
                 </Link>
                 <Link href="/">
-                    <li>Soluções</li>
+                    <li>soluções</li>
                 </Link>
                 <Link href="/">
-                    <li>Fale conosco</li>
+                    <li>fale conosco</li>
                 </Link>
                 <Link href="/">
-                    <li>Cote agora</li>
+                    <li>cote agora</li>
                 </Link>
                 <Link href="/">
-                    <li>A fidentia</li>
+                    <li>a fidentia</li>
                 </Link>
                 {activeMenu ? (
                     <section className={styles.social_medias_logos}>

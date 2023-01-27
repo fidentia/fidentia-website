@@ -82,13 +82,18 @@ export default function Home({postsPagination}) {
             <div className={styles.title}>
               <h2>Apoiando você, <span>sempre</span></h2>
             </div>
+
             <div className={styles.subtitle}>
-              <p >Soluções <br />completas em seguros para pesquisas clínicas</p>
-             <button
-              className={styles.downarrow}
-              onClick={() => scrollTo(section2)}></button>
-           
+              <p>Soluções <br />completas em seguros para pesquisas clínicas</p>
             </div>
+
+            <div className={styles.downarrow}>
+              <button
+                onClick={() => scrollTo(section2)}
+              ></button>
+            </div>
+
+            
           </div>
             
       </section>
