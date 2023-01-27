@@ -15,14 +15,14 @@ export default function Header(){
     return (
         <header className={styles.header}>
             <Link href="/">
-                <span>
-                <Image 
-                    src={`/images/fidentiaLogo.svg`} 
-                    width={150}
-                    height={100}
-                    alt="background image"
-                 />
-                </span> 
+                <figure className={styles.logo}>
+                    <Image 
+                        src={`/images/fidentiaLogo.svg`} 
+                        width={150}
+                        height={100}
+                        alt="background image"
+                    />
+                </figure>
             </Link>
           <nav className={styles.nav}>
             <button className={styles.button_mobile} onClick={()=>handleToggle()}>
