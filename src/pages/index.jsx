@@ -72,6 +72,7 @@ export default function Home({postsPagination}) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+ 
 
   return (
     <>
@@ -169,7 +170,7 @@ export default function Home({postsPagination}) {
             </div>
             <div className={styles.numbers}>
                 <div>
-                  <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`} ref={numbersRef} data-val="300000">
+                  <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
                     {sectionTreeVisible ? (
                       <>
                         <CountUp end={300000} duration={2.75} /> +
