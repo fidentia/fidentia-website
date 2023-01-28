@@ -110,7 +110,7 @@ export default function Home({postsPagination}) {
 
       <section className={styles.section2} ref={section2}>
           <Image 
-            src={`/images/section2.png`} 
+            src={`${mobileWidth ? '/images/section2_mobile.png': '/images/section2.png'}`} 
             fill={true}
             alt="background image"
             />
