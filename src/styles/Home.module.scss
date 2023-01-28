@@ -245,7 +245,19 @@
           font-weight: 400;
         }
       }
-      
+      .count_animation {
+        animation: countAnimation 5s;
+      }
+    
+      @keyframes countAnimation {
+        from {
+          content: "0";
+        }
+        to {
+          content: "200";
+        }
+      }
+    
     }
     .downarrow {
     background: none;

@@ -6,6 +6,8 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useRef, useState } from "react";
+import CountUp from 'react-countup';
+
 
 
 
@@ -15,16 +17,16 @@ export default function Home({postsPagination}) {
   
   const [nextPage, setNextPage] = useState(postsPagination.next_page)
   const [posts, setPosts] = useState(postsPagination?.results);
+
   const [mobileWidth, setMobileWidth] = useState(false);
-  const { ref: homeSection, inView: homeSectionVisible} = useInView();
-  const { ref: subSection, inView: subSectionVisible} = useInView();
-  const [sectionHeight, setSectionHeight] = useState(null);
+  const { ref: sectionOne, inView: sectionOneVisible} = useInView();
+  const { ref: sectionTwo, inView: sectionTwoVisible} = useInView();
+  const { ref: sectionTree, inView: sectionTreeVisible} = useInView();
 
   const section1 = useRef();
   const section2 = useRef();
   const section3 = useRef();
  
-  console.log(subSectionVisible);
 
   function scrollTo(section){
     section.current.scrollIntoView({
@@ -71,11 +73,6 @@ export default function Home({postsPagination}) {
     };
   }, []);
 
-  useEffect(() => {
-    setSectionHeight(section2.current.offsetHeight);
-  }, [section2]);
-  
-  
   return (
     <>
     
@@ -88,7 +85,7 @@ export default function Home({postsPagination}) {
             fill={true}
             alt="background image"
             />
-          <div className={styles.content} ref={homeSection}>
+          <div className={styles.content}>
             <div className={styles.title}>
               <h2>Apoiando você, <span>sempre</span></h2>
             </div>
@@ -114,14 +111,14 @@ export default function Home({postsPagination}) {
             fill={true}
             alt="background image"
             />
-          <div className={`${styles.content} ${subSectionVisible && styles.animate}` }>
+          <div className={`${styles.content}` }>
             <div className={styles.title}>
                 <div>
                   <h2>Conheça nossas soluções exclusivas</h2>
                 </div>
                 <p>Oferecemos uma suíte completa de soluções e serviços com tudo o que você precisa sobre seguro para o mundo das pesquisas clínicas.</p>
             </div>
-            <div className={styles.cards} ref={subSection}>
+            <div className={styles.cards}>
                 <div className={styles.card}>
                   <h3>Seguros para</h3>
                   <p>Pesquisas Clínicas</p>
@@ -163,28 +160,64 @@ export default function Home({postsPagination}) {
 
       <section className={styles.section3} ref={section3}>
           <Image 
-            src={`/images/section3.png`} 
+            src={`${mobileWidth ? '/images/section3_mobile.png' : '/images/section3.png'}`} 
             fill={true}
           />
-          <div className={styles.content}>
+          <div className={styles.content} ref={sectionTree}>
             <div className={styles.title}>
               <h2>Porque somos especialistas em <br/>seguros para pesquisas clínicas?</h2>
             </div>
             <div className={styles.numbers}>
                 <div>
-                  <h2>300000+</h2>
+                  <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`} ref={numbersRef} data-val="300000">
+                    {sectionTreeVisible ? (
+                      <>
+                        <CountUp end={300000} duration={2.75} /> +
+                      </>
+                    ): (
+                      0
+                    )}
+                    
+                  </h2>
                   <p>Participantes cobertos</p>
                 </div>
                 <div>
-                  <h2>900+</h2>
+                  <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
+                    {sectionTreeVisible ?(
+                      <>
+                      <CountUp end={900}  duration={3.20} /> +
+                      </>
+                    ):(
+                      0
+                    )}
+                    
+                  </h2>
                   <p>Pesquisas clínicas seguradas</p>
                 </div>
                 <div>
-                  <h2>300+</h2>
+                  <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
+                    {sectionTreeVisible ? (
+                      <>
+                        <CountUp end={300} duration={3.20} /> +
+                      </>
+                    ) : (
+                      0
+                    )}
+                    
+                  </h2>
                   <p>Pesquisas seguradas ativas</p>
                 </div>
                 <div>
-                  <h2>200+</h2>
+                  <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
+                    {sectionTreeVisible ? (
+                      <>
+                        <CountUp end={200} duration={3.20} /> +
+                      </>
+                    ) : (
+                      0
+                    )}
+                    
+                  </h2>
                   <p>Novas apólices por ano</p>
                 </div>
             </div>
