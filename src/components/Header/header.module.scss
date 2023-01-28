@@ -1,19 +1,18 @@
 .header{
     display: flex;
-    max-width: 1500px;
+    width: 100%;
     align-items: center;
-    margin: 0 auto;
     justify-content: space-between;
     box-sizing: border-box; 
-    height: 4.3rem;
-    padding: 2rem;
+    height: 2.3rem;
+    padding: 3rem 1rem;
     align-self: center;
     position: relative;
     background: none;
     border: 0;
     z-index: 1;
     .logo{
-        margin-left: 2rem;
+        margin-left: 0.8rem;
     }
     
 }
@@ -168,10 +167,7 @@
   
     .header{
 
-        padding: 0.5rem;
-        .logo{
-            margin-left: 1rem;
-        }
+        
     }
     
 }

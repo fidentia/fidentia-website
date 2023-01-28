@@ -6,7 +6,7 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useRef, useState } from "react";
-import Carousel from 'react-elastic-carousel';
+
 
 
 import Image from "next/image";
@@ -24,6 +24,7 @@ export default function Home({postsPagination}) {
   const section2 = useRef();
   const section3 = useRef();
  
+  console.log(subSectionVisible);
 
   function scrollTo(section){
     section.current.scrollIntoView({
@@ -113,14 +114,14 @@ export default function Home({postsPagination}) {
             fill={true}
             alt="background image"
             />
-          <div className={styles.content} ref={subSection}>
+          <div className={`${styles.content} ${subSectionVisible && styles.animate}` }>
             <div className={styles.title}>
                 <div>
                   <h2>Conheça nossas soluções exclusivas</h2>
                 </div>
                 <p>Oferecemos uma suíte completa de soluções e serviços com tudo o que você precisa sobre seguro para o mundo das pesquisas clínicas.</p>
             </div>
-            <div className={styles.cards}>
+            <div className={styles.cards} ref={subSection}>
                 <div className={styles.card}>
                   <h3>Seguros para</h3>
                   <p>Pesquisas Clínicas</p>
