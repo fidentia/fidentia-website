@@ -230,7 +230,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 5rem;
         &:last-of-type{
-          margin-bottom: 5rem;
+          margin-bottom: 8rem;
         }
         h2{
           font-weight: 600;
@@ -243,18 +243,6 @@
           
           font-size: 1.5rem;
           font-weight: 400;
-        }
-      }
-      .count_animation {
-        animation: countAnimation 5s;
-      }
-    
-      @keyframes countAnimation {
-        from {
-          content: "0";
-        }
-        to {
-          content: "200";
         }
       }
     
