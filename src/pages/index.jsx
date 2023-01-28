@@ -162,13 +162,34 @@ export default function Home({postsPagination}) {
       </section>
 
       <section className={styles.section3} ref={section3}>
-          <div className={styles.copy}>
-            <h2>Lorem ipsum</h2>
-          </div>
           <Image 
-            src={`/images/michael-olsen--djS1aPrSr4-unsplash.jpg`} 
+            src={`/images/section3.png`} 
             fill={true}
-            />
+          />
+          <div className={styles.content}>
+            <div className={styles.title}>
+              <h2>Porque somos especialistas em <br/>seguros para pesquisas clínicas?</h2>
+            </div>
+            <div className={styles.numbers}>
+                <div>
+                  <h2>300000+</h2>
+                  <p>Participantes cobertos</p>
+                </div>
+                <div>
+                  <h2>900+</h2>
+                  <p>Pesquisas clínicas seguradas</p>
+                </div>
+                <div>
+                  <h2>300+</h2>
+                  <p>Pesquisas seguradas ativas</p>
+                </div>
+                <div>
+                  <h2>200+</h2>
+                  <p>Novas apólices por ano</p>
+                </div>
+            </div>
+          </div>
+            
       </section>
       </main>
     </>
