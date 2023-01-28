@@ -1,13 +1,15 @@
 .container {
   position: relative;
-  overflow-y: auto;
+  overflow-y: smooth;
   overscroll-behavior-y: contain;
   scroll-snap-type: y mandatory;
   overflow-x: hidden;
+  // behavior: "smooth";
   height: 100vh;
   width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
     display: none;
   }
