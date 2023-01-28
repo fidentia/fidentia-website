@@ -6,6 +6,8 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useRef, useState } from "react";
+import Carousel from 'react-elastic-carousel';
+
 
 import Image from "next/image";
 
@@ -16,10 +18,12 @@ export default function Home({postsPagination}) {
   const [mobileWidth, setMobileWidth] = useState(false);
   const { ref: homeSection, inView: homeSectionVisible} = useInView();
   const { ref: subSection, inView: subSectionVisible} = useInView();
+  const [sectionHeight, setSectionHeight] = useState(null);
 
   const section1 = useRef();
   const section2 = useRef();
   const section3 = useRef();
+ 
 
   function scrollTo(section){
     section.current.scrollIntoView({
@@ -65,7 +69,12 @@ export default function Home({postsPagination}) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
- 
+
+  useEffect(() => {
+    setSectionHeight(section2.current.offsetHeight);
+  }, [section2]);
+  
+  
   return (
     <>
     
@@ -148,10 +157,7 @@ export default function Home({postsPagination}) {
             </div>
           </div>
           
-          <button
-          className={styles.downarrow}
-          onClick={() => scrollTo(section3)}
-        ></button>
+        
       </section>
 
       <section className={styles.section3} ref={section3}>

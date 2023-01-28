@@ -72,12 +72,12 @@
   }
 
   .section2 {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     position: relative;
     img {
       position: relative;
@@ -87,14 +87,13 @@
       height: 100%;
     }
     .content {
-      width: 100%; 
+      width: 80%; 
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: 10rem;
+      gap: 15rem;
       .title{
         width: 35rem;
-        margin-left: 10rem;
         flex-direction: column;
         h2 {
           justify-content: flex-start;
@@ -117,11 +116,10 @@
         }
       }
       .cards{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-content: center;;
+        display: flex;
+        justify-content: center;
         margin: 0 auto;
-        gap: 10rem;
+        gap: 8rem;
         .card{
           box-sizing: border-box;
           padding: 2rem;
@@ -471,9 +469,42 @@
   ##Screen = 1281px to higher resolution desktops
 */
 
-@media (min-width: 1281px) {
-  
-  /* CSS */
+@media (max-width: 1400px) {
+  .section2{
+    
+    .content{
+      .title{
+        
+        h2{
+        
+        }
+        p{
+        
+        }
+      }
+      .cards{
+        gap: 4%;
+        .card{
+        
+          
+          h3{
+            
+            &::after{
+            
+            }
+          }
+          .button{
+           
+           
+            button{
+           
+            }
+
+          }
+        }
+      }
+    }
+  }
   
 }
 
@@ -481,6 +512,27 @@
   ##Device = Laptops, Desktops
   ##Screen = B/w 1025px to 1280px
 */
+
+@media (max-width: 1180px) {
+  .section2{
+    .content{
+      gap: 5rem;
+      .title{
+        margin: 0 auto;
+        text-align: left;
+        h2{
+          font-size: 2.5rem;
+        }
+      }
+      .cards{
+        gap: 2rem;
+        flex-wrap: wrap;
+        
+      }
+    }
+  }
+}
+
 
 @media (min-width: 1025px) and (max-width: 1180px) {
   
@@ -516,6 +568,7 @@
       
     }
   }
+  
   
 }
 
@@ -606,8 +659,48 @@
       }
     }
     
-    
-    
+  }
+
+  .section2{
+    .content{
+      .title{
+        margin-top: 1rem;
+        width: 22rem;
+        text-align: left;
+        h2{
+          font-size: 2rem;
+          font-weight: 500;
+        }
+        p{
+          font-size: 1rem;
+          font-weight: 400;
+
+        }
+      }
+      .cards{
+        flex-direction: column;
+        .card{
+          
+          &:last-of-type{
+            margin-bottom: 10rem;
+          }
+          h3{
+            
+            &::after{
+            
+            }
+          }
+          .button{
+           
+           
+            button{
+           
+            }
+
+          }
+        }
+      }
+    }
   }
   
 }
