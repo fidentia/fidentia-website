@@ -195,12 +195,12 @@
   }
 
   .section3 {
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
     position: relative;
    
     .content {
@@ -311,7 +311,7 @@
         }
       }
       .cards{
-        
+        max-width: 2800px;
         align-self: center;
         display: flex;
         gap: 1rem;

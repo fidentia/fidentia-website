@@ -21,6 +21,8 @@ export default function Home({postsPagination}) {
 
   const [mobileWidth, setMobileWidth] = useState(false);
   const [widthCarrousel1, setWidthCarrousel1] = useState(0)
+  const [countFinish, setCountFinish] = useState(false);
+
   const { ref: sectionOne, inView: sectionOneVisible} = useInView();
   const { ref: sectionTwo, inView: sectionTwoVisible} = useInView();
   const { ref: sectionTree, inView: sectionTreeVisible} = useInView();
@@ -30,7 +32,6 @@ export default function Home({postsPagination}) {
   const section3 = useRef();
   const carousel1 = useRef();
  
-	console.log(widthCarrousel1);
   function scrollTo(section){
     section.current.scrollIntoView({
       behavior: "smooth"
@@ -79,10 +80,15 @@ export default function Home({postsPagination}) {
   useEffect(()=>{
 	
 		setWidthCarrousel1(carousel1.current?.scrollWidth - carousel1.current?.offsetWidth);
+    
 	
-  }, [sectionFourVisible])
- 
+  }, [])
 
+  useEffect(()=>{
+    if(sectionTreeVisible){
+      setCountFinish(true);
+    }
+  }, [sectionTreeVisible])
   return (
     <>
     
@@ -180,20 +186,20 @@ export default function Home({postsPagination}) {
             <div className={styles.numbers}>
                 <div>
                   <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
-                    {sectionTreeVisible ? (
+                    {countFinish ? (
                       <>
                         <CountUp end={300000} duration={2.75} /> +
                       </>
                     ): (
                       0
                     )}
-                    
+                     
                   </h2>
                   <p>Participantes cobertos</p>
                 </div>
                 <div>
                   <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
-                    {sectionTreeVisible ?(
+                  {countFinish ? (
                       <>
                       <CountUp end={900}  duration={2.80} /> +
                       </>
@@ -201,12 +207,13 @@ export default function Home({postsPagination}) {
                       0
                     )}
                     
+                    
                   </h2>
                   <p>Pesquisas clínicas seguradas</p>
                 </div>
                 <div>
                   <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
-                    {sectionTreeVisible ? (
+                  {countFinish ? (
                       <>
                         <CountUp end={300} duration={3.20} /> +
                       </>
@@ -219,7 +226,7 @@ export default function Home({postsPagination}) {
                 </div>
                 <div>
                   <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
-                    {sectionTreeVisible ? (
+                  {countFinish ? (
                       <>
                         <CountUp end={200} duration={3.20} /> +
                       </>
@@ -237,10 +244,11 @@ export default function Home({postsPagination}) {
 
       <section className={styles.section4}>
           <div className={styles.content} ref={carousel1}>
-				<div className={styles.title} ref={sectionFour}>
+				<div className={styles.title}>
 					<h2>Como o seguro apoiará você?</h2>
 				</div>							
 				<motion.div 
+        
 				className={styles.cards} 
 				drag="x"
 				whileTap={{cursor: "grabbing"}}
