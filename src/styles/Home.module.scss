@@ -283,6 +283,7 @@
       align-items: flex-start;
       gap: 10rem;
       padding: 2.4rem;
+
       .title{    
         width: 50rem;
         padding: 2rem;
@@ -310,19 +311,23 @@
         }
       }
       .cards{
+        
         align-self: center;
         display: flex;
         gap: 1rem;
         cursor: grab;
         overflow: hidden;
         .card{
-          width: 100%;
-          height: 27rem;
+          width: 30rem;
+          height: 30.68rem;
           border: 0.5px solid rgba(22, 5, 68, 0.15);
           border-radius: 30px;
           position: relative;
           padding: 2.5rem;
           margin-bottom: 4rem;
+          &:first-of-type{
+            margin-left: 50rem
+          }
           h3{
             color: var(--purple-800);
             font-weight: 500;
@@ -347,7 +352,7 @@
             border-radius: 22.5644px;
             border: 0;
             right: 62.07%;
-            bottom: 2rem;
+            
             left: 7.85%;
 
           }
@@ -570,6 +575,27 @@
       }
   }
 
+  @media (max-width: 650px) {
+    .section4{
+      .content{
+        .title{
+          width: 50rem;
+          h2{
+            font-size: 3.30rem;
+            &::after{
+              width: 6rem;
+            }
+          }
+        }
+        .cards{
+          .card{
+            width: 25rem;
+          }
+        }
+      }
+    }
+  }
+
   @media (max-width: 540px) {
     .section2{
       .content{
@@ -592,7 +618,20 @@
           }
         }
       }
-      
+    }
+    .section4{
+      .content{
+        padding: 0.3rem;
+        .title{
+          width: 38rem;
+          h2{
+            font-size: 2.70rem;
+            &::after{
+              width: 6rem;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -623,6 +662,25 @@
         .numbers{
           grid-template-columns: 1fr;
           gap: 3rem;
+        }
+      }
+    }
+
+    .section4{
+      .content{
+        .title{
+          width: 35rem;
+          h2{
+            font-size: 2.30rem;
+            &::after{
+              width: 6rem;
+            }
+          }
+        }
+        .cards{
+          .card{
+            width: 20rem;
+          }
         }
       }
     }
@@ -676,6 +734,25 @@
         }
         
       }
+
+      .section4{
+        .content{
+          .title{
+            width: 30rem;
+            h2{
+              font-size: 2rem;
+              &::after{
+                width: 5rem;
+              }
+            }
+          }
+          .cards{
+            .card{
+              width: 25rem;
+            }
+          }
+        }
+      }
   }
 
   @media (max-width: 320px) {
@@ -705,6 +782,26 @@
         .numbers{
           h2{
             font-size: 3rem;
+          }
+        }
+      }
+    }
+
+    .section4{
+      .content{
+        .title{
+          width: 24rem;
+          h2{
+            font-size: 1.6rem;
+            &::after{
+              width: 5rem;
+            }
+          }
+        }
+        .cards{
+          .card{
+            width: 20rem;
+            height: 25rem;
           }
         }
       }

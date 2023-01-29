@@ -13,6 +13,7 @@
     "@prismicio/client": "^6.7.3",
     "@prismicio/react": "^2.5.1",
     "date-fns": "^2.29.3",
+    "framer-motion": "^8.5.4",
     "gsap": "^3.11.4",
     "next": "13.1.1",
     "react": "18.2.0",

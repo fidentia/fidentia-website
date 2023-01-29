@@ -7,6 +7,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useRef, useState } from "react";
 import CountUp from 'react-countup';
+import { motion } from 'framer-motion';
 
 
 
@@ -19,15 +20,17 @@ export default function Home({postsPagination}) {
   const [posts, setPosts] = useState(postsPagination?.results);
 
   const [mobileWidth, setMobileWidth] = useState(false);
+  const [widthCarrousel1, setWidthCarrousel1] = useState(0)
   const { ref: sectionOne, inView: sectionOneVisible} = useInView();
   const { ref: sectionTwo, inView: sectionTwoVisible} = useInView();
   const { ref: sectionTree, inView: sectionTreeVisible} = useInView();
-
+  const { ref: sectionFour, inView: sectionFourVisible} = useInView();
   const section1 = useRef();
   const section2 = useRef();
   const section3 = useRef();
+  const carousel1 = useRef();
  
-
+	console.log(widthCarrousel1);
   function scrollTo(section){
     section.current.scrollIntoView({
       behavior: "smooth"
@@ -72,6 +75,12 @@ export default function Home({postsPagination}) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(()=>{
+	
+		setWidthCarrousel1(carousel1.current?.scrollWidth - carousel1.current?.offsetWidth);
+	
+  }, [sectionFourVisible])
  
 
   return (
@@ -227,27 +236,42 @@ export default function Home({postsPagination}) {
       </section>
 
       <section className={styles.section4}>
-          <div className={styles.content}>
-				<div className={styles.title}>
+          <div className={styles.content} ref={carousel1}>
+				<div className={styles.title} ref={sectionFour}>
 					<h2>Como o seguro apoiará você?</h2>
 				</div>							
-				<div className={styles.cards}>
-					<div className={styles.card}>
+				<motion.div 
+				className={styles.cards} 
+				drag="x"
+				whileTap={{cursor: "grabbing"}}
+				dragConstraints={{right: 0, left: -widthCarrousel1}}
+				>
+					<motion.div className={styles.card}>
 						<h3>Centros de pesquisa clínica</h3>
 						<p>Além de blindar o relacionamento com seus patrocinadores, cobre automaticamente todos os ensaios clínicos realizados no seu centro</p>
 						<button>Saiba mais</button>
-					</div>
-					<div className={styles.card}>
+					</motion.div>
+					<motion.div className={styles.card}>
 						<h3>Médicos e profissionais investigadores</h3>
 						<p>Protege por erros de seu time na execução dos em saios clínicos </p>
 						<button>Saiba mais</button>
-					</div>
-					<div className={styles.card}>
+					</motion.div>
+					<motion.div className={styles.card}>
 						<h3>Centros de pesquisa clínica</h3>
 						<p>Protege por erros de seu time na execução dos em saios clínicos </p>
 						<button>Saiba mais</button>
-					</div>
-				</div>						
+					</motion.div>
+					<motion.div className={styles.card}>
+						<h3>Médicos e profissionais investigadores</h3>
+						<p>Protege por erros de seu time na execução dos em saios clínicos </p>
+						<button>Saiba mais</button>
+					</motion.div>
+					<motion.div className={styles.card}>
+						<h3>Centros de pesquisa clínica</h3>
+						<p>Protege por erros de seu time na execução dos em saios clínicos </p>
+						<button>Saiba mais</button>
+					</motion.div>
+				</motion.div>						
           </div>
       </section>
       </main>
