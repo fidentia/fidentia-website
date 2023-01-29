@@ -252,7 +252,7 @@ export default function Home({postsPagination}) {
 				className={styles.cards} 
 				drag="x"
 				whileTap={{cursor: "grabbing"}}
-				dragConstraints={{right: 0, left: -widthCarrousel1}}
+				dragConstraints={{right: 0, left: 0}}
 				>
 					<motion.div className={styles.card}>
 						<h3>Centros de pesquisa clínica</h3>
