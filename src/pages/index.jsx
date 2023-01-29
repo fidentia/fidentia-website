@@ -186,7 +186,7 @@ export default function Home({postsPagination}) {
                   <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
                     {sectionTreeVisible ?(
                       <>
-                      <CountUp end={900}  duration={3.20} /> +
+                      <CountUp end={900}  duration={2.80} /> +
                       </>
                     ):(
                       0
@@ -224,6 +224,31 @@ export default function Home({postsPagination}) {
             </div>
           </div>
             
+      </section>
+
+      <section className={styles.section4}>
+          <div className={styles.content}>
+				<div className={styles.title}>
+					<h2>Como o seguro apoiará você?</h2>
+				</div>							
+				<div className={styles.cards}>
+					<div className={styles.card}>
+						<h3>Centros de pesquisa clínica</h3>
+						<p>Além de blindar o relacionamento com seus patrocinadores, cobre automaticamente todos os ensaios clínicos realizados no seu centro</p>
+						<button>Saiba mais</button>
+					</div>
+					<div className={styles.card}>
+						<h3>Médicos e profissionais investigadores</h3>
+						<p>Protege por erros de seu time na execução dos em saios clínicos </p>
+						<button>Saiba mais</button>
+					</div>
+					<div className={styles.card}>
+						<h3>Centros de pesquisa clínica</h3>
+						<p>Protege por erros de seu time na execução dos em saios clínicos </p>
+						<button>Saiba mais</button>
+					</div>
+				</div>						
+          </div>
       </section>
       </main>
     </>
