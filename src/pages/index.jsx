@@ -86,7 +86,7 @@ export default function Home({postsPagination}) {
   useEffect(()=>{
     setWidthCarrousel1(carousel1.current?.scrollWidth - carousel1.current?.offsetWidth);
   }, [sectionFourVisible])
-  
+
   return (
     <>
     
@@ -250,7 +250,7 @@ export default function Home({postsPagination}) {
         
           className={styles.cards} 
           drag="x"
-          dragDirectionLock
+          dragDirectionLock={true}
           whileTap={{cursor: "grabbing"}}
           dragConstraints={{right: 0, left: -widthCarrousel1}}
           >
