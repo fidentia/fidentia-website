@@ -15,8 +15,8 @@ import { motion } from 'framer-motion';
 import Image from "next/image";
 import Carrousel from "../components/Carrousel";
 
-export default function Home({postsPagination}) {
-  
+export default function Home({ postsPagination }) {
+
   const [nextPage, setNextPage] = useState(postsPagination.next_page)
   const [posts, setPosts] = useState(postsPagination?.results);
 
@@ -24,16 +24,16 @@ export default function Home({postsPagination}) {
   const [widthCarrousel1, setWidthCarrousel1] = useState(0)
   const [countFinish, setCountFinish] = useState(false);
 
-  const { ref: sectionOne, inView: sectionOneVisible} = useInView();
-  const { ref: sectionTwo, inView: sectionTwoVisible} = useInView();
-  const { ref: sectionTree, inView: sectionTreeVisible} = useInView();
-  const { ref: sectionFour, inView: sectionFourVisible} = useInView();
+  const { ref: sectionOne, inView: sectionOneVisible } = useInView();
+  const { ref: sectionTwo, inView: sectionTwoVisible } = useInView();
+  const { ref: sectionTree, inView: sectionTreeVisible } = useInView();
+  const { ref: sectionFour, inView: sectionFourVisible } = useInView();
   const section1 = useRef();
   const section2 = useRef();
   const section3 = useRef();
   const carousel1 = useRef();
- 
-  function scrollTo(section){
+
+  function scrollTo(section) {
     section.current.scrollIntoView({
       behavior: "smooth"
     })
@@ -77,29 +77,26 @@ export default function Home({postsPagination}) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  
-  useEffect(()=>{
-    if(sectionTreeVisible){
+
+  useEffect(() => {
+    if (sectionTreeVisible) {
       setCountFinish(true);
     }
   }, [sectionTreeVisible])
 
-  useEffect(()=>{
-    setWidthCarrousel1(carousel1.current?.scrollWidth - carousel1.current?.offsetWidth);
-  }, [sectionFourVisible])
 
   return (
     <>
-    
-    <main className={`container ${styles.container}`}>
-      
-      <section className={styles.section1} ref={section1}>
+
+      <main className={`container ${styles.container}`}>
+
+        <section className={styles.section1} ref={section1}>
           <Header />
-          <Image 
-            src={`${mobileWidth ? '/images/section1_mobile.png' : '/images/section1.png'}`} 
+          <Image
+            src={`${mobileWidth ? '/images/section1_mobile.png' : '/images/section1.png'}`}
             fill={true}
             alt="background image"
-            />
+          />
           <div className={styles.content}>
             <div className={styles.title}>
               <h2>Apoiando você, <span>sempre</span></h2>
@@ -115,143 +112,156 @@ export default function Home({postsPagination}) {
               ></button>
             </div>
 
-            
-          </div>
-            
-      </section>
 
-      <section className={styles.section2} ref={section2}>
-          <Image 
-            src={`${mobileWidth ? '/images/section2_mobile.png': '/images/section2.png'}`} 
+          </div>
+
+        </section>
+
+        <section className={styles.section2} ref={section2}>
+          <Image
+            src={`${mobileWidth ? '/images/section2_mobile.png' : '/images/section2.png'}`}
             fill={true}
             alt="background image"
-            />
-          <div className={`${styles.content}` }>
+          />
+          <div className={`${styles.content}`}>
             <div className={styles.title}>
-                <div>
-                  <h2>Conheça nossas soluções exclusivas</h2>
-                </div>
-                <p>Oferecemos uma suíte completa de soluções e serviços com tudo o que você precisa sobre seguro para o mundo das pesquisas clínicas.</p>
+              <div>
+                <h2>Conheça nossas soluções exclusivas</h2>
+              </div>
+              <p>Oferecemos uma suíte completa de soluções e serviços com tudo o que você precisa sobre seguro para o mundo das pesquisas clínicas.</p>
             </div>
             <div className={styles.cards}>
-                <div className={styles.card}>
-                  <h3>Seguros para</h3>
-                  <p>Pesquisas Clínicas</p>
-                  <p>Profissionais de pesquisas clínicas</p>
-                  <p>Transportes de materiais para o estabelecimento</p>
-                  <p>Seguro de vida para pacientes</p>
-                  <div className={styles.button}>
-                    <button>Saiba mais</button>
-                  </div>
+              <div className={styles.card}>
+                <h3>Seguros para</h3>
+                <p>Pesquisas Clínicas</p>
+                <p>Profissionais de pesquisas clínicas</p>
+                <p>Transportes de materiais para o estabelecimento</p>
+                <p>Seguro de vida para pacientes</p>
+                <div className={styles.button}>
+                  <button>Saiba mais</button>
                 </div>
+              </div>
 
-                <div className={styles.card}>
-                  <h3>Cursos</h3>
-                  <p>Seguros para pesquisas clínicas</p>
-                  <p>Venda de seguros</p>
-                  <p>Palestras</p>
-                  <p>Cursos de curta duração</p>
-                  <p>Cursos in-company</p>
-                  <div className={styles.button}>
-                    <button>Saiba mais</button>
-                  </div>
+              <div className={styles.card}>
+                <h3>Cursos</h3>
+                <p>Seguros para pesquisas clínicas</p>
+                <p>Venda de seguros</p>
+                <p>Palestras</p>
+                <p>Cursos de curta duração</p>
+                <p>Cursos in-company</p>
+                <div className={styles.button}>
+                  <button>Saiba mais</button>
                 </div>
+              </div>
 
-                <div className={styles.card}>
-                  <h3>Consultoria</h3>
-                  <p>Para corretores, seguradoras e brokers</p>
-                  <p>Análise e gestão de riscos</p>
-                  <p>Subscroção de riscos</p>
-                  <p>Suporte técnico e comercial completo</p>
-                  <div className={styles.button}>
-                    <button>Saiba mais</button>
-                  </div>
+              <div className={styles.card}>
+                <h3>Consultoria</h3>
+                <p>Para corretores, seguradoras e brokers</p>
+                <p>Análise e gestão de riscos</p>
+                <p>Subscroção de riscos</p>
+                <p>Suporte técnico e comercial completo</p>
+                <div className={styles.button}>
+                  <button>Saiba mais</button>
                 </div>
+              </div>
             </div>
           </div>
-          
-        
-      </section>
 
-      <section className={styles.section3} ref={section3}>
-          <Image 
-            src={`${mobileWidth ? '/images/section3_mobile.png' : '/images/section3.png'}`} 
+
+        </section>
+
+        <section className={styles.section3} ref={section3}>
+          <Image
+            src={`${mobileWidth ? '/images/section3_mobile.png' : '/images/section3.png'}`}
             fill={true}
           />
           <div className={styles.content} ref={sectionTree}>
             <div className={styles.title}>
-              <h2>Porque somos especialistas em <br/>seguros para pesquisas clínicas?</h2>
+              <h2>Porque somos especialistas em <br />seguros para pesquisas clínicas?</h2>
             </div>
             <div className={styles.numbers}>
-                <div>
-                  <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
-                    {countFinish ? (
-                      <>
-                        <CountUp end={300000} duration={2.75} /> +
-                      </>
-                    ): (
-                      0
-                    )}
-                     
-                  </h2>
-                  <p>Participantes cobertos</p>
-                </div>
-                <div>
-                  <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
+              <div>
+                <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
                   {countFinish ? (
-                      <>
-                      <CountUp end={900}  duration={2.80} /> +
-                      </>
-                    ):(
-                      0
-                    )}
-                    
-                    
-                  </h2>
-                  <p>Pesquisas clínicas seguradas</p>
-                </div>
-                <div>
-                  <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
+                    <>
+                      <CountUp end={300000} duration={2.75} /> +
+                    </>
+                  ) : (
+                    0
+                  )}
+
+                </h2>
+                <p>Participantes cobertos</p>
+              </div>
+              <div>
+                <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
                   {countFinish ? (
-                      <>
-                        <CountUp end={300} duration={3.20} /> +
-                      </>
-                    ) : (
-                      0
-                    )}
-                    
-                  </h2>
-                  <p>Pesquisas seguradas ativas</p>
-                </div>
-                <div>
-                  <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
+                    <>
+                      <CountUp end={900} duration={2.80} /> +
+                    </>
+                  ) : (
+                    0
+                  )}
+
+
+                </h2>
+                <p>Pesquisas clínicas seguradas</p>
+              </div>
+              <div>
+                <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
                   {countFinish ? (
-                      <>
-                        <CountUp end={200} duration={3.20} /> +
-                      </>
-                    ) : (
-                      0
-                    )}
-                    
-                  </h2>
-                  <p>Novas apólices por ano</p>
-                </div>
+                    <>
+                      <CountUp end={300} duration={3.20} /> +
+                    </>
+                  ) : (
+                    0
+                  )}
+
+                </h2>
+                <p>Pesquisas seguradas ativas</p>
+              </div>
+              <div>
+                <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
+                  {countFinish ? (
+                    <>
+                      <CountUp end={200} duration={3.20} /> +
+                    </>
+                  ) : (
+                    0
+                  )}
+
+                </h2>
+                <p>Novas apólices por ano</p>
+              </div>
             </div>
           </div>
-            
-      </section>
 
-      <section className={styles.section4} ref={sectionFour}>
-          <div className={styles.content} ref={carousel1}>
-				<div className={styles.title}>
-					<h2>Como o seguro apoiará você?</h2>
-				</div>		
-        
-          <Carrousel />
-          
-      				
-        </div>
-      </section>
+        </section>
+
+        <section className={styles.section4} ref={sectionFour}>
+          <div className={styles.content}>
+            <div className={styles.title}>
+              <h2>Como o seguro apoiará você?</h2>
+            </div>
+            <Carrousel />
+          </div>
+        </section>
+
+        <section className={styles.section5}>
+           <Image
+            src={`${mobileWidth ? '/images/section5_mobile.png' : '/images/section5.png'}`}
+            fill={true}
+          />
+          <div className={styles.content}>
+            <div className={styles.title}>
+              <h2>Faça sua cotação online conosco</h2>
+            </div>
+            <div className={styles.button}>
+                <button>Cote agora</button>
+            </div>
+          </div>
+        </section>
+
       </main>
     </>
   )
@@ -259,7 +269,7 @@ export default function Home({postsPagination}) {
 
 export async function getStaticProps() {
   const client = getPrismicClient();
-  
+
   const postsResponse = await client.get([
     prismic.predicate.at('document.type', 'posts')
   ], {
@@ -271,7 +281,7 @@ export async function getStaticProps() {
   });
 
   const posts = postsResponse.results.map(post => {
-    return{
+    return {
       uid: post.uid,
       first_publication_date: format(new Date(post.first_publication_date), "dd MM yyyy", {
         locale: ptBR
@@ -279,15 +289,15 @@ export async function getStaticProps() {
       data: {
         title: post.data.title
       },
-      next_page: postsResponse.next_page  
+      next_page: postsResponse.next_page
     }
   })
-  
+
   const postsPagination = {
     next_page: postsResponse.next_page,
     results: posts
   }
-  
+
   return {
     props: {
       postsPagination
