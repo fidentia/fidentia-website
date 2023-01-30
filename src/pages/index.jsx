@@ -246,45 +246,11 @@ export default function Home({postsPagination}) {
 				<div className={styles.title}>
 					<h2>Como o seguro apoiará você?</h2>
 				</div>		
-        {sectionFourVisible ? (
-          <Carrousel />
-          // <motion.div 
         
-          // className={styles.cards} 
-          // drag="x"
-          // dragDirectionLock={true}
-          // whileTap={{cursor: "grabbing"}}
-          // dragConstraints={{right: 0, left: -widthCarrousel1}}
-          // >
-          //   <motion.div className={styles.card}>
-          //     <h3>Centros de pesquisa clínica</h3>
-          //     <p>Além de blindar o relacionamento com seus patrocinadores, cobre automaticamente todos os ensaios clínicos realizados no seu centro</p>
-          //     <button>Saiba mais</button>
-          //   </motion.div>
-          //   <motion.div className={styles.card}>
-          //     <h3>Médicos e profissionais investigadores</h3>
-          //     <p>Protege por erros de seu time na execução dos em saios clínicos </p>
-          //     <button>Saiba mais</button>
-          //   </motion.div>
-          //   <motion.div className={styles.card}>
-          //     <h3>Centros de pesquisa clínica</h3>
-          //     <p>Protege por erros de seu time na execução dos em saios clínicos </p>
-          //     <button>Saiba mais</button>
-          //   </motion.div>
-          //   <motion.div className={styles.card}>
-          //     <h3>Médicos e profissionais investigadores</h3>
-          //     <p>Protege por erros de seu time na execução dos em saios clínicos </p>
-          //     <button>Saiba mais</button>
-          //   </motion.div>
-          //   <motion.div className={styles.card}>
-          //     <h3>Centros de pesquisa clínica</h3>
-          //     <p>Protege por erros de seu time na execução dos em saios clínicos </p>
-          //     <button>Saiba mais</button>
-          //   </motion.div>
-          // </motion.div>		
-        ) : null}					
-								
-          </div>
+          <Carrousel />
+          
+      				
+        </div>
       </section>
       </main>
     </>
