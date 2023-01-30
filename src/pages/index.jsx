@@ -197,7 +197,7 @@ export default function Home({ postsPagination }) {
                 <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
                   {countFinish ? (
                     <>
-                      <CountUp end={900} duration={2.80} /> +
+                      <CountUp end={900} duration={2.75} /> +
                     </>
                   ) : (
                     0
@@ -211,7 +211,7 @@ export default function Home({ postsPagination }) {
                 <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
                   {countFinish ? (
                     <>
-                      <CountUp end={300} duration={3.20} /> +
+                      <CountUp end={300} duration={2.75} /> +
                     </>
                   ) : (
                     0
@@ -224,7 +224,7 @@ export default function Home({ postsPagination }) {
                 <h2 className={`${sectionTreeVisible ? styles.count_animation : null}`}>
                   {countFinish ? (
                     <>
-                      <CountUp end={200} duration={3.20} /> +
+                      <CountUp end={200} duration={2.75} /> +
                     </>
                   ) : (
                     0
@@ -259,6 +259,53 @@ export default function Home({ postsPagination }) {
             <div className={styles.button}>
                 <button>Cote agora</button>
             </div>
+          </div>
+        </section>
+
+        <section className={styles.section6}>
+          <div className={styles.content}>
+            <div className={styles.title}>
+              <h2>Ajudar pessoas a desenvolver o seu melhor é o que nos move.</h2>
+              
+                <h2>Leia os depoimentos de alguns de nossos parceiros</h2>
+
+            </div>
+    
+            <div className={styles.deposition}>
+                <div className={styles.photo}>
+                  <Image
+                    src={'/images/photo_profile.svg'}
+                    width={168}
+                    height={168}
+                  />
+                </div>
+                <div className={styles.info}>
+                    <h3>Dr. Augusto F. Rodrigues</h3>
+                    <p>Hospital Albert Einstein</p>
+                </div>
+                <article className={styles.text}>
+                    <p>“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.”</p>
+                </article>
+            </div>
+
+            <div className={styles.deposition}>
+                <div className={styles.photo}>
+                  <Image
+                    src={'/images/photo_profile2.svg'}
+                    width={168}
+                    height={168}
+                  />
+                </div>
+              
+                <div className={styles.info}>
+                    <h3>Brenda A. C. Real</h3>
+                    <p>Instituto Butantan</p>
+                </div>
+                <article className={styles.text}>
+                    <p>“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper.”</p>
+                </article>
+            </div>
+
           </div>
         </section>
 
