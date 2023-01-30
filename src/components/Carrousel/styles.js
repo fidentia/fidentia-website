@@ -4,7 +4,7 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     width: 448px;
-    height: 29rem;
+    height: 463px;
     border: 0.5px solid rgba(22, 5, 68, 0.15);
     border-radius: 30px;
     padding: 2.2rem;
@@ -25,7 +25,7 @@ export const Card = styled.div`
 
       button{
         position: absolute;
-        bottom: 7rem;
+        bottom: 6rem;
         background: var(--purple-300);
         color: #FFFFFF;
         border-radius: 22.5644px;
@@ -36,15 +36,43 @@ export const Card = styled.div`
 
       }
          
-      @media (max-width: 430px){
-        
+      @media (max-width: 886px){
+        button{
+            bottom: 2rem;
+        }
+        h3{
+            font-size: 1.5rem;
+        }
+        p{
+            font-size: 1.2rem;
+        }
       }
       @media (max-width: 640px){
-        height: 35rem;
+        height: 450px;
         button{
             top: 25rem;
         }
       }
+
+      @media (max-width: 380px){
+        height: 30rem;
+      }
+
+      @media (max-width: 370px){
+        // background: red;
+        h3{
+            font-size: 1.5rem;
+        }
+        p{
+            margin-top: 2rem;
+            font-size: 1.2rem;
+        }
+      }
       
+`;
+
+export const Paragraph = styled.div`
+      width: 25rem;
+      background: red;
 `;
 
