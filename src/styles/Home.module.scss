@@ -808,6 +808,35 @@
         }
       }
     }
+    .section6{
+      .content{
+        padding: 0.1rem;
+        .title{
+          margin: 2rem auto;
+          width: 16rem;
+          h2{
+            font-size: 1.6rem;
+          }
+        }
+        .deposition{
+          .info{
+            h3{
+              font-size: 1.3rem;
+            }
+            p{
+              font-size: 1.18rem;
+            }
+          }
+        }
+        .text{
+          font-size: 0.9rem;
+        }
+      }
+    }
+}
+
+@media (max-width: 420px) {
+  
 }
 
 
@@ -864,6 +893,35 @@
           }
         }
       }
+  }
+
+  @media (max-width: 340px) {
+    .section6{
+      .content{
+        padding: 0.1rem;
+        .title{
+          margin: 2rem auto;
+          width: 16rem;
+          h2{
+            font-size: 1.4rem;
+          }
+        }
+        .deposition{
+          .info{
+            h3{
+              font-size: 1.2rem;
+            }
+            p{
+              font-size: 1.12rem;
+            }
+          }
+        }
+        .text{
+          font-size: 0.8rem;
+        }
+      }
+    }
+    
   }
 
   @media (max-width: 320px) {
