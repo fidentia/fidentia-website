@@ -1,20 +1,39 @@
 import styles from "./styles.module.scss";
 import Carousel from 'react-elastic-carousel'
 import * as S from "./styles";
+import { useEffect, useState } from "react";
 
 
 export default function Carrousel(){
-   const breakPoints = [
-    { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
-    { width: 850, itemsToShow: 3 },
-    { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
-    { width: 1450, itemsToShow: 5 },
-    { width: 1750, itemsToShow: 6 },
-   ]
+    const [itemsPerPage, setItemsPerPage] = useState(2);
+    useEffect(() => {
+        const handleResize = () => {
+          if (window.innerWidth < 820) {
+            setItemsPerPage(1);
+          }else{
+            setItemsPerPage(2);
+          }
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        handleResize();
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
+
+      const breakPoints = [
+        {width: 500, itemsToShow: 1},
+        {width: 500, itemsToShow: 2},
+        {width: 1200, itemsToShow: 2},
+        {width: 1500, itemsToShow: 2},
+        {width: 1800, itemsToShow: 2}
+      ]
 
     return(
-        <Carousel itemsToShow={2} itemPadding={[10, 50]}>
+        <Carousel itemsToShow={itemsPerPage} breakPoints={breakPoints}>
                 <S.Card>
                 
                     <h3>Centros de pesquisa clínica</h3>
