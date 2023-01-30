@@ -35,10 +35,10 @@ export const Card = styled.div`
         height: 3rem;
 
       }
-    
-
-     
-
+         
+      @media (max-width: 430px){
+        
+      }
       @media (max-width: 640px){
         height: 35rem;
         button{
