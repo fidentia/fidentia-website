@@ -40,6 +40,7 @@ export const Card = styled.div`
      
 
       @media (max-width: 640px){
+        height: 35rem;
         button{
             top: 25rem;
         }
