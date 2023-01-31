@@ -42,18 +42,12 @@ export default function CarrouselArticles({posts, nextPage}){
       }
 
 
-      const breakPoints = [
-        {width: 500, itemsToShow: 1},
-        {width: 500, itemsToShow: 1},
-        {width: 1200, itemsToShow: 1},
-        {width: 1500, itemsToShow: 1},
-        {width: 1800, itemsToShow: 1}
-      ]
+  
 
     return(
         <Carousel 
-          itemsToShow={itemsPerPage} 
-          breakPoints={breakPoints}
+          itemsToShow={itemsPerPage}
+          itemPadding={[10, 1]}  
           onChange={(currentItem, pageIndex) =>
             nextPost(currentItem.index)
           }>
@@ -61,7 +55,7 @@ export default function CarrouselArticles({posts, nextPage}){
           {posts.map((article =>{
             return(
               <S.Card key={article.uid}>
-                <S.ImageBanner src={article.data?.banner?.url ?? ""}/>
+                <S.ImageBanner src={article.data?.banner?.url ?? ""} loading="lazy"/>
                 <h3>{article.data.title}</h3>
                 <button>Leia mais</button>
               </S.Card>

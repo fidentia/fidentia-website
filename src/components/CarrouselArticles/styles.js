@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Card = styled.div`
     display: flex;
     flex-direction: column;
-    width: 310px;
-    height: 447px;
+    width: 448px;
+    height: 463px;
     border: 0.5px solid rgba(22, 5, 68, 0.15);
     border-radius: 25.7726px;
     padding: 2.2rem;
@@ -55,13 +55,14 @@ export const Card = styled.div`
       }
 
       @media (max-width: 370px){
-        // background: red;
         h3{
             font-size: 1.5rem;
         }
-        p{
-            margin-top: 2rem;
-            font-size: 1.2rem;
+      }
+
+      @media (max-width: 320px){
+        h3{
+            font-size: 1.3rem;
         }
       }
       

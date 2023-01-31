@@ -539,19 +539,16 @@
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        width: 50rem;
+        width: 100%;
         padding: 2rem;
         h2 {
           position: relative;
           z-index: 1;
-          font-size: 1.4rem;
+          font-size: 3.75rem;
           font-weight: 500;
           line-height: 107.02%;
           text-align: center;
           color: var(--purple-800);
-          @media (min-width: 768px) {
-            font-size: 3rem;
-          }
         }
       }
       .posts{
@@ -891,6 +888,15 @@
         }
         .text{
           font-size: 0.9rem;
+        }
+      }
+    }
+    .section7{
+      .content{
+        .title{
+          h2{
+            font-size: 3.20rem;
+          }
         }
       }
     }

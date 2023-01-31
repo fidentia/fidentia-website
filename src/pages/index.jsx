@@ -40,10 +40,6 @@ export default function Home({ postsPagination }) {
     })
   }
 
-  const updatePosts = (postsChildren) =>{
-    setPosts([...posts, ...postsChildren]);
-  }
-
   const handlePagination = () => {
     if(nextPage){
       fetch(nextPage)
@@ -368,7 +364,6 @@ export async function getStaticProps() {
   return {
     props: {
       postsPagination
-    },
-    revalidate: 60 * 30,
+    }
   }
 } 
