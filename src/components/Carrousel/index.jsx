@@ -32,8 +32,16 @@ export default function Carrousel(){
         {width: 1800, itemsToShow: 2}
       ]
 
+      const handleChange = (index) => {
+        // setCurrentIndex(index);
+        console.log(`Moved to card with index: ${index}`);
+      };
+
     return(
-        <Carousel itemsToShow={itemsPerPage} breakPoints={breakPoints}>
+        <Carousel itemsToShow={itemsPerPage} breakPoints={breakPoints} 
+        onChange={(currentItem, pageIndex) =>
+          console.log(currentItem)
+        }>
                 <S.Card>
                 
                     <h3>Centros de pesquisa clínica</h3>

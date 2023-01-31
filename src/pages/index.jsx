@@ -14,6 +14,7 @@ import { motion } from 'framer-motion';
 
 import Image from "next/image";
 import Carrousel from "../components/Carrousel";
+import CarrouselArticles from "../components/CarrouselArticles";
 
 export default function Home({ postsPagination }) {
 
@@ -21,17 +22,17 @@ export default function Home({ postsPagination }) {
   const [posts, setPosts] = useState(postsPagination?.results);
 
   const [mobileWidth, setMobileWidth] = useState(false);
-  const [widthCarrousel1, setWidthCarrousel1] = useState(0)
+
   const [countFinish, setCountFinish] = useState(false);
 
   const { ref: sectionOne, inView: sectionOneVisible } = useInView();
   const { ref: sectionTwo, inView: sectionTwoVisible } = useInView();
   const { ref: sectionTree, inView: sectionTreeVisible } = useInView();
   const { ref: sectionFour, inView: sectionFourVisible } = useInView();
+
   const section1 = useRef();
   const section2 = useRef();
   const section3 = useRef();
-  const carousel1 = useRef();
 
   function scrollTo(section) {
     section.current.scrollIntoView({
@@ -39,8 +40,13 @@ export default function Home({ postsPagination }) {
     })
   }
 
+  const updatePosts = (postsChildren) =>{
+    setPosts([...posts, ...postsChildren]);
+  }
+
   const handlePagination = () => {
-    fetch(nextPage)
+    if(nextPage){
+      fetch(nextPage)
       .then(res => res.json())
       .then(data => {
         console.log(data)
@@ -58,6 +64,7 @@ export default function Home({ postsPagination }) {
         setPosts([...posts, ...formattedData]);
         setNextPage(data.next_page);
       })
+    }
   }
 
   useEffect(() => {
@@ -309,6 +316,18 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
+        <section className={styles.section7}>
+          <div className={styles.content}>
+            <div className={styles.title}>
+              <h2>Artigos</h2>
+            </div>
+            <CarrouselArticles 
+              posts={posts} 
+              nextPage={handlePagination}
+            />
+          </div>
+        </section>
+
       </main>
     </>
   )
@@ -334,7 +353,8 @@ export async function getStaticProps() {
         locale: ptBR
       }),
       data: {
-        title: post.data.title
+        title: post.data.title,
+        banner: post.data.banner
       },
       next_page: postsResponse.next_page
     }
