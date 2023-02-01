@@ -60,6 +60,10 @@ export const Card = styled.div`
         }
       }
 
+      @media (max-width: 340px){
+        width: 20rem;
+      }
+
       @media (max-width: 320px){
         h3{
             font-size: 1.3rem;

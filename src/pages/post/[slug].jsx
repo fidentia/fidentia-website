@@ -7,13 +7,10 @@ import Image from "next/image";
 
 export default function post({post}){
     return(
+        
         <section className={styles.container}>
-                {/* <Image                 
-                    src={"/images/section_articles.png"}
-                    fill={true}
-                    alt="Imagem ilustrativa para artigo"
-                /> */}
-                <section className={styles.post}>
+                {post ? (
+                    <section className={styles.post}>
                     <h2>Artigos</h2>
                     <article className={styles.content}>
                         <div className={styles.title}>
@@ -54,6 +51,8 @@ export default function post({post}){
                         
                     </article>
                 </section>
+                ) : null}
+                
         </section>
     )
 }
