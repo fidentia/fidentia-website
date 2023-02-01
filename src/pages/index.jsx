@@ -98,6 +98,7 @@ export default function Home({ postsPagination }) {
           <Image
             src={`${mobileWidth ? '/images/section1_mobile.png' : '/images/section1.png'}`}
             fill={true}
+            priority={true}
             alt="background image"
           />
           <div className={styles.content}>
@@ -124,6 +125,7 @@ export default function Home({ postsPagination }) {
           <Image
             src={`${mobileWidth ? '/images/section2_mobile.png' : '/images/section2.png'}`}
             fill={true}
+            priority={true}
             alt="background image"
           />
           <div className={`${styles.content}`}>
@@ -176,6 +178,7 @@ export default function Home({ postsPagination }) {
         <section className={styles.section3} ref={section3}>
           <Image
             src={`${mobileWidth ? '/images/section3_mobile.png' : '/images/section3.png'}`}
+            priority={true}
             fill={true}
           />
           <div className={styles.content} ref={sectionTree}>
@@ -253,6 +256,7 @@ export default function Home({ postsPagination }) {
         <section className={styles.section5}>
            <Image
             src={`${mobileWidth ? '/images/section5_mobile.png' : '/images/section5.png'}`}
+            priority={true}
             fill={true}
           />
           <div className={styles.content}>

@@ -66,19 +66,22 @@ export const getStaticPaths = async () => {
       [prismic.predicate.at('document.type', 'posts')],
       { pageSize: 3 }
     );
-  
-    const paths = posts.results.map(result => {
+
+    const paths = posts?.results.map(result => {
       return {
         params: {
           slug: result.uid,
         },
       };
     });
+    if(paths){
+        return {
+            paths,
+            fallback: true,
+          };
+    }
   
-    return {
-      paths,
-      fallback: true,
-    };
+    
   };
   
 
