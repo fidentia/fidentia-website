@@ -38,10 +38,14 @@ export default function Carrousel(){
       };
 
     return(
-        <Carousel itemsToShow={itemsPerPage} breakPoints={breakPoints} 
-        onChange={(currentItem, pageIndex) =>
-          console.log(currentItem)
-        }>
+        <Carousel 
+          itemsToShow={itemsPerPage} 
+          breakPoints={breakPoints} 
+          onChange={(currentItem, pageIndex) =>
+            console.log(currentItem)
+          }
+          showArrows={false}
+        >
                 <S.Card>
                 
                     <h3>Centros de pesquisa clínica</h3>

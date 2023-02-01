@@ -73,6 +73,10 @@ export const Paragraph = styled.div`
       background: red;
 `;
 
+export const ContainerCard = styled.section`
+      max-width: 800px;
+`;
+
 export const ImageBanner = styled.img`
       position: absolute;
       bottom: 0;

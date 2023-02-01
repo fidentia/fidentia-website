@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 import Carousel from 'react-elastic-carousel'
 import * as S from "./styles";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 
 export default function CarrouselArticles({posts, nextPage}){
@@ -48,17 +49,23 @@ export default function CarrouselArticles({posts, nextPage}){
         <Carousel 
           itemsToShow={itemsPerPage}
           itemPadding={[10, 1]}  
+          showArrows={false}
+          showEmptySlots={false}
           onChange={(currentItem, pageIndex) =>
             nextPost(currentItem.index)
           }>
 
-          {posts.map((article =>{
+          {posts.map((post =>{
+
             return(
-              <S.Card key={article.uid}>
-                <S.ImageBanner src={article.data?.banner?.url ?? ""} loading="lazy"/>
-                <h3>{article.data.title}</h3>
-                <button>Leia mais</button>
-              </S.Card>
+
+                <S.Card key={post.uid}>
+                  <S.ImageBanner src={post.data?.banner?.url ?? ""} loading="lazy"/>
+                  <h3>{post.data.title}</h3>
+                  <Link href={`/post/${post.uid}`}>
+                      <button>Leia mais</button>
+                  </Link>
+                </S.Card>
             )
           }))}
                 
