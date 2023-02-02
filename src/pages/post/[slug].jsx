@@ -5,6 +5,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 export default function post({post}){
     const refContainer = useRef();
@@ -36,8 +37,11 @@ export default function post({post}){
                         </figure>
                         
                         <section className={styles.container_post}>
+                        
+                        <Link href="/#artigos">Clica aqui</Link>
                             {post.data.content.map((content,index) =>{
                                 return(
+                                    
                                     <section key={index} className={styles.post_content}>
                                         <h2>{content.heading}</h2>  
                                         {content.body.map((body, index) => {

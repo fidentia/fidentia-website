@@ -18,6 +18,8 @@ import CarrouselArticles from "../components/CarrouselArticles";
 
 export default function Home({ postsPagination }) {
 
+
+
   const [nextPage, setNextPage] = useState(postsPagination.next_page)
   const [posts, setPosts] = useState(postsPagination?.results);
 
@@ -29,10 +31,18 @@ export default function Home({ postsPagination }) {
   const { ref: sectionTwo, inView: sectionTwoVisible } = useInView();
   const { ref: sectionTree, inView: sectionTreeVisible } = useInView();
   const { ref: sectionFour, inView: sectionFourVisible } = useInView();
+  const { ref: sectionFive, inView: sectionFiveVisible } = useInView();
+  const { ref: sectionSix, inView: sectionSixVisible } = useInView();
+  const { ref: sectionSeven, inView: sectionSevenVisible } = useInView();
 
   const section1 = useRef();
   const section2 = useRef();
   const section3 = useRef();
+  const section4 = useRef();
+  const section5 = useRef();
+  const section6 = useRef();  
+  const section7 = useRef();
+
 
   function scrollTo(section) {
     section.current.scrollIntoView({
@@ -87,13 +97,25 @@ export default function Home({ postsPagination }) {
     }
   }, [sectionTreeVisible])
 
+  // useEffect(() =>{
+  //   if(sectionOneVisible){
+  //     window.history.pushState({}, '', `#home`);
+
+      
+
+  //   }
+  //   if(sectionTwoVisible){
+  //     window.history.pushState({}, '', `#solucoes`);
+  //   }
+  // }, [sectionOneVisible, sectionTwoVisible, sectionTreeVisible])
+
 
   return (
     <>
 
       <main className={`container ${styles.container}`}>
 
-        <section className={styles.section1} ref={section1}>
+        <section className={styles.section1} id="home" ref={section1}>
           <Header />
           <Image
             src={`${mobileWidth ? '/images/section1_mobile.png' : '/images/section1.png'}`}
@@ -101,7 +123,7 @@ export default function Home({ postsPagination }) {
             priority={true}
             alt="background image"
           />
-          <div className={styles.content}>
+          <div className={styles.content} ref={sectionOne}>
             <div className={styles.title}>
               <h2>Apoiando você, <span>sempre</span></h2>
             </div>
@@ -121,14 +143,14 @@ export default function Home({ postsPagination }) {
 
         </section>
 
-        <section className={styles.section2} ref={section2}>
+        <section className={styles.section2} id="solucoes" ref={section2}>
           <Image
             src={`${mobileWidth ? '/images/section2_mobile.png' : '/images/section2.png'}`}
             fill={true}
             priority={true}
             alt="background image"
           />
-          <div className={`${styles.content}`}>
+          <div className={`${styles.content}`} ref={sectionTwo}>
             <div className={styles.title}>
               <div>
                 <h2>Conheça nossas soluções exclusivas</h2>
@@ -175,7 +197,7 @@ export default function Home({ postsPagination }) {
 
         </section>
 
-        <section className={styles.section3} ref={section3}>
+        <section className={styles.section3} ref={section3} id="especialidades">
           <Image
             src={`${mobileWidth ? '/images/section3_mobile.png' : '/images/section3.png'}`}
             priority={true}
@@ -244,7 +266,7 @@ export default function Home({ postsPagination }) {
 
         </section>
 
-        <section className={styles.section4} ref={sectionFour}>
+        <section className={styles.section4} ref={section4} id="apoio">
           <div className={styles.content}>
             <div className={styles.title}>
               <h2>Como o seguro apoiará você?</h2>
@@ -253,7 +275,7 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
-        <section className={styles.section5}>
+        <section className={styles.section5} ref={section5} id="cotacao">
            <Image
             src={`${mobileWidth ? '/images/section5_mobile.png' : '/images/section5.png'}`}
             priority={true}
@@ -269,7 +291,7 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
-        <section className={styles.section6}>
+        <section className={styles.section6} ref={section6} id="depoimentos">
           <div className={styles.content}>
             <div className={styles.title}>
               <h2>Ajudar pessoas a desenvolver o seu melhor é o que nos move.</h2>
@@ -316,7 +338,7 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
-        <section className={styles.section7}>
+        <section className={styles.section7} id="artigos" ref={section7}>
           <div className={styles.content}>
             <div className={styles.title}>
               <h2>Artigos</h2>

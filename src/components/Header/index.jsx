@@ -39,10 +39,10 @@ export default function Header(){
                         </span>
                     </div>
                 ) : null}
-                <Link href="/">
+                <Link href="/#home">
                     <li>início</li>
                 </Link>
-                <Link href="/">
+                <Link href="/#solucoes">
                     <li>soluções</li>
                 </Link>
                 <Link href="/">
