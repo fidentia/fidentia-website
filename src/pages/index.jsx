@@ -350,6 +350,48 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
+        <section className={styles.section8}>
+            <div className={styles.content}>
+                  <div className={styles.title}>
+                    <h3>Vamos bater um papo ?</h3>
+                    <p>Conte-nos mais sobre você e <br/>como nós podemos auxiliá-lo</p>
+                  </div>
+                  <form className={styles.forms}>
+                      <div>
+                        <label>Qual o seu nome?</label>
+                        <input type="text" placeholder="Digite seu nome"/>
+                      </div>
+
+                      <div>
+                        <label>Qual o nome da empresa?</label>
+                        <input type="text" placeholder="Digite o nome da empresa" />
+                      </div>
+                      
+                      <div>
+                        <label>Qual o seu telefone?</label>
+                        <input type="text" placeholder="Digite seu telefone"/>
+                      </div>
+
+                      <div>
+                        <label>Qual o seu e-mail?</label>
+                        <input type="text" placeholder="Digite seu e-mail"/>
+                      </div>
+                      <div>
+                        <label>Sobre o que quer falar</label>
+                        <textarea width="200" height="300" placeholder="Digite um assunto"></textarea>
+                      </div>
+
+                      
+                    
+                  </form>
+                  <div className={styles.container_submit_form}>
+                        <button>Enviar mensagem</button>
+                      </div>
+                 
+            </div>
+            
+        </section>
+
       </main>
     </>
   )

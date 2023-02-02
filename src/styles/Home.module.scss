@@ -610,46 +610,95 @@
   .section8 {
     height: 100vh;
     width: 100%;
+    border: 1px solid red;
+    background: #FDCDC0;
     display: flex;
     justify-content: center;
     align-items: center;
     scroll-snap-align: center;
     position: relative;
-    img {
-      position: relative;
-      object-fit: cover;
-      object-position: center;
-      width: 100%;
-      height: 100%;
-    }
     .content {
-      h2 {
-        position: relative;
-        z-index: 1;
-        font-size: 1.4rem;
-        font-weight: bold;
-        color: #fff;
-        text-align: center;
-        @media (min-width: 768px) {
-          font-size: 3rem;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      position: relative;
+      .title{
+        width: 28rem;
+      
+        h3{
+          margin-bottom: 4rem;
+          font-size: 2.81rem;
+          font-weight: 500;
+          color: var(--purple-800);
+        }
+        p{
+          font-size: 1.6rem;
+          font-weight: 500;
+          color: var(--purple-800);
+        }
+      } 
+      .forms{
+        display: grid;
+        grid-template-columns:  300px 300px;
+        text-align: left;
+        div{
+          margin-bottom: 1rem;
+        }
+        label{
+          font-size: 1.3rem;
+          font-weight: 400;
+          color: var(--purple-800);
+          
+        }
+        input{
+          width: 15rem;
+          padding: 0.6rem;
+          height: 2.1rem;
+          border-radius: 28px;
+          background: transparent;
+          border: 1.16146px solid var(--coral-300);
+          &::placeholder{
+            font-weight: 300;
+            line-height: 107.02%;
+
+          }
+        }
+        textarea{
+          width: 35rem;
+          height: 9.8rem;
+          padding: 0.8rem;
+          border: 1.16146px solid #FD8160;
+          background: transparent;
+          border-radius: 23.2292px;
+          &::placeholder{
+            font-weight: 300;
+            line-height: 107.02%;
+
+          }
+
+        }
+        
+      }
+
+      .container_submit_form{
+        
+        
+        button{
+          position: absolute;
+          right: 12rem;
+          background: var(--coral-300);
+          font-size: 400;
+          color: #FFFFFF;
+          width: 14rem;
+          height: 2.5rem;
+          border: 1px solid #FD8160;
+          border-radius: 23px;
         }
       }
+     
     }
-    .downarrow {
-    background: none;
-    border: 0;
-      position: absolute;
-      bottom: 8rem;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      background-image: url("/images/downarrow.svg");
-      background-repeat: no-repeat;
-      background-size: contain;
-      width: 40px;
-      height: 40px;
-      z-index: 2;
-    }
+   
   }
 
 
