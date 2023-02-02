@@ -47,3 +47,23 @@
       }
     }
 }
+
+
+.button_pagination{
+  border: 0;
+  background: none;
+  margin: 10px;
+}
+
+.arrowIcon{
+  width: 3rem;
+  height: 3rem;
+}
+
+@media (max-width: 480px) {
+  .button_pagination{
+    border: 0;
+    background: none;
+    margin: 0px;
+  }  
+}

@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
-import Carousel from 'react-elastic-carousel'
 import * as S from "./styles";
 import { useEffect, useState } from "react";
+import Carousel, { consts } from 'react-elastic-carousel';
 
 
 export default function Carrousel(){
@@ -32,19 +32,19 @@ export default function Carrousel(){
         {width: 1800, itemsToShow: 2}
       ]
 
-      const handleChange = (index) => {
-        // setCurrentIndex(index);
-        console.log(`Moved to card with index: ${index}`);
-      };
-
+      const myArrow = ({ type, onClick, isEdge }) => {
+        const pointer = type === consts.PREV ? <img src="/images/arrowLeft.png" className={styles.arrowIcon} /> : <img src="/images/arrowRight.png" className={styles.arrowIcon} />
+        return (
+          <button onClick={onClick} disabled={isEdge} className={styles.button_pagination}>
+            {pointer}
+          </button>
+        )
+      }
     return(
         <Carousel 
           itemsToShow={itemsPerPage} 
           breakPoints={breakPoints} 
-          onChange={(currentItem, pageIndex) =>
-            console.log(currentItem)
-          }
-          showArrows={false}
+          renderArrow={myArrow}
         >
                 <S.Card>
                 
