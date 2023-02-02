@@ -9,15 +9,19 @@ import Link from "next/link";
 
 export default function post({post}){
     const refContainer = useRef();
-    // refContainer.body.style.overflow = "hidden";
-    // useEffect(() => {
-    //     document.body.style.overflow = "hidden";
-    //   }, []);
 
     return(
         
         <section className={styles.container} ref={refContainer}>
+             <div className={styles.container_arrow_back}>
+                <button>
+                    <Link href="/#artigos">
+                        <img src={"/images/closeArrow.png"} alt="ícone para sair da seção de artigos" loading="lazy" title="Voltar para página principal"/>
+                    </Link>
+                </button>
+            </div>
             <div className={styles.subContainer}>
+           
                 {post ? (
                 <section className={styles.post}>
                     <h2>Artigos</h2>
@@ -38,7 +42,7 @@ export default function post({post}){
                         
                         <section className={styles.container_post}>
                         
-                        <Link href="/#artigos">Clica aqui</Link>
+                
                             {post.data.content.map((content,index) =>{
                                 return(
                                     

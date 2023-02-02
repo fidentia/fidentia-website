@@ -110,6 +110,20 @@
     }
 }
 
+.container_arrow_back{
+
+    text-align: right;
+    margin-right: 2rem;
+    button{
+        border: 0;
+        background: none;
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
 
 
 
@@ -243,6 +257,10 @@
                 }
             }
         }
+    }
+
+    .container_arrow_back{
+        margin-right: 0rem;
     }
 }
 
