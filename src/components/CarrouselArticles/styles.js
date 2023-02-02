@@ -82,6 +82,7 @@ export const ContainerCard = styled.section`
 `;
 
 export const ImageBanner = styled.img`
+      filter: brightness(55%);
       position: absolute;
       bottom: 0;
       right: 0;
@@ -89,8 +90,12 @@ export const ImageBanner = styled.img`
       top: 0;
       width: 100%;
       height: 100%;
-      user-drag: none; 
+      pointer-events: none;
+
+      user-drag: none;
       user-select: none;
+      -moz-user-select: none;
+      -webkit-user-drag: none;
       border-radius: 25.7726px;
 
 `;

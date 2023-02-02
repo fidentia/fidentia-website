@@ -4,13 +4,21 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import styles from "./styles.module.scss";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 export default function post({post}){
+    const refContainer = useRef();
+    // refContainer.body.style.overflow = "hidden";
+    // useEffect(() => {
+    //     document.body.style.overflow = "hidden";
+    //   }, []);
+
     return(
         
-        <section className={styles.container}>
+        <section className={styles.container} ref={refContainer}>
+            <div className={styles.subContainer}>
                 {post ? (
-                    <section className={styles.post}>
+                <section className={styles.post}>
                     <h2>Artigos</h2>
                     <article className={styles.content}>
                         <div className={styles.title}>
@@ -45,13 +53,10 @@ export default function post({post}){
                                 )
                             })}
                         </section>
-
-                                
-                            
-                        
                     </article>
                 </section>
                 ) : null}
+                </div>
                 
         </section>
     )
