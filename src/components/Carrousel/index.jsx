@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 import * as S from "./styles";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Carousel, { consts } from 'react-elastic-carousel';
 
@@ -47,6 +48,7 @@ export default function Carrousel(){
           renderArrow={myArrow}
         >
                 <S.Card>
+
                     <h3>Investigador principal</h3>
                       <p>Blinde e amplie o relacionamento com seus patrocinadores, proteja-se por desvios de protocolo e muito mais para você que está na fronte do desenvolvimento científico</p>
                     <button>Saiba mais</button>

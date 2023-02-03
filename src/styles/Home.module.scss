@@ -32,9 +32,10 @@
 .section1 {
   min-height: 100vh;
   width: 100%;
+
   justify-content: center;
   align-items: center;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   position: relative;
 
   .content {
@@ -69,7 +70,7 @@
     }
     .downarrow {
       text-align: center;
-      margin-top: 2%;
+      margin-top: 10%;
 
       button {
         background: none;
@@ -81,7 +82,7 @@
         height: 1rem;
         z-index: 1;
       }
-    } 
+    }
   }
 }
 
@@ -106,7 +107,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 8rem;
+    gap: 13rem;
     .title {
       width: 35rem;
       flex-direction: column;
@@ -213,7 +214,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   position: relative;
 
   .content {
@@ -458,7 +459,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      width: 35rem;
+      width: 30rem;
       h2 {
         text-align: left;
         margin-bottom: 2rem;
@@ -702,15 +703,7 @@
         height: 2.5rem;
         border: 1px solid #fd8160;
         border-radius: 23px;
-        
       }
-      .disabled{
-        filter: opacity(0.5);
-        &:hover{
-          cursor: not-allowed! important;
-        }
-      }
-      
     }
   }
 }
@@ -781,7 +774,7 @@
     padding-top: 50px;
     margin-top: 120px;
 
-    span {
+    a, span {
       font-weight: 600;
       font-size: 1.3rem;
       color: var(--purple-800);
@@ -802,34 +795,64 @@
   }
 }
 
-@media (min-width: 1440px) {
-  .section2{
+@media (max-width: 1368px) {
+  .section1{
     .content{
-      .cards{
-        margin-bottom: 12rem;
-        
-      }
+      margin-top: 0rem;
     }
   }
-}
-
-@media (max-width: 1330px) {
   .section2 {
+    padding-bottom:  1px;
     .content {
-      gap: 5rem;
+      gap: 3rem;
       .cards {
         flex-wrap: wrap;
         .card {
+          width: 300px;
+          > div{
+            height: 280px;
+          }
           &:last-of-type {
             margin-bottom: 10rem;
           }
         }
+      
       }
     }
   }
+  .section3{
+      align-items: normal ;
+    }
+    .section6{
+      .content{
+        .title{
+          h2{
+            font-size: 1.9rem;
+        }
+      }
+      .deposition{
+        .info {
+          h3 {
+            font-size: 1.4rem;
+          }
+          p {
+            font-size: 1.2rem;
+          }
+        }
+        .text {
+          margin-top: 1.5rem;
+          width: 19rem;
+          p {
+            font-size: .9rem;
+          }
+        }
+      }
+      }
+    }
 }
 
 @media (max-width: 1024px) {
+
   .section8 {
     .content {
       gap: 5rem;
@@ -950,13 +973,6 @@
 }
 
 @media (max-width: 540px) {
-  .section1{
-    .content{
-      .downarrow{
-        width: 20rem;
-      }
-    }
-  }
   .section2 {
     .content {
       gap: 5rem;
@@ -1011,6 +1027,11 @@
 @media (max-width: 450px) {
   .section2 {
     .content {
+      .card{
+        >div{
+        max-height: 250px;
+        }
+      }
       gap: 5rem;
       .title {
         width: 26rem;
@@ -1054,6 +1075,58 @@
         .card {
           width: 20rem;
         }
+      }
+    }
+  }
+  .footer{
+    padding: 0 10px;
+    
+    .content{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      >div:first-child{
+        margin-top: 0px;
+      }
+      >div{
+        h2{
+          font-size: 2.3rem;
+        }
+
+        a, p{
+          font-size: 1.4rem;
+        }
+        display: flex;
+        margin-top: 50px;
+        justify-content: center;
+
+        .border{
+          max-width: 60px;
+          border: 2px solid var(--purple-800);
+          margin-top: 30px;
+          margin-bottom: 20px;
+        }
+
+        button{
+          margin-top: 15px;
+        }
+
+        button a img{
+          width: 38px;
+          height: 38px;
+        } 
+      }
+    }
+    .copyrightWrapper{
+      text-align: center;
+      .copyContent{
+
+        width: 100%;
+      }
+      figure img{
+        margin-top: 30px;
+        width: 30px;
       }
     }
   }
@@ -1121,14 +1194,10 @@
         margin: 2rem auto;
         width: 16rem;
         h2 {
-          font-size: 1.8rem;
+          font-size: 1.6rem;
         }
       }
       .deposition {
-
-        &:last-of-type{
-          margin-bottom: 15rem;
-        }
         .info {
           h3 {
             font-size: 1.3rem;
