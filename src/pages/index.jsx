@@ -6,13 +6,15 @@ import { format } from "date-fns";
 import Link from "next/link";
 import ptBR from "date-fns/locale/pt-BR";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
+import { ToastContainer, toast } from 'react-toastify';
 
 import Image from "next/image";
 import Carrousel from "../components/Carrousel";
 import CarrouselArticles from "../components/CarrouselArticles";
+import { useForm } from "react-hook-form";
 
 const iconsFooter = [
   {
@@ -38,6 +40,7 @@ export default function Home({ postsPagination }) {
 
   const [mobileWidth, setMobileWidth] = useState(false);
   const [countFinish, setCountFinish] = useState(false);
+  const [loadingSubmitForm, setLoadingSubmitForm] = useState(false);
 
   const { ref: sectionOne, inView: sectionOneVisible } = useInView();
   const { ref: sectionTwo, inView: sectionTwoVisible } = useInView();
@@ -56,6 +59,65 @@ export default function Home({ postsPagination }) {
   const section5 = useRef();
   const section6 = useRef();
   const section7 = useRef();
+
+  const notifySuccess = () => toast("Mensagem enviada com sucesso! Aguarde nosso contato.", {
+    type: "success"
+  });
+
+  const notifyError = () => toast("Ocorreu um erro inesperado ao realizar envio da mensagem.", {
+    type: "error"
+  });
+
+  const notifyInfo = (nameInput) => toast(`Campo *${nameInput}* é obrigatório`, {
+    type: "info"
+  });
+
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = async data => {
+    try {
+
+      if(!data.name){
+        notifyInfo('qual o seu nome?');
+        return;
+      }
+      if(!data.phone){
+        notifyInfo('qual o seu telefone?');
+        return;
+      }
+      if(!data.company){
+        notifyInfo('qual o nome da empresa?');
+        return;
+      }
+      if(!data.subject){
+        notifyInfo('sobre o que quer falar?');
+        return;
+      }
+
+      setLoadingSubmitForm(true);
+      const res = await fetch(`api/contact`, {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if(res.status == 200){
+        setLoadingSubmitForm(false);
+        notifySuccess();
+      }
+      const { error } = await res.json()
+      if(error){
+        setLoadingSubmitForm(false);
+        notifyError();
+      }
+    } catch (error) {
+      setLoadingSubmitForm(false);
+      notifyError();
+    }
+  };
+
 
   function scrollTo(section) {
     section.current.scrollIntoView({
@@ -440,17 +502,17 @@ export default function Home({ postsPagination }) {
               </p>
             </div>
             <div>
-              <form className={styles.forms}>
+              <form className={styles.forms} onSubmit={handleSubmit(onSubmit)}>
                 <div >
                   <div className={styles.formsInputs}>
                     <div className={styles.inputContainer}>
                       <label>Qual o seu nome?</label>
-                      <input type="text" placeholder="Digite seu nome" />
+                      <input type="text" placeholder="Digite seu nome" {...register("name")} />
                     </div>
 
                     <div className={styles.inputContainer}>
                       <label>Qual o seu telefone?</label>
-                      <input type="text" placeholder="Digite seu telefone" />
+                      <input type="text" placeholder="Digite seu telefone" {...register("phone")} />
                     </div>
                   </div>
 
@@ -461,12 +523,13 @@ export default function Home({ postsPagination }) {
                       <input
                         type="text"
                         placeholder="Digite o nome da empresa"
+                        {...register("company")}
                       />
                     </div>
 
                     <div className={styles.inputContainer}>
                       <label>Qual o seu e-mail?</label>
-                      <input type="text" placeholder="Digite seu e-mail" />
+                      <input type="text" placeholder="Digite seu e-mail" {...register("email")}/>
                     </div>
                   </div>
                 </div>
@@ -476,12 +539,15 @@ export default function Home({ postsPagination }) {
                     width="200"
                     height="300"
                     placeholder="Digite um assunto"
+                    {...register("subject")}
                   ></textarea>
                 </div>
+                <div className={styles.container_submit_form}>
+                  <button type="submit" disabled={loadingSubmitForm} className={`${loadingSubmitForm ? styles.disabled : null}`}>Enviar mensagem</button>
+                </div>
+                <ToastContainer autoClose={8000} />
               </form>
-              <div className={styles.container_submit_form}>
-                <button>Enviar mensagem</button>
-              </div>
+              
             </div>
           </div>
         </section>

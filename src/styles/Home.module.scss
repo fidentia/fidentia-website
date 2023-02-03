@@ -703,7 +703,15 @@
         height: 2.5rem;
         border: 1px solid #fd8160;
         border-radius: 23px;
+        
       }
+      .disabled{
+        filter: opacity(0.5);
+        &:hover{
+          cursor: not-allowed! important;
+        }
+      }
+      
     }
   }
 }
