@@ -3,7 +3,7 @@ import * as prismic from "@prismicio/client";
 import { getPrismicClient } from "../services/prismic";
 import styles from "../styles/Home.module.scss";
 import { format } from "date-fns";
-import Link from 'next/link';
+import Link from "next/link";
 import ptBR from "date-fns/locale/pt-BR";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useRef, useState } from "react";
@@ -15,9 +15,21 @@ import Carrousel from "../components/Carrousel";
 import CarrouselArticles from "../components/CarrouselArticles";
 
 const iconsFooter = [
-  { src: "/images/instagranIcon.svg", alt: "instagran do ícone", link: "https://www.instagram.com/fidentiaseguros/" },
-  { src: "/images/facebookIcon.svg", alt: "facebook do ícone", link: "https://www.facebook.com/Fidentia-Insurance-Group-102406679286320" },
-  { src: "/images/linkedinIcon.svg", alt: "linkedin do ícone", link: "https://www.linkedin.com/company/fidentiainsurance/" },
+  {
+    src: "/images/instagranIcon.svg",
+    alt: "instagran do ícone",
+    link: "https://www.instagram.com/fidentiaseguros/",
+  },
+  {
+    src: "/images/facebookIcon.svg",
+    alt: "facebook do ícone",
+    link: "https://www.facebook.com/Fidentia-Insurance-Group-102406679286320",
+  },
+  {
+    src: "/images/linkedinIcon.svg",
+    alt: "linkedin do ícone",
+    link: "https://www.linkedin.com/company/fidentiainsurance/",
+  },
 ];
 
 export default function Home({ postsPagination }) {
@@ -25,16 +37,17 @@ export default function Home({ postsPagination }) {
   const [posts, setPosts] = useState(postsPagination?.results);
 
   const [mobileWidth, setMobileWidth] = useState(false);
-
   const [countFinish, setCountFinish] = useState(false);
 
   const { ref: sectionOne, inView: sectionOneVisible } = useInView();
   const { ref: sectionTwo, inView: sectionTwoVisible } = useInView();
-  const { ref: sectionTree, inView: sectionTreeVisible } = useInView();
+  const { ref: sectionThree, inView: sectionThreeVisible } = useInView();
   const { ref: sectionFour, inView: sectionFourVisible } = useInView();
   const { ref: sectionFive, inView: sectionFiveVisible } = useInView();
   const { ref: sectionSix, inView: sectionSixVisible } = useInView();
   const { ref: sectionSeven, inView: sectionSevenVisible } = useInView();
+  const { ref: sectionEight, inView: sectionEightVisible } = useInView();
+  const { ref: sectionFooter, inView: sectionFooterVisible } = useInView();
 
   const section1 = useRef();
   const section2 = useRef();
@@ -96,10 +109,10 @@ export default function Home({ postsPagination }) {
   }, []);
 
   useEffect(() => {
-    if (sectionTreeVisible) {
+    if (sectionThreeVisible) {
       setCountFinish(true);
     }
-  }, [sectionTreeVisible]);
+  }, [sectionThreeVisible]);
 
   // useEffect(() =>{
   //   if(sectionOneVisible){
@@ -126,7 +139,10 @@ export default function Home({ postsPagination }) {
             priority={true}
             alt="background image"
           />
-          <div className={styles.content} ref={sectionOne}>
+          <div
+            className={`${styles.content} ${sectionOneVisible && styles.fade}`}
+            ref={sectionOne}
+          >
             <div className={styles.title}>
               <h2>
                 Apoiando você, <span>sempre</span>
@@ -157,7 +173,10 @@ export default function Home({ postsPagination }) {
             priority={true}
             alt="background image"
           />
-          <div className={`${styles.content}`} ref={sectionTwo}>
+          <div
+            className={`${styles.content} ${sectionTwoVisible && styles.fade}`}
+            ref={sectionTwo}
+          >
             <div className={styles.title}>
               <div>
                 <h2>Conheça nossas soluções exclusivas</h2>
@@ -216,7 +235,12 @@ export default function Home({ postsPagination }) {
             priority={true}
             fill={true}
           />
-          <div className={styles.content} ref={sectionTree}>
+          <div
+            className={`${styles.content} ${
+              sectionThreeVisible && styles.fade
+            }`}
+            ref={sectionThree}
+          >
             <div className={styles.title}>
               <h2>
                 Porque somos especialistas em <br />
@@ -227,7 +251,7 @@ export default function Home({ postsPagination }) {
               <div>
                 <h2
                   className={`${
-                    sectionTreeVisible ? styles.count_animation : null
+                    sectionThreeVisible ? styles.count_animation : null
                   }`}
                 >
                   {countFinish ? (
@@ -243,7 +267,7 @@ export default function Home({ postsPagination }) {
               <div>
                 <h2
                   className={`${
-                    sectionTreeVisible ? styles.count_animation : null
+                    sectionThreeVisible ? styles.count_animation : null
                   }`}
                 >
                   {countFinish ? (
@@ -259,7 +283,7 @@ export default function Home({ postsPagination }) {
               <div>
                 <h2
                   className={`${
-                    sectionTreeVisible ? styles.count_animation : null
+                    sectionThreeVisible ? styles.count_animation : null
                   }`}
                 >
                   {countFinish ? (
@@ -275,7 +299,7 @@ export default function Home({ postsPagination }) {
               <div>
                 <h2
                   className={`${
-                    sectionTreeVisible ? styles.count_animation : null
+                    sectionThreeVisible ? styles.count_animation : null
                   }`}
                 >
                   {countFinish ? (
@@ -293,7 +317,10 @@ export default function Home({ postsPagination }) {
         </section>
 
         <section className={styles.section4} ref={section4} id="apoio">
-          <div className={styles.content}>
+          <div
+            className={`${styles.content} ${sectionFourVisible && styles.fade}`}
+            ref={sectionFour}
+          >
             <div className={styles.title}>
               <h2>Como o seguro apoiará você?</h2>
             </div>
@@ -311,7 +338,10 @@ export default function Home({ postsPagination }) {
             priority={true}
             fill={true}
           />
-          <div className={styles.content}>
+          <div
+            className={`${styles.content} ${sectionFiveVisible && styles.fade}`}
+            ref={sectionFive}
+          >
             <div className={styles.title}>
               <h2>Faça sua cotação online conosco</h2>
             </div>
@@ -322,7 +352,10 @@ export default function Home({ postsPagination }) {
         </section>
 
         <section className={styles.section6} ref={section6} id="depoimentos">
-          <div className={styles.content}>
+          <div
+            className={`${styles.content} ${sectionSixVisible && styles.fade}`}
+            ref={sectionSix}
+          >
             <div className={styles.title}>
               <h2>
                 Ajudar pessoas a desenvolver o seu melhor é o que nos move.
@@ -379,7 +412,12 @@ export default function Home({ postsPagination }) {
         </section>
 
         <section className={styles.section7} id="artigos" ref={section7}>
-          <div className={styles.content}>
+          <div
+            className={`${styles.content} ${
+              sectionSevenVisible && styles.fade
+            }`}
+            ref={sectionSeven}
+          >
             <div className={styles.title}>
               <h2>Artigos</h2>
             </div>
@@ -388,7 +426,12 @@ export default function Home({ postsPagination }) {
         </section>
 
         <section className={styles.section8}>
-          <div className={styles.content}>
+          <div
+            className={`${styles.content} ${
+              sectionEightVisible && styles.fade
+            }`}
+            ref={sectionEight}
+          >
             <div className={styles.title}>
               <h3>Vamos bater um papo ?</h3>
               <p>
@@ -396,50 +439,75 @@ export default function Home({ postsPagination }) {
                 como nós podemos auxiliá-lo
               </p>
             </div>
-            <form className={styles.forms}>
-              <div>
-                <label>Qual o seu nome?</label>
-                <input type="text" placeholder="Digite seu nome" />
-              </div>
+            <div>
+              <form className={styles.forms}>
+                <div >
+                  <div className={styles.formsInputs}>
+                    <div className={styles.inputContainer}>
+                      <label>Qual o seu nome?</label>
+                      <input type="text" placeholder="Digite seu nome" />
+                    </div>
 
-              <div>
-                <label>Qual o nome da empresa?</label>
-                <input type="text" placeholder="Digite o nome da empresa" />
-              </div>
+                    <div className={styles.inputContainer}>
+                      <label>Qual o seu telefone?</label>
+                      <input type="text" placeholder="Digite seu telefone" />
+                    </div>
+                  </div>
 
-              <div>
-                <label>Qual o seu telefone?</label>
-                <input type="text" placeholder="Digite seu telefone" />
-              </div>
+                  <div className={styles.formsInputs}>
+                    
+                  <div className={styles.inputContainer}>
+                      <label>Qual o nome da empresa?</label>
+                      <input
+                        type="text"
+                        placeholder="Digite o nome da empresa"
+                      />
+                    </div>
 
-              <div>
-                <label>Qual o seu e-mail?</label>
-                <input type="text" placeholder="Digite seu e-mail" />
+                    <div className={styles.inputContainer}>
+                      <label>Qual o seu e-mail?</label>
+                      <input type="text" placeholder="Digite seu e-mail" />
+                    </div>
+                  </div>
+                </div>
+                <div className={styles.inputContainer}>
+                  <label>Sobre o que quer falar</label>
+                  <textarea
+                    width="200"
+                    height="300"
+                    placeholder="Digite um assunto"
+                  ></textarea>
+                </div>
+              </form>
+              <div className={styles.container_submit_form}>
+                <button>Enviar mensagem</button>
               </div>
-              <div>
-                <label>Sobre o que quer falar</label>
-                <textarea
-                  width="200"
-                  height="300"
-                  placeholder="Digite um assunto"
-                ></textarea>
-              </div>
-            </form>
-            <div className={styles.container_submit_form}>
-              <button>Enviar mensagem</button>
             </div>
           </div>
         </section>
 
         <footer className={styles.footer}>
-          <div className={styles.content}>
+          <div
+            className={`${styles.content} ${
+              sectionFooterVisible && styles.fade
+            }`}
+            ref={sectionFooter}
+          >
             <div>
               <h2>A Fidentia</h2>
               <div className={styles.border}></div>
-              <Link href="/#solucoes" onClick={() => scrollTo(section2)}>Soluções</Link>
-              <Link href="/#fidentia" onClick={() => scrollTo(section6)}>A Fidentia</Link>
-              <Link href="/#cotacao" onClick={() => scrollTo(section5)}>Cote agora</Link>
-              <Link href="#artigos" onClick={() => scrollTo(section7)}>Artigos</Link>
+              <Link href="/#solucoes" onClick={() => scrollTo(section2)}>
+                Soluções
+              </Link>
+              <Link href="/#fidentia" onClick={() => scrollTo(section6)}>
+                A Fidentia
+              </Link>
+              <Link href="/#cotacao" onClick={() => scrollTo(section5)}>
+                Cote agora
+              </Link>
+              <Link href="#artigos" onClick={() => scrollTo(section7)}>
+                Artigos
+              </Link>
             </div>
 
             <div>
@@ -458,12 +526,14 @@ export default function Home({ postsPagination }) {
               <div className={styles.iconsWrapper}>
                 {iconsFooter.map((icon) => (
                   <button key={icon.src}>
-                    <Link href={icon.link} target="_blank"><Image
-                      src={icon.src}
-                      width={45}
-                      height={45}
-                      alt={icon.alt}
-                    /></Link>
+                    <Link href={icon.link} target="_blank">
+                      <Image
+                        src={icon.src}
+                        width={45}
+                        height={45}
+                        alt={icon.alt}
+                      />
+                    </Link>
                   </button>
                 ))}
               </div>
@@ -475,21 +545,20 @@ export default function Home({ postsPagination }) {
                 Copyright @ 2023 Fidentia. Todos os direitos reservados.
               </span>
               <div className={styles.copyImageContent}>
-                <div className={styles.copyContent}> 
+                <div className={styles.copyContent}>
                   <span>Política de privacidade</span>
                   <span>Política de Cookies</span>
                   <span>Ética e Compliance</span>
                 </div>
                 <figure>
-                <Link href="/#home" onClick={() => scrollTo(section1)}>
+                  <Link href="/#home" onClick={() => scrollTo(section1)}>
                     <Image
                       src="/images/logo.svg"
                       width={85}
                       height={85}
                       alt="logo"
                     />
-                    </Link>
-                  
+                  </Link>
                 </figure>
               </div>
             </div>
