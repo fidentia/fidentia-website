@@ -189,34 +189,40 @@ export default function Home({ postsPagination }) {
             </div>
             <div className={styles.cards}>
               <div className={styles.card}>
-                <h3>Seguros para</h3>
-                <p>Pesquisas Clínicas</p>
-                <p>Profissionais de pesquisas clínicas</p>
-                <p>Transportes de materiais para o estabelecimento</p>
-                <p>Seguro de vida para pacientes</p>
+                <div>
+                  <h3>Seguros para</h3>
+                  <p>Pesquisas Clínicas</p>
+                  <p>Profissionais de pesquisas clínicas</p>
+                  <p>Transportes de materiais para o estabelecimento</p>
+                  <p>Seguro de vida para pacientes</p>
+                </div>
                 <div className={styles.button}>
                   <button>Saiba mais</button>
                 </div>
               </div>
 
               <div className={styles.card}>
-                <h3>Cursos</h3>
-                <p>Seguros para pesquisas clínicas</p>
-                <p>Venda de seguros</p>
-                <p>Palestras</p>
-                <p>Cursos de curta duração</p>
-                <p>Cursos in-company</p>
+                <div>
+                  <h3>Cursos</h3>
+                  <p>Seguros para pesquisas clínicas</p>
+                  <p>Venda de seguros</p>
+                  <p>Palestras</p>
+                  <p>Cursos de curta duração</p>
+                  <p>Cursos in-company</p>
+                </div>
                 <div className={styles.button}>
                   <button>Saiba mais</button>
                 </div>
               </div>
 
               <div className={styles.card}>
-                <h3>Consultoria</h3>
-                <p>Para corretores, seguradoras e brokers</p>
-                <p>Análise e gestão de riscos</p>
-                <p>Subscroção de riscos</p>
-                <p>Suporte técnico e comercial completo</p>
+                <div>
+                  <h3>Consultoria</h3>
+                  <p>Para corretores, seguradoras e brokers</p>
+                  <p>Análise e gestão de riscos</p>
+                  <p>Subscroção de riscos</p>
+                  <p>Suporte técnico e comercial completo</p>
+                </div>
                 <div className={styles.button}>
                   <button>Saiba mais</button>
                 </div>

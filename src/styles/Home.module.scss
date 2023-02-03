@@ -459,7 +459,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      width: 35rem;
+      width: 30rem;
       h2 {
         text-align: left;
         margin-bottom: 2rem;
@@ -795,23 +795,64 @@
   }
 }
 
-@media (max-width: 1330px) {
+@media (max-width: 1368px) {
+  .section1{
+    .content{
+      margin-top: 0rem;
+    }
+  }
   .section2 {
+    padding-bottom:  1px;
     .content {
-      gap: 5rem;
+      gap: 3rem;
       .cards {
         flex-wrap: wrap;
         .card {
+          width: 300px;
+          > div{
+            height: 280px;
+          }
           &:last-of-type {
             margin-bottom: 10rem;
           }
         }
+      
       }
     }
   }
+  .section3{
+      align-items: normal ;
+    }
+    .section6{
+      .content{
+        .title{
+          h2{
+            font-size: 1.9rem;
+        }
+      }
+      .deposition{
+        .info {
+          h3 {
+            font-size: 1.4rem;
+          }
+          p {
+            font-size: 1.2rem;
+          }
+        }
+        .text {
+          margin-top: 1.5rem;
+          width: 19rem;
+          p {
+            font-size: .9rem;
+          }
+        }
+      }
+      }
+    }
 }
 
 @media (max-width: 1024px) {
+
   .section8 {
     .content {
       gap: 5rem;
@@ -986,6 +1027,11 @@
 @media (max-width: 450px) {
   .section2 {
     .content {
+      .card{
+        >div{
+        max-height: 250px;
+        }
+      }
       gap: 5rem;
       .title {
         width: 26rem;
@@ -1029,6 +1075,58 @@
         .card {
           width: 20rem;
         }
+      }
+    }
+  }
+  .footer{
+    padding: 0 10px;
+    
+    .content{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      >div:first-child{
+        margin-top: 0px;
+      }
+      >div{
+        h2{
+          font-size: 2.3rem;
+        }
+
+        a, p{
+          font-size: 1.4rem;
+        }
+        display: flex;
+        margin-top: 50px;
+        justify-content: center;
+
+        .border{
+          max-width: 60px;
+          border: 2px solid var(--purple-800);
+          margin-top: 30px;
+          margin-bottom: 20px;
+        }
+
+        button{
+          margin-top: 15px;
+        }
+
+        button a img{
+          width: 38px;
+          height: 38px;
+        } 
+      }
+    }
+    .copyrightWrapper{
+      text-align: center;
+      .copyContent{
+
+        width: 100%;
+      }
+      figure img{
+        margin-top: 30px;
+        width: 30px;
       }
     }
   }
