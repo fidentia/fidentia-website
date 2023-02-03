@@ -65,9 +65,6 @@ export default function Header(){
                         <figure>
                             <img src="/images/linkedinLogo.svg" alt="linkedin logo" />
                         </figure>
-                        <figure>
-                            <img src="/images/youtubeLogo.svg" alt="youtube logo" />
-                        </figure>
                     </section>
                 ) : null}
             </ul>
