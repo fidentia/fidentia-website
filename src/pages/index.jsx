@@ -32,6 +32,8 @@ const iconsFooter = [
   },
 ];
 
+const politics = [{uid: "politica-de-privacidade", title: "A"}, ]
+
 export default function Home({ postsPagination }) {
   const [nextPage, setNextPage] = useState(postsPagination.next_page);
   const [posts, setPosts] = useState(postsPagination?.results);
@@ -552,9 +554,9 @@ export default function Home({ postsPagination }) {
               </span>
               <div className={styles.copyImageContent}>
                 <div className={styles.copyContent}>
-                  <span>Política de privacidade</span>
-                  <span>Política de Cookies</span>
-                  <span>Ética e Compliance</span>
+                  <Link href={`politics/#email-mensagem`}>Política de privacidade</Link>
+                  <Link href={`politics/#politica-privacidade`}>Política de Cookies</Link>
+                  <Link href={`politics/#etica-compliance`}>Ética e Compliance</Link>
                 </div>
                 <figure>
                   <Link href="/#home" onClick={() => scrollTo(section1)}>

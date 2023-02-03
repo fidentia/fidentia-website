@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 import * as S from "./styles";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import Carousel, { consts } from 'react-elastic-carousel';
 
@@ -50,7 +51,7 @@ export default function Carrousel(){
                 
                     <h3>Centros de pesquisa clínica</h3>
                     <p>Além de blindar o relacionamento com seus patrocinadores, cobre automaticamente todos os ensaios clínicos realizados no seu centro</p>
-                    <button>Saiba mais</button>
+                    <button><Link href="/insurance">Saiba mais</Link></button>
                 
                 </S.Card>
                 <S.Card>
