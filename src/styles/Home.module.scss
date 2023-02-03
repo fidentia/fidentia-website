@@ -32,10 +32,9 @@
 .section1 {
   min-height: 100vh;
   width: 100%;
-
   justify-content: center;
   align-items: center;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   position: relative;
 
   .content {
@@ -70,7 +69,7 @@
     }
     .downarrow {
       text-align: center;
-      margin-top: 10%;
+      margin-top: 2%;
 
       button {
         background: none;
@@ -82,7 +81,7 @@
         height: 1rem;
         z-index: 1;
       }
-    }
+    } 
   }
 }
 
@@ -107,7 +106,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 13rem;
+    gap: 8rem;
     .title {
       width: 35rem;
       flex-direction: column;
@@ -214,7 +213,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   position: relative;
 
   .content {
@@ -803,6 +802,17 @@
   }
 }
 
+@media (min-width: 1440px) {
+  .section2{
+    .content{
+      .cards{
+        margin-bottom: 12rem;
+        
+      }
+    }
+  }
+}
+
 @media (max-width: 1330px) {
   .section2 {
     .content {
@@ -940,6 +950,13 @@
 }
 
 @media (max-width: 540px) {
+  .section1{
+    .content{
+      .downarrow{
+        width: 20rem;
+      }
+    }
+  }
   .section2 {
     .content {
       gap: 5rem;
@@ -1104,10 +1121,14 @@
         margin: 2rem auto;
         width: 16rem;
         h2 {
-          font-size: 1.6rem;
+          font-size: 1.8rem;
         }
       }
       .deposition {
+
+        &:last-of-type{
+          margin-bottom: 15rem;
+        }
         .info {
           h3 {
             font-size: 1.3rem;
