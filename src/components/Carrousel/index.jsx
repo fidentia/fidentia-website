@@ -34,7 +34,7 @@ export default function Carrousel(){
       ]
 
       const myArrow = ({ type, onClick, isEdge }) => {
-        const pointer = type === consts.PREV ? <img src="/images/arrowLeft.png" className={styles.arrowIcon} /> : <img src="/images/arrowRight.png" className={styles.arrowIcon} />
+        const pointer = type === consts.PREV ? <img src="/images/arrowLeft.png" className={styles.arrowIcon} alt="Ícone de seta para esquerda" /> : <img src="/images/arrowRight.png" className={styles.arrowIcon} alt="Ícone de seta para direita"/>
         return (
           <button onClick={onClick} disabled={isEdge} className={styles.button_pagination}>
             {pointer}
@@ -48,7 +48,6 @@ export default function Carrousel(){
           renderArrow={myArrow}
         >
                 <S.Card>
-
                     <h3>Investigador principal</h3>
                       <p>Blinde e amplie o relacionamento com seus patrocinadores, proteja-se por desvios de protocolo e muito mais para você que está na fronte do desenvolvimento científico</p>
                     <button>Saiba mais</button>
