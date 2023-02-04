@@ -20,22 +20,22 @@ export default function Header(){
                         src={`/images/fidentiaLogo.svg`} 
                         width={150}
                         height={100}
-                        alt="background image"
+                        alt="Logomarca Fidentia para menu"
                     />
                 </figure>
             </Link>
           <nav className={styles.nav}>
             <button className={styles.button_mobile} onClick={()=>handleToggle()}>
-                <img src="/images/hamburguerLogo.svg" alt="hamburguer logo" />
+                <img src="/images/hamburguerLogo.svg" alt="ícone do tipo hamburguer para clicar" />
             </button>
             <ul className={activeMenu ? styles.active : styles.menu}>
                 {activeMenu ? (
                     <div className={styles.icons_menu}>
                         <figure>
-                            <img className={styles.logo_menu} src="/images/fidentiaLogoMenu.svg" alt="logomarca fidentia" />
+                            <img className={styles.logo_menu} src="/images/fidentiaLogoMenu.svg" alt="Logomarca Fidentia" />
                         </figure>
                         <span onClick={()=>handleClose()}>
-                            <img src="/images/closeIcon.svg" alt="ícone para fechar menu" title='Fechar menu' />
+                            <img src="/images/closeIcon.svg" alt="ícone para fechar menu" title='ícone para fechar o menu responsivo' />
                         </span>
                     </div>
                 ) : null}
@@ -64,9 +64,6 @@ export default function Header(){
                         </figure>
                         <figure>
                             <img src="/images/linkedinLogo.svg" alt="linkedin logo" />
-                        </figure>
-                        <figure>
-                            <img src="/images/youtubeLogo.svg" alt="youtube logo" />
                         </figure>
                     </section>
                 ) : null}

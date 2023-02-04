@@ -6,13 +6,15 @@ import { format } from "date-fns";
 import Link from "next/link";
 import ptBR from "date-fns/locale/pt-BR";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
-import { motion } from "framer-motion";
+import { ToastContainer, toast } from 'react-toastify';
 
 import Image from "next/image";
 import Carrousel from "../components/Carrousel";
 import CarrouselArticles from "../components/CarrouselArticles";
+import { useForm } from "react-hook-form";
+import Head from "next/head";
 
 const iconsFooter = [
   {
@@ -32,12 +34,15 @@ const iconsFooter = [
   },
 ];
 
+const politics = [{uid: "politica-de-privacidade", title: "A"}, ]
+
 export default function Home({ postsPagination }) {
   const [nextPage, setNextPage] = useState(postsPagination.next_page);
   const [posts, setPosts] = useState(postsPagination?.results);
 
   const [mobileWidth, setMobileWidth] = useState(false);
   const [countFinish, setCountFinish] = useState(false);
+  const [loadingSubmitForm, setLoadingSubmitForm] = useState(false);
 
   const { ref: sectionOne, inView: sectionOneVisible } = useInView();
   const { ref: sectionTwo, inView: sectionTwoVisible } = useInView();
@@ -56,6 +61,65 @@ export default function Home({ postsPagination }) {
   const section5 = useRef();
   const section6 = useRef();
   const section7 = useRef();
+
+  const notifySuccess = () => toast("Mensagem enviada com sucesso! Aguarde nosso contato.", {
+    type: "success"
+  });
+
+  const notifyError = () => toast("Ocorreu um erro inesperado ao realizar envio da mensagem.", {
+    type: "error"
+  });
+
+  const notifyInfo = (nameInput) => toast(`Campo *${nameInput}* é obrigatório`, {
+    type: "info"
+  });
+
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = async data => {
+    try {
+
+      if(!data.name){
+        notifyInfo('qual o seu nome?');
+        return;
+      }
+      if(!data.phone){
+        notifyInfo('qual o seu telefone?');
+        return;
+      }
+      if(!data.company){
+        notifyInfo('qual o nome da empresa?');
+        return;
+      }
+      if(!data.subject){
+        notifyInfo('sobre o que quer falar?');
+        return;
+      }
+
+      setLoadingSubmitForm(true);
+      const res = await fetch(`api/contact`, {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if(res.status == 200){
+        setLoadingSubmitForm(false);
+        notifySuccess();
+      }
+      const { error } = await res.json()
+      if(error){
+        setLoadingSubmitForm(false);
+        notifyError();
+      }
+    } catch (error) {
+      setLoadingSubmitForm(false);
+      notifyError();
+    }
+  };
+
 
   function scrollTo(section) {
     section.current.scrollIntoView({
@@ -114,18 +178,18 @@ export default function Home({ postsPagination }) {
     }
   }, [sectionThreeVisible]);
 
-  // useEffect(() =>{
-  //   if(sectionOneVisible){
-  //     window.history.pushState({}, '', `#home`);
-
-  //   }
-  //   if(sectionTwoVisible){
-  //     window.history.pushState({}, '', `#solucoes`);
-  //   }
-  // }, [sectionOneVisible, sectionTwoVisible, sectionTreeVisible])
 
   return (
     <>
+    <Head>
+      <title>Fidentia</title>
+        <meta name="description" content="Soluções completas em seguros para pesquisas clínicas. Oferecemos uma suíte completa de soluções e serviços com tudo o que você precisa sobre seguro para o mundo das pesquisas clínicas." />
+        <meta property="og:title" content="Fidentia soluções completas em seguros para pesquisas clínicas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.fidentia.com.br/" />
+        <meta property="og:description" content="Soluções completas em seguros para pesquisas clínicas. Oferecemos uma suíte completa de soluções e serviços com tudo o que você precisa sobre seguro para o mundo das pesquisas clínicas." />
+        <meta property="og:site_name" content="Fidentia" />
+    </Head>
       <main className={`container ${styles.container}`}>
         <section className={styles.section1} id="home" ref={section1}>
           <Header />
@@ -137,10 +201,10 @@ export default function Home({ postsPagination }) {
             }`}
             fill={true}
             priority={true}
-            alt="background image"
+            alt="Imagem ilustrativa de fundo para primeira seção"
           />
           <div
-            className={`${styles.content} ${sectionOneVisible && styles.fade}`}
+            className={`${styles.content} ${styles.fade}`}
             ref={sectionOne}
           >
             <div className={styles.title}>
@@ -171,7 +235,7 @@ export default function Home({ postsPagination }) {
             }`}
             fill={true}
             priority={true}
-            alt="background image"
+            alt="Imagem ilustrativa de fundo para segunda seção"
           />
           <div
             className={`${styles.content} ${sectionTwoVisible && styles.fade}`}
@@ -189,34 +253,40 @@ export default function Home({ postsPagination }) {
             </div>
             <div className={styles.cards}>
               <div className={styles.card}>
-                <h3>Seguros para</h3>
-                <p>Pesquisas Clínicas</p>
-                <p>Profissionais de pesquisas clínicas</p>
-                <p>Transportes de materiais para o estabelecimento</p>
-                <p>Seguro de vida para pacientes</p>
+                <div>
+                  <h3>Seguros para</h3>
+                  <p>Pesquisas Clínicas</p>
+                  <p>Profissionais de pesquisas clínicas</p>
+                  <p>Transportes de materiais para o estabelecimento</p>
+                  <p>Seguro de vida para pacientes</p>
+                </div>
                 <div className={styles.button}>
                   <button>Saiba mais</button>
                 </div>
               </div>
 
               <div className={styles.card}>
-                <h3>Cursos</h3>
-                <p>Seguros para pesquisas clínicas</p>
-                <p>Venda de seguros</p>
-                <p>Palestras</p>
-                <p>Cursos de curta duração</p>
-                <p>Cursos in-company</p>
+                <div>
+                  <h3>Cursos</h3>
+                  <p>Seguros para pesquisas clínicas</p>
+                  <p>Venda de seguros</p>
+                  <p>Palestras</p>
+                  <p>Cursos de curta duração</p>
+                  <p>Cursos in-company</p>
+                </div>
                 <div className={styles.button}>
                   <button>Saiba mais</button>
                 </div>
               </div>
 
               <div className={styles.card}>
-                <h3>Consultoria</h3>
-                <p>Para corretores, seguradoras e brokers</p>
-                <p>Análise e gestão de riscos</p>
-                <p>Subscroção de riscos</p>
-                <p>Suporte técnico e comercial completo</p>
+                <div>
+                  <h3>Consultoria</h3>
+                  <p>Para corretores, seguradoras e brokers</p>
+                  <p>Análise e gestão de riscos</p>
+                  <p>Subscroção de riscos</p>
+                  <p>Suporte técnico e comercial completo</p>
+                </div>
                 <div className={styles.button}>
                   <button>Saiba mais</button>
                 </div>
@@ -234,6 +304,7 @@ export default function Home({ postsPagination }) {
             }`}
             priority={true}
             fill={true}
+            alt="Imagem ilustrativa de fundo para segunda seção"
           />
           <div
             className={`${styles.content} ${
@@ -337,6 +408,7 @@ export default function Home({ postsPagination }) {
             }`}
             priority={true}
             fill={true}
+            alt="Imagem ilustrativa de fundo para quinta seção"
           />
           <div
             className={`${styles.content} ${sectionFiveVisible && styles.fade}`}
@@ -370,18 +442,16 @@ export default function Home({ postsPagination }) {
                   src={"/images/photo_profile.svg"}
                   width={168}
                   height={168}
+                  alt="Foto de perfil Rafael Abad"
                 />
               </div>
               <div className={styles.info}>
-                <h3>Dr. Augusto F. Rodrigues</h3>
-                <p>Hospital Albert Einstein</p>
+                <h3>Rafael Abad</h3>
+                <p>CFO at KNW Brokers</p>
               </div>
               <article className={styles.text}>
                 <p>
-                  “Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                  nostrud exerci tation ullamcorper.”
+                "Sou fã do trabalho da Fidentia, Felipe e equipe. Poderia citar o profissionalismo, qualidade de entrega, o quão correta é sua atuação,  mas acho que essas características já estão muito claras e talvez constantes em outros depoimentos. Gostaria de salientar a importância da Fidentia e equipe não ficarem “somente” no mundo do seguro e, sim se preocuparem, e muito, em entender e estar do lado do cliente final, investindo anos e anos de seu tempo e expertise em desenvolver um mercado tão importante e nobre quanto o de Testes Clínicos, utilizando o seguro como meio de fomentar a indústria como um todo.  Esse tipo de atuação e preocupação é um exemplo para minha atuação profissional e espero que também inspirem outros profissionais e empresas de nosso mercado. Falar sobre seguro, para o mercado de seguros é importante, mas de certa forma cômodo para nós. A grande beleza está em sair dessa bolha."
                 </p>
               </article>
             </div>
@@ -392,19 +462,17 @@ export default function Home({ postsPagination }) {
                   src={"/images/photo_profile2.svg"}
                   width={168}
                   height={168}
+                  alt="Foto de perfil Sofia Banuls Scatena"
                 />
               </div>
 
               <div className={styles.info}>
-                <h3>Brenda A. C. Real</h3>
-                <p>Instituto Butantan</p>
+                <h3>Sofia Banuls Scatena</h3>
+                <p>Diretora Comercial - C.C.O</p>
               </div>
               <article className={styles.text}>
                 <p>
-                  “Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                  nostrud exerci tation ullamcorper.”
+                "A Fidentia é uma empresa com grande reconhecimento no mercado de clinical trial e através do Diretor Felipe, a Sanyuu pôde ter o privilégio de galgar uma comparticipação. Isso possibilitou que pudéssemos ter mais conhecimento sobre as capacitações do Felipe e a responsabilidade e dedicação que ele tem junto a Fidentia/HDI para com os seus clientes e parceiros. Com isso, fica muito claro o quão sólido e valoroso é o trabalho feito por eles."
                 </p>
               </article>
             </div>
@@ -440,17 +508,17 @@ export default function Home({ postsPagination }) {
               </p>
             </div>
             <div>
-              <form className={styles.forms}>
+              <form className={styles.forms} onSubmit={handleSubmit(onSubmit)}>
                 <div >
                   <div className={styles.formsInputs}>
                     <div className={styles.inputContainer}>
                       <label>Qual o seu nome?</label>
-                      <input type="text" placeholder="Digite seu nome" />
+                      <input type="text" placeholder="Digite seu nome" {...register("name")} />
                     </div>
 
                     <div className={styles.inputContainer}>
                       <label>Qual o seu telefone?</label>
-                      <input type="text" placeholder="Digite seu telefone" />
+                      <input type="text" placeholder="Digite seu telefone" {...register("phone")} />
                     </div>
                   </div>
 
@@ -461,12 +529,13 @@ export default function Home({ postsPagination }) {
                       <input
                         type="text"
                         placeholder="Digite o nome da empresa"
+                        {...register("company")}
                       />
                     </div>
 
                     <div className={styles.inputContainer}>
                       <label>Qual o seu e-mail?</label>
-                      <input type="text" placeholder="Digite seu e-mail" />
+                      <input type="text" placeholder="Digite seu e-mail" {...register("email")}/>
                     </div>
                   </div>
                 </div>
@@ -476,12 +545,15 @@ export default function Home({ postsPagination }) {
                     width="200"
                     height="300"
                     placeholder="Digite um assunto"
+                    {...register("subject")}
                   ></textarea>
                 </div>
+                <div className={styles.container_submit_form}>
+                  <button type="submit" disabled={loadingSubmitForm} className={`${loadingSubmitForm ? styles.disabled : null}`}>Enviar mensagem</button>
+                </div>
+                <ToastContainer autoClose={8000} />
               </form>
-              <div className={styles.container_submit_form}>
-                <button>Enviar mensagem</button>
-              </div>
+              
             </div>
           </div>
         </section>
@@ -546,9 +618,9 @@ export default function Home({ postsPagination }) {
               </span>
               <div className={styles.copyImageContent}>
                 <div className={styles.copyContent}>
-                  <span>Política de privacidade</span>
-                  <span>Política de Cookies</span>
-                  <span>Ética e Compliance</span>
+                  <Link href={`politics/#email-mensagem`}>Política de privacidade</Link>
+                  <Link href={`politics/#politica-privacidade`}>Política de Cookies</Link>
+                  <Link href={`politics/#etica-compliance`}>Ética e Compliance</Link>
                 </div>
                 <figure>
                   <Link href="/#home" onClick={() => scrollTo(section1)}>
@@ -556,7 +628,7 @@ export default function Home({ postsPagination }) {
                       src="/images/logo.svg"
                       width={85}
                       height={85}
-                      alt="logo"
+                      alt="logo fidentia"
                     />
                   </Link>
                 </figure>

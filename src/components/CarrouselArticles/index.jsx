@@ -44,7 +44,7 @@ export default function CarrouselArticles({posts, nextPage}){
       }
 
       const myArrow = ({ type, onClick, isEdge }) => {
-        const pointer = type === consts.PREV ? <img src="/images/arrowLeft.png" className={styles.arrowIcon} /> : <img src="/images/arrowRight.png" className={styles.arrowIcon} />
+        const pointer = type === consts.PREV ? <img src="/images/arrowLeft.png" className={styles.arrowIcon} alt="Ícone de seta para esquerda" /> : <img src="/images/arrowRight.png" className={styles.arrowIcon} alt="Ícone de seta para direita" />
         return (
           <button onClick={onClick} disabled={isEdge} className={styles.button_pagination}>
             {pointer}
@@ -52,7 +52,7 @@ export default function CarrouselArticles({posts, nextPage}){
         )
       }
   
-
+      
     return(
         <Carousel 
           itemsToShow={itemsPerPage}
@@ -64,11 +64,10 @@ export default function CarrouselArticles({posts, nextPage}){
           }>
 
           {posts.map((post =>{
-
             return(
 
                 <S.Card key={post.uid}>
-                  <S.ImageBanner src={post.data?.banner?.url ?? ""} loading="lazy"/>
+                  <S.ImageBanner src={post.data?.banner?.url ?? ""} loading="lazy" alt={post.uid} />
                   <h3>{post.data.title}</h3>
                   <Link href={`/post/${post.uid}`}>
                       <button>Leia mais</button>

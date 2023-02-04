@@ -21,7 +21,6 @@ export default function post({post}){
                 </button>
             </div>
             <div className={styles.subContainer}>
-           
                 {post ? (
                 <section className={styles.post}>
                     <h2>Artigos</h2>
@@ -31,7 +30,6 @@ export default function post({post}){
                         </div>
                         <figure className={styles.banner}>
                             <Image 
-                            
                                 src={post.data.banner.url}
                                 width={1200}
                                 height={300}
@@ -41,11 +39,8 @@ export default function post({post}){
                         </figure>
                         
                         <section className={styles.container_post}>
-                        
-                
                             {post.data.content.map((content,index) =>{
                                 return(
-                                    
                                     <section key={index} className={styles.post_content}>
                                         <h2>{content.heading}</h2>  
                                         {content.body.map((body, index) => {
