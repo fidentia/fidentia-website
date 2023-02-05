@@ -610,8 +610,7 @@ export default function Home({ postsPagination }) {
                 ))}
               </div>
             </div>
-          </div>
-          <div className={styles.copyrightWrapper}>
+            <div className={styles.copyrightWrapper}>
             <div>
               <span className={styles.copyContent}>
                 Copyright @ 2023 Fidentia. Todos os direitos reservados.
@@ -635,6 +634,8 @@ export default function Home({ postsPagination }) {
               </div>
             </div>
           </div>
+          </div>
+          
         </footer>
       </main>
     </>
