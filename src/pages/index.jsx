@@ -501,7 +501,7 @@ export default function Home({ postsPagination }) {
             ref={sectionEight}
           >
             <div className={styles.title}>
-              <h3>Vamos bater um papo ?</h3>
+              <h3>Vamos bater um papo?</h3>
               <p>
                 Conte-nos mais sobre você e <br />
                 como nós podemos auxiliá-lo
