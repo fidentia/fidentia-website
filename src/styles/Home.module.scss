@@ -709,7 +709,7 @@
 }
 
 .footer {
-  height: 100vh;
+  min-height: 100vh;
   scroll-snap-align: center;
   padding: 143px 108px 0;
 
@@ -771,8 +771,7 @@
   .copyrightWrapper {
     width: 100%;
     border-top: 1px solid #00000040;
-    padding-top: 50px;
-    margin-top: 120px;
+    margin-bottom: 10rem;
 
     a, span {
       font-weight: 600;
@@ -1220,6 +1219,24 @@
         }
       }
     }
+  }
+  .section8{
+    .content{
+      .title{
+        margin-top: 5rem;
+        margin-left: 15px;
+        h3{
+          font-size: 2.5rem;
+        }
+        p{
+          font-size: 1.4rem;
+        }
+      }
+      .forms{
+        margin-bottom: 6rem;
+      }
+    }
+    
   }
 }
 
