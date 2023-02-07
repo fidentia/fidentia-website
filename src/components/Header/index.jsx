@@ -45,13 +45,13 @@ export default function Header(){
                 <Link href="/#solucoes">
                     <li>soluções</li>
                 </Link>
-                <Link href="/">
+                <Link href="/#contato">
                     <li>fale conosco</li>
                 </Link>
-                <Link href="/">
+                <Link href="/#cotacao">
                     <li>cote agora</li>
                 </Link>
-                <Link href="/">
+                <Link href="/fidentia">
                     <li>a fidentia</li>
                 </Link>
                 {activeMenu ? (

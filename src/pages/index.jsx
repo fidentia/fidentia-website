@@ -493,7 +493,7 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
-        <section className={styles.section8}>
+        <section className={styles.section8} id="contato">
           <div
             className={`${styles.content} ${
               sectionEightVisible && styles.fade

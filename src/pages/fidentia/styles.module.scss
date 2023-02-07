@@ -1,4 +1,6 @@
-
+.mt30{
+    margin-top: 30px;
+}
 .container{
     .title{
         display: flex;
@@ -31,9 +33,14 @@
             width: 80%;
             margin: auto;
         }
-        h3, p{
+        h3, p, li{
             color: var(--purple-800);
             font-size: 25px; 
+        }
+
+        li{
+            list-style: disc;
+            margin-left: 35px;
         }
 
         h3{
