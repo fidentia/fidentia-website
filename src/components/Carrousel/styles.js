@@ -4,7 +4,7 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     width: 448px;
-    height: 463px;
+    height: 423px;
     border: 0.5px solid rgba(22, 5, 68, 0.15);
     border-radius: 30px;
     padding: 2.2rem;
@@ -25,7 +25,7 @@ export const Card = styled.div`
 
       button{
         position: absolute;
-        bottom: 6rem;
+        bottom: 3rem;
         background: var(--purple-300);
         color: #FFFFFF;
         border-radius: 22.5644px;

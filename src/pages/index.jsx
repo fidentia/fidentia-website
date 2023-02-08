@@ -256,9 +256,10 @@ export default function Home({ postsPagination }) {
                 <div>
                   <h3>Seguros para</h3>
                   <p>Pesquisas Clínicas</p>
-                  <p>Profissionais de pesquisas clínicas</p>
-                  <p>Transportes de materiais para o estabelecimento</p>
+                  <p>Profissionais de saúde</p>
+                  <p>Transporte de insumos</p>
                   <p>Seguro de vida para pacientes</p>
+                  <p>Soluções customizadas</p>
                 </div>
                 <div className={styles.button}>
                   <button>Saiba mais</button>
@@ -268,7 +269,7 @@ export default function Home({ postsPagination }) {
               <div className={styles.card}>
                 <div>
                   <h3>Cursos</h3>
-                  <p>Seguros para pesquisas clínicas</p>
+                  <p>Seguro de pesquisas clínicas</p>
                   <p>Venda de seguros</p>
                   <p>Palestras</p>
                   <p>Cursos de curta duração</p>
@@ -282,10 +283,11 @@ export default function Home({ postsPagination }) {
               <div className={styles.card}>
                 <div>
                   <h3>Consultoria</h3>
-                  <p>Para corretores, seguradoras e brokers</p>
+                  <p>Corretores e brokers</p>
+                  <p>Seguradoras e resseguradoras</p>
                   <p>Análise e gestão de riscos</p>
-                  <p>Subscroção de riscos</p>
-                  <p>Suporte técnico e comercial completo</p>
+                  <p>Subscrição de riscos</p>
+                  <p>Suporte técnico e comercial</p>
                 </div>
                 <div className={styles.button}>
                   <button>Saiba mais</button>
@@ -327,13 +329,29 @@ export default function Home({ postsPagination }) {
                 >
                   {countFinish ? (
                     <>
+                      <CountUp end={650000000} duration={2.75} /> +
+                    </>
+                  ) : (
+                    0
+                  )}
+                </h2>
+                <p>De capital sob nossa gestão</p>
+              </div>
+              <div>
+                <h2
+                  className={`${
+                    sectionThreeVisible ? styles.count_animation : null
+                  }`}
+                >
+                  {countFinish ? (
+                    <>
                       <CountUp end={300000} duration={2.75} /> +
                     </>
                   ) : (
                     0
                   )}
                 </h2>
-                <p>Participantes cobertos</p>
+                <p>Pacientes cobertos</p>
               </div>
               <div>
                 <h2
@@ -350,22 +368,6 @@ export default function Home({ postsPagination }) {
                   )}
                 </h2>
                 <p>Pesquisas clínicas seguradas</p>
-              </div>
-              <div>
-                <h2
-                  className={`${
-                    sectionThreeVisible ? styles.count_animation : null
-                  }`}
-                >
-                  {countFinish ? (
-                    <>
-                      <CountUp end={300} duration={2.75} /> +
-                    </>
-                  ) : (
-                    0
-                  )}
-                </h2>
-                <p>Pesquisas seguradas ativas</p>
               </div>
               <div>
                 <h2

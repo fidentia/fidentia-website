@@ -5,15 +5,12 @@
     justify-content: space-between;
     box-sizing: border-box; 
     height: 2.3rem;
-    padding: 3rem 1rem;
+    padding: 3rem 5rem;
     align-self: center;
     position: relative;
     background: none;
     border: 0;
     z-index: 1;
-    .logo{
-        margin-left: 0.8rem;
-    }
     
 }
 
@@ -25,9 +22,47 @@
     gap: .5rem;   
     li{
         font-size: 1.2rem;
-        display: block;
         padding: .5rem;
         line-height: 1.4rem;
+        margin-bottom: 5px;
+        transition: all .2s;
+        display: flex;
+        margin-top: 5px;
+        gap: 5px;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .hoverActive{
+        color: var(--purple-300);
+    }
+
+    .hoverActive::after{
+        content: "";
+        width: 19px;
+        border-radius: 10px;
+        border: 1px solid var(--purple-300);
+    }
+
+    li::after{
+        content: "";
+        width: 19px;
+        border: 1px solid transparent;
+    }
+
+    li:hover{
+        color: var(--purple-300);
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    li:hover::after{
+        content: "";
+        width: 19px;
+        border: 1px solid var(--purple-300);
     }
 }
 

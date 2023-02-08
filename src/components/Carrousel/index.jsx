@@ -6,7 +6,7 @@ import Carousel, { consts } from 'react-elastic-carousel';
 
 
 export default function Carrousel(){
-    const [itemsPerPage, setItemsPerPage] = useState(2);
+    const [itemsPerPage, setItemsPerPage] = useState(3);
     useEffect(() => {
         const handleResize = () => {
           if (window.innerWidth < 820) {
@@ -28,9 +28,9 @@ export default function Carrousel(){
       const breakPoints = [
         {width: 500, itemsToShow: 1},
         {width: 500, itemsToShow: 2},
-        {width: 1200, itemsToShow: 2},
-        {width: 1500, itemsToShow: 2},
-        {width: 1800, itemsToShow: 2}
+        {width: 1200, itemsToShow: 3},
+        {width: 1500, itemsToShow: 3},
+        {width: 1800, itemsToShow: 3}
       ]
 
       const myArrow = ({ type, onClick, isEdge }) => {
@@ -46,6 +46,7 @@ export default function Carrousel(){
           itemsToShow={itemsPerPage} 
           breakPoints={breakPoints} 
           renderArrow={myArrow}
+          className={styles.container}
         >
                 <S.Card>
                     <h3>Investigador principal</h3>
@@ -78,5 +79,6 @@ export default function Carrousel(){
                     <button>Saiba mais</button>
                 </S.Card>
         </Carousel>
+        
     )
 }

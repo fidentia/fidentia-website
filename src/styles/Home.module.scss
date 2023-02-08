@@ -70,7 +70,7 @@
     }
     .downarrow {
       text-align: center;
-      margin-top: 10%;
+      margin-top: 8%;
 
       button {
         background: none;
@@ -103,7 +103,8 @@
     height: 100%;
   }
   .content {
-    width: 80%;
+    width: 100%;
+    padding-left: 5rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -136,11 +137,11 @@
       display: flex;
       justify-content: center;
       margin: 0 auto;
-      gap: 5rem;
+      gap: 10rem;
       .card {
         box-sizing: border-box;
         padding: 2rem;
-        width: 21.5rem;
+        width: 400px;
         height: 24rem;
         background-color: #ffffff;
         border: 2.10766px solid #ffffff;
@@ -245,13 +246,15 @@
       grid-template-columns: 1fr 1fr;
 
       h2 {
-        font-weight: 600;
+        font-weight: 500;
+        margin-bottom: 10px;
         font-size: 4.8rem;
         @media (max-width: 768px) {
           font-size: 3.5rem;
         }
       }
       p {
+        margin-bottom: 50px;
         font-size: 1.5rem;
         font-weight: 400;
       }
@@ -306,7 +309,9 @@
         color: var(--purple-800);
         &::after {
           content: "";
-          width: 9.8rem;
+          margin-left: 8px;
+          border-radius: 50px;
+          width: 8.8rem;
           background: #ba97ff;
           opacity: 0.7;
           position: absolute;
