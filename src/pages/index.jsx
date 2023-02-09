@@ -446,7 +446,7 @@ export default function Home({ postsPagination }) {
             <div className={styles.deposition}>
               <div className={styles.photo}>
                 <Image
-                  src={"/images/photo_profile.svg"}
+                  src={"/images/man.jpeg"}
                   width={168}
                   height={168}
                   alt="Foto de perfil Rafael Abad"
@@ -458,21 +458,7 @@ export default function Home({ postsPagination }) {
               </div>
               <article className={styles.text}>
                 <p>
-                  "Sou fã do trabalho da Fidentia, Felipe e equipe. Poderia
-                  citar o profissionalismo, qualidade de entrega, o quão correta
-                  é sua atuação, mas acho que essas características já estão
-                  muito claras e talvez constantes em outros depoimentos.
-                  Gostaria de salientar a importância da Fidentia e equipe não
-                  ficarem “somente” no mundo do seguro e, sim se preocuparem, e
-                  muito, em entender e estar do lado do cliente final,
-                  investindo anos e anos de seu tempo e expertise em desenvolver
-                  um mercado tão importante e nobre quanto o de Testes Clínicos,
-                  utilizando o seguro como meio de fomentar a indústria como um
-                  todo. Esse tipo de atuação e preocupação é um exemplo para
-                  minha atuação profissional e espero que também inspirem outros
-                  profissionais e empresas de nosso mercado. Falar sobre seguro,
-                  para o mercado de seguros é importante, mas de certa forma
-                  cômodo para nós. A grande beleza está em sair dessa bolha."
+              "Sou fã do trabalho da Fidentia, Felipe e equipe. Gostaria de salientar a importância da Fidentia e equipe não ficarem "somente" no mundo do seguro, e sim se preocuparem entender e estar ao lado do cliente final, investindo anos e anos de seu tempo e expertise em desenvolver um mercado tão importante e nobre quanto o de Testes Clinicos, utilizando o seguro como meio de fomentar a indústria como um todo. Esse tipo de atuação e preocupação é um exemplo para minha atuação profissional e espero que também inspirem outros profissionais e empresas de nosso mercado."
                 </p>
               </article>
             </div>
@@ -480,7 +466,7 @@ export default function Home({ postsPagination }) {
             <div className={styles.deposition}>
               <div className={styles.photo}>
                 <Image
-                  src={"/images/photo_profile2.svg"}
+                  src={"/images/woman.jpeg"}
                   width={168}
                   height={168}
                   alt="Foto de perfil Sofia Banuls Scatena"
@@ -493,14 +479,7 @@ export default function Home({ postsPagination }) {
               </div>
               <article className={styles.text}>
                 <p>
-                  "A Fidentia é uma empresa com grande reconhecimento no mercado
-                  de clinical trial e através do Diretor Felipe, a Sanyuu pôde
-                  ter o privilégio de galgar uma comparticipação. Isso
-                  possibilitou que pudéssemos ter mais conhecimento sobre as
-                  capacitações do Felipe e a responsabilidade e dedicação que
-                  ele tem junto a Fidentia/HDI para com os seus clientes e
-                  parceiros. Com isso, fica muito claro o quão sólido e valoroso
-                  é o trabalho feito por eles."
+                "A Fidentia é uma empresa com grande reconhecimento no mercado de clinical trial e através do Diretor Felipe, a Sanyuu pôde ter o privilégio de galgar uma comparticipação. Isso possibilitou que pudéssemos ter mais conhecimento sobre as capacitações do Felipe e a responsabilidade e dedicação que ele tem junto a Fidentia/HDI para com os seus clientes e parceiros. Com isso, fica muito claro o quão sólido e valoroso é o trabalho feito por eles."
                 </p>
               </article>
             </div>

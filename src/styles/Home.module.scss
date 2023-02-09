@@ -453,23 +453,22 @@
   scroll-snap-align: start;
   position: relative;
   .content {
-    padding: 2rem;
+    padding-left: 5rem;
     height: 100%;
-    margin: 0 auto;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     .title {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: center;
       width: 30rem;
       h2 {
         text-align: left;
         margin-bottom: 2rem;
         position: relative;
         z-index: 1;
-        font-size: 2.375rem;
+        font-size: 2.375rem !important;
         font-weight: 500;
         color: var(--purple-800);
         @media (min-width: 768px) {
@@ -478,7 +477,7 @@
       }
     }
     .deposition {
-      margin-left: 3rem;
+      margin-left: 10rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -486,25 +485,32 @@
 
       .photo {
         margin-bottom: 1rem;
+        img{
+          border-radius: 50%;
+        }
       }
 
       .info {
         h3 {
           font-size: 1.68rem;
           color: var(--purple-800);
-          font-weight: 400;
+          font-weight: 500;
         }
         p {
           font-size: 1.5rem;
           color: var(--coral-300);
           font-weight: 400;
+          font-family: Helvetica;
         }
       }
       .text {
         margin-top: 1.5rem;
         width: 21rem;
+        height: 300px;
         p {
+          font-family: Arial, Helvetica, sans-serif;
           font-size: 1.125rem;
+          font-weight: 300;
         }
       }
     }
@@ -730,15 +736,16 @@
     h2,
     p {
       color: var(--purple-800);
-      font-weight: 500;
+      
     }
 
     h2 {
       font-size: 3rem;
+      font-weight: 500;
     }
 
     p {
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       margin-bottom: 10px;
     }
 
@@ -780,7 +787,7 @@
     justify-content: space-between;
     border-top: 1px solid #00000040;
     padding-top: 30px;
-    margin: 30px 0 10rem ;
+    margin: 30px 0 ;
 
     a, span {
       font-weight: 600;
