@@ -20,72 +20,92 @@ export default function fidentia() {
       <div className={styles.subContainer}>
         <div id="email-mensagem">
           <p>
-            Somos a Fidentia, um agente de seguros dedicado à prática e ao
-            incentivo às pesquisas clínicas. Apoiamos a todos que as desenvolvem
-            ou contribuem, oferecendo uma extensa suíte de serviços em
-            consultoria com foco em gestão de riscos, seguros, resseguros,
-            subscrição, educação e pesquisa.
+          Somos a Fidentia, um agente de seguros dedicado à prática e ao incentivo às pesquisas clínicas. Apoiamos a todos que as desenvolvem ou contribuem, oferecendo uma extensa suíte de serviços em consultoria com foco em gestão de riscos, seguros, resseguros, subscrição, educação e pesquisa.
+          </p>
+
+          <p className={styles.mt30}>
+          Acreditamos que podemos cuidar de pessoas ao mesmo tempo em que lutamos para unir o mercado segurador aos demais setores da economia. Neste caminho, buscamos contribuir para um melhor ambiente socioeconômico em prol do bem-estar das pessoas e desenvolvimento da ciência, oferecendo aos nossos clientes e parceiros o que há de melhor e mais inovador em gestão de riscos com soluções únicas em seguros, perseguindo os mais elevados padrões de qualidade técnica, ética, transparência, clareza, honestidade e empatia.
+          </p>
+
+          <p className={styles.mt30}>
+          Atuando como um verdadeiro hub de novas oportunidades, almejamos a excelência e reconhecimento por oferecermos a melhor consultoria individualizada em seguros para aqueles que a buscam. 
+          </p>
+
+          <p className={styles.mt30}>Apoiamos você, sempre.</p>
+
+          <p className={styles.mt30}>Na Fidentia oferecemos uma suíte com serviços de:</p>
+
+        </div>
+
+        <div>
+          <h3>Consultoria</h3>
+          <p>
+          Consultoria é a alma de tudo que fazemos. Todos os nossos serviços foram concebidos de forma a prestar consultoria individualizada, garantindo aos nossos clientes e parceiros compreensão e gestão sobre seus riscos.
           </p>
         </div>
 
         <div>
-          <h3>Email and messages</h3>
+          <h3>Assessoria</h3>
           <p>
-            Our e-mails and messages are addressed only to the addressee and
-            contain information of a private, confidential, and secret nature.
-            We notify you in advance that any distribution, use or copy of our
-            e-mails or messages and the information contained therein by anyone
-            other than its correct recipient(s) is subject to the prior
-            authorization of the sender being the violator subject to applicable
-            sanctions under the terms of current legislation. If you have
-            received our e-mail or message by mistake, please notify the sender
-            immediately, delete the original message and all its contents from
-            your records, data systems and controls as well as any physical
-            copies.
+          Prestamos assessoria completa em gestão de riscos e seguros para o segurado, intermediadores de seguros e resseguros e cias seguradoras e resseguradoras, nacionais ou internacionais.
           </p>
         </div>
 
-        <div id="politica-privacidade">
-          <h3>Política de Privacidade e Cookies</h3>
-          <p>Idem seu site.</p>
+        <div>
+          <h3>Subscrição</h3>
+          <p>
+          Nossa especialidade. A subscrição de risco de pesquisas clínicas no Brasil e no mundo é a base técnica para todas as nossas soluções.
+          </p>
         </div>
 
-        <div id="etica-compliance">
-          <h3>Ética e Compliance</h3>
+        <div>
+          <h3>Resseguro</h3>
           <p>
-            Levamos a sério nossos compromissos para com a sociedade, indivíduos
-            e instituições com quem nos relacionamos. Respeito às crenças,
-            opiniões, ideais, ideologias, modo de pensar, orientação sexual,
-            características, etnia, gênero, religião, idade, nacionalidade ou
-            naturalidade formam os princípios básicos de nossas atividades e
-            pautam nossas ações cotidianas.
-          </p>
-          <p>
-            Nós observamos e seguimos as leis e regras aplicáveis não só às
-            nossas atividades em âmbito profissional e individual, mas também
-            àquelas aplicáveis aos indivíduos e instituições a quem servimos,
-            utilizando-os inclusive como material para prestação de serviço de
-            excelência como perseguimos.
-          </p>
-          <p>
-            Buscamos ser o elo entre o mercado segurador e demais setores da
-            sociedade. Com isso, perseguimos os mais elevados padrões de
-            qualidade técnica atuando com transparência, agilidade, ética,
-            diligência, retidão, profissionalismo, empatia, espírito
-            colaborativo e justiça.
-          </p>
-          <p>
-            Nós não toleramos condutas inapropriadas, imorais, antiéticas e
-            muito menos ilegais. Caso observemos ações que conflitem com nossos
-            valores, com a ética ou com a lei, nós tomaremos as medidas cabíveis
-            inclusive denunciando aos órgãos competentes. Igualmente,
-            encorajamos aos nossos clientes, parceiros bem como a todos os
-            indivíduos e instituições com quem nos relacionamos que, ao
-            presenciarem práticas antiéticas ou ilegais com algo ou alguém que
-            possa de alguma forma se relacionar com a Fidentia, nos comunique
-            utilizando os canais disponíveis de contato.
+          Oferecemos programas de resseguros, viabilizando a cobertura de seguro para qualquer tipo de pesquisa, em qualquer lugar do mundo.
           </p>
         </div>
+
+        <div>
+          <h3>Research</h3>
+          <p>
+          Realizamos continuamente pesquisas de mercado nos setores em que atuamos, fornecendo aos nossos clientes e parceiros dados confiáveis e precisos contribuindo em suas tomadas de decisão e atuação em seus setores.
+          </p>
+        </div>
+
+        <div>
+          <h3>Educação</h3>
+          <p>
+          Promovemos palestras, cursos, cursos in-company, estudos e artigos, além de gerarmos conteúdo oferecendo atualização contínua aos entusiastas de pesquisas clínicas.
+          </p>
+        </div>
+
+        <div>
+          <h3>Nossa missão</h3>
+          <p>
+          Cuidar de pessoas unindo o mercado segurador aos demais setores da economia, garantindo e apoiando o desenvolvimento socioeconômico através de soluções em seguros e perseguindo os mais elevados padrões de qualidade técnica, ética, transparência, clareza, honestidade, agilidade e empatia.
+          </p>
+        </div>
+
+        <div>
+          <h3>Nossa visão</h3>
+          <p>
+          Ser a melhor consultoria em seguros, veículo de conhecimento e hub de negócios para seus parceiros contribuindo continuamente para o desenvolvimento e o bem-estar da sociedade.
+          </p>
+        </div>
+
+        <div>
+          <h3>Nossa valores</h3>
+          <ul>
+            <li>Ética</li>
+            <li>Honestidade</li>
+            <li>Clareza</li>
+            <li>Transparência</li>
+            <li>Capacidade Técnica</li>
+            <li>Agilidade</li>
+            <li>Empatia</li>
+          </ul>
+        </div>
+
       </div>
     </section>
   );

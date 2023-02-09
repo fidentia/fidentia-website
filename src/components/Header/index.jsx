@@ -46,13 +46,14 @@ export default function Header(){
                 <Link href="/#solucoes">
                     <li onMouseEnter={() => setActiveHover(false) } onMouseLeave={() => setActiveHover(true) } >soluções</li>
                 </Link>
-                <Link href="/">
+                
+                <Link href="/#contato">
                     <li onMouseEnter={() => setActiveHover(false)} onMouseLeave={() => setActiveHover(true) }>fale conosco</li>
                 </Link>
-                <Link href="/">
+                <Link href="/#cotacao">
                     <li onMouseEnter={() => setActiveHover(false)} onMouseLeave={() => setActiveHover(true) }>cote agora</li>
                 </Link>
-                <Link href="/">
+                <Link href="/fidentia">
                     <li onMouseEnter={() => setActiveHover(false)} onMouseLeave={() => setActiveHover(true) }>a fidentia</li>
                 </Link>
                 {activeMenu ? (

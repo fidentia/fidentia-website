@@ -18,7 +18,7 @@ export default function insurance() {
         </button>
       </div>
       <div className={styles.subContainer}>
-        <div id="#email-mensagem">
+        <div id="investigador">
           <h3 className={styles.marginBottom}>Investigador Principal</h3>
           <p className={styles.marginBottom}>
             Você está na fronte do desenvolvimento científico e é responsável,
@@ -71,7 +71,7 @@ export default function insurance() {
           </p>
         </div>
 
-        <div id="#politica-privacidade">
+        <div id="centro">
           <h3 className={styles.marginBottom}>Centros de Pesquisa</h3>
           <p className={styles.marginBottom}>
             Você é o elo entre o paciente e seus médicos. O meio para viabilizar
@@ -122,7 +122,7 @@ export default function insurance() {
           </p>
         </div>
 
-        <div>
+        <div id="patrocinador">
           <h3 className={styles.marginBottom}>Patrocinador</h3>
           <p className={styles.marginBottom}>
             Você é quem viabiliza as pesquisas clínicas e garante a oferta dos
@@ -177,7 +177,7 @@ export default function insurance() {
           </p>
         </div>
 
-        <div>
+        <div id="orpc">
           <h3 className={styles.marginBottom}>ORPC</h3>
           <p className={styles.marginBottom}>
             Você é a ponte que permite o Brasil a acessar os tratamentos mais
@@ -224,7 +224,7 @@ export default function insurance() {
           </p>
         </div>
 
-        <div>
+        <div id="intermediadores">
           <h3 className={styles.marginBottom}>Intermediadores de Seguro</h3>
           <p className={styles.marginBottom}>
             O setor de pesquisas clínicas está em constante expansão e o
@@ -275,7 +275,7 @@ export default function insurance() {
           </p>
         </div>
 
-        <div>
+        <div id="cias">
           <h3 className={styles.marginBottom}>Cias Seguradoras & Resseguradoras</h3>
           <p className={styles.marginBottom}>
             A Fidentia é o maior player do setor do mercado segurador brasileiro
@@ -314,8 +314,8 @@ export default function insurance() {
 
           <p className={styles.marginBottom}>
             Não encontrou o que precisava? Desenhamos, também, soluções
-            personalizadas para anteder às suas necessidades, corretor. Fale
-            conosco e deixe-nos saber como podemos apoiá-lo melhor.
+            personalizadas para anteder às suas necessidades, corretor. <Link href="/#contato">Fale
+            conosco</Link> e deixe-nos saber como podemos apoiá-lo melhor.
           </p>
         </div>
       </div>
