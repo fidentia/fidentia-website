@@ -7,7 +7,7 @@ import Carousel, { consts } from 'react-elastic-carousel';
 
 
 export default function CarrouselArticles({posts, nextPage}){
-    const [itemsPerPage, setItemsPerPage] = useState(2);    
+    const [itemsPerPage, setItemsPerPage] = useState(3);    
     const [totalPosts, setTotalPosts] = useState();
   
     
@@ -16,7 +16,7 @@ export default function CarrouselArticles({posts, nextPage}){
           if (window.innerWidth < 820) {
             setItemsPerPage(1);
           }else{
-            setItemsPerPage(2);
+            setItemsPerPage(3);
           }
         };
     
@@ -59,6 +59,7 @@ export default function CarrouselArticles({posts, nextPage}){
           itemPadding={[10, 1]}  
           renderArrow={myArrow}
           showEmptySlots={false}
+          className={styles.container}
           onChange={(currentItem, pageIndex) =>
             nextPost(currentItem.index)
           }>

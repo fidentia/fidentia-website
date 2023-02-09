@@ -5,6 +5,7 @@ import styles from './header.module.scss';
 
 export default function Header(){
     const [activeMenu, setActiveMenu] = useState(false);
+    const [activeHover, setActiveHover] = useState(true);
     const handleToggle = () =>{
         setActiveMenu(!activeMenu);
     }
@@ -40,19 +41,20 @@ export default function Header(){
                     </div>
                 ) : null}
                 <Link href="/#home">
-                    <li>início</li>
+                    <li className={activeHover && styles.hoverActive} >início</li>
                 </Link>
                 <Link href="/#solucoes">
-                    <li>soluções</li>
+                    <li onMouseEnter={() => setActiveHover(false) } onMouseLeave={() => setActiveHover(true) } >soluções</li>
                 </Link>
+                
                 <Link href="/#contato">
-                    <li>fale conosco</li>
+                    <li onMouseEnter={() => setActiveHover(false)} onMouseLeave={() => setActiveHover(true) }>fale conosco</li>
                 </Link>
                 <Link href="/#cotacao">
-                    <li>cote agora</li>
+                    <li onMouseEnter={() => setActiveHover(false)} onMouseLeave={() => setActiveHover(true) }>cote agora</li>
                 </Link>
                 <Link href="/fidentia">
-                    <li>a fidentia</li>
+                    <li onMouseEnter={() => setActiveHover(false)} onMouseLeave={() => setActiveHover(true) }>a fidentia</li>
                 </Link>
                 {activeMenu ? (
                     <section className={styles.social_medias_logos}>
