@@ -7,7 +7,7 @@ export default function fidentia() {
       <h1 className={styles.title}>A fidentia</h1>
       <div className={styles.container_arrow_back}>
         <button>
-          <Link href="/#artigos">
+          <Link href="/">
             <img
               src={"/images/closeArrow.png"}
               alt="ícone para sair da seção de artigos"

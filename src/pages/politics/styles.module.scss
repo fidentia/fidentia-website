@@ -1,3 +1,6 @@
+.margin{
+    margin: 20px 0;
+}
 
 .container{
     .title{
@@ -27,7 +30,22 @@
         -webkit-filter:initial;
         filter: initial;
         
+        
         >div{
+            ol{
+                li{
+                    list-style: decimal;
+                }
+            }
+            li{
+                color: var(--purple-800);
+                margin-left: 20px;
+                font-size: 22px;
+                list-style: disc;
+                li{
+                    list-style: circle;
+                } 
+            }
             width: 80%;
             margin: auto;
         }
@@ -35,7 +53,12 @@
             color: var(--purple-800);
             font-size: 25px; 
         }
-
+        
+        h4{
+            font-weight: 600;
+            font-size: 22px;
+            color: var(--purple-800);
+        }
         h3{
             margin-top: 30px;
             font-weight: 600;

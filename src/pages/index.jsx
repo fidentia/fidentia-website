@@ -267,7 +267,7 @@ export default function Home({ postsPagination }) {
                   <p>Soluções customizadas</p>
                 </div>
                 <div className={styles.button}>
-                  <button>Saiba mais</button>
+                <Link href="/#cotacao"><button>Saiba mais</button></Link>
                 </div>
               </div>
 
@@ -281,7 +281,7 @@ export default function Home({ postsPagination }) {
                   <p>Cursos in-company</p>
                 </div>
                 <div className={styles.button}>
-                  <button>Saiba mais</button>
+                <Link href="/#cotacao"><button>Saiba mais</button></Link>
                 </div>
               </div>
 
@@ -295,7 +295,7 @@ export default function Home({ postsPagination }) {
                   <p>Suporte técnico e comercial</p>
                 </div>
                 <div className={styles.button}>
-                  <button>Saiba mais</button>
+                <Link href="/#cotacao"><button>Saiba mais</button></Link>
                 </div>
               </div>
             </div>
@@ -425,7 +425,7 @@ export default function Home({ postsPagination }) {
               <h2>Faça sua cotação online conosco</h2>
             </div>
             <div className={styles.button}>
-              <button>Cote agora</button>
+              <Link href="https://podio.com/webforms/28192878/2229964" target="_blank"><button>Cote agora</button></Link>
             </div>
           </div>
         </section>
@@ -581,7 +581,7 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
-        <footer className={styles.footer}>
+        <footer className={styles.footer} id="footer">
           <div
             className={`${styles.content} ${
               sectionFooterVisible && styles.fade
@@ -594,7 +594,7 @@ export default function Home({ postsPagination }) {
               <Link href="/#solucoes" onClick={() => scrollTo(section2)}>
                 Soluções
               </Link>
-              <Link href="/#fidentia" onClick={() => scrollTo(section6)}>
+              <Link href="/fidentia" onClick={() => scrollTo(section6)}>
                 A Fidentia
               </Link>
               <Link href="/#cotacao" onClick={() => scrollTo(section5)}>
@@ -619,6 +619,7 @@ export default function Home({ postsPagination }) {
               <h2>Redes sociais</h2>
               <div className={styles.border}></div>
               <div className={styles.iconsWrapper}>
+                <div className={styles.iconsWrapper}>
                 {iconsFooter.map((icon) => (
                   <button key={icon.src}>
                     <Link href={icon.link} target="_blank">
@@ -631,6 +632,18 @@ export default function Home({ postsPagination }) {
                     </Link>
                   </button>
                 ))}
+
+                </div>
+                <figure className={styles.logoMobile}>
+                <Link href="/#home" onClick={() => scrollTo(section1)}>
+                  <Image
+                    src="/images/logo.svg"
+                    width={45}
+                    height={45}
+                    alt="logo fidentia"
+                  />
+                </Link>
+              </figure>
               </div>
             </div>
             <div className={styles.copyrightWrapper}>
