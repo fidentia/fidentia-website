@@ -454,7 +454,7 @@ export default function Home({ postsPagination }) {
               </div>
               <div className={styles.info}>
                 <h3>Rafael Abad</h3>
-                <p>CFO at KNW Brokers</p>
+                <p>CFO na KNW Brokers</p>
               </div>
               <article className={styles.text}>
                 <p>
@@ -475,7 +475,7 @@ export default function Home({ postsPagination }) {
 
               <div className={styles.info}>
                 <h3>Sofia Banuls Scatena</h3>
-                <p>Diretora Comercial - C.C.O</p>
+                <p>CCO na Sanyuu</p>
               </div>
               <article className={styles.text}>
                 <p>
@@ -511,7 +511,7 @@ export default function Home({ postsPagination }) {
               <h3>Vamos bater um papo?</h3>
               <p>
                 Conte-nos mais sobre você e <br />
-                como nós podemos auxiliá-lo
+                como nós podemos auxiliá-lo.
               </p>
             </div>
             <div>

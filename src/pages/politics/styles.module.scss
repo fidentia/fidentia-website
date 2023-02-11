@@ -2,6 +2,24 @@
     margin: 20px 0;
 }
 
+.titlePrincipal{
+    font-size: 2.5rem !important;
+}
+.italicFont{
+    font-style: italic;
+}
+.flexrows{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    > div{
+        width: 45%;
+        min-width: 250px;
+        @media (max-width: 765px) {
+            width: 100%;
+          }
+    }
+}
 .container{
     .title{
         display: flex;

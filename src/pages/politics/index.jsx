@@ -18,45 +18,46 @@ export default function politics() {
         </button>
       </div>
       <div className={styles.subContainer}>
+        <div className={styles.flexrows}>
+          <div id="email-mensagem">
+            <h3 className={`${styles.margin} ${styles.titlePrincipal}`}>Email e mensagem</h3>
+            <p>
+              Nossos e-mails e mensagens são dirigidos apenas ao destinatário e
+              contém informações de caráter privado, confidencial e sigiloso.
+              Notificamos previamente que qualquer distribuição, uso ou cópia de
+              nossos e-mails ou mensagens e das informações neles contidas por
+              outrem que não seu(s) destinatário(s) correto(s) está sujeito à
+              prévia autorização do emissor estando o infrator sujeito às sanções
+              aplicáveis sob os termos da legislação vigente. Se recebeu nosso
+              e-mail ou mensagem por engano, por favor, notifique imediatamente o
+              remetente, elimine a mensagem original e todo seu conteúdo de seus
+              registros, sistemas de dados e controles bem como eventuais cópias
+              físicas.
+            </p>
+          </div>
 
-        <div id="email-mensagem">
-          <h3 className={styles.margin}>Email e mensagem</h3>
-          <p>
-            Nossos e-mails e mensagens são dirigidos apenas ao destinatário e
-            contém informações de caráter privado, confidencial e sigiloso.
-            Notificamos previamente que qualquer distribuição, uso ou cópia de
-            nossos e-mails ou mensagens e das informações neles contidas por
-            outrem que não seu(s) destinatário(s) correto(s) está sujeito à
-            prévia autorização do emissor estando o infrator sujeito às sanções
-            aplicáveis sob os termos da legislação vigente. Se recebeu nosso
-            e-mail ou mensagem por engano, por favor, notifique imediatamente o
-            remetente, elimine a mensagem original e todo seu conteúdo de seus
-            registros, sistemas de dados e controles bem como eventuais cópias
-            físicas.
-          </p>
-        </div>
-
-        <div>
-          <h3 className={styles.margin}>Email and messages</h3>
-          <p>
-            Our e-mails and messages are addressed only to the addressee and
-            contain information of a private, confidential, and secret nature.
-            We notify you in advance that any distribution, use or copy of our
-            e-mails or messages and the information contained therein by anyone
-            other than its correct recipient(s) is subject to the prior
-            authorization of the sender being the violator subject to applicable
-            sanctions under the terms of current legislation. If you have
-            received our e-mail or message by mistake, please notify the sender
-            immediately, delete the original message and all its contents from
-            your records, data systems and controls as well as any physical
-            copies.
-          </p>
+          <div className={styles.italicFont}>
+            <h3 className={`${styles.margin} ${styles.titlePrincipal}`}>Email and messages</h3>
+            <p>
+              Our e-mails and messages are addressed only to the addressee and
+              contain information of a private, confidential, and secret nature.
+              We notify you in advance that any distribution, use or copy of our
+              e-mails or messages and the information contained therein by anyone
+              other than its correct recipient(s) is subject to the prior
+              authorization of the sender being the violator subject to applicable
+              sanctions under the terms of current legislation. If you have
+              received our e-mail or message by mistake, please notify the sender
+              immediately, delete the original message and all its contents from
+              your records, data systems and controls as well as any physical
+              copies.
+            </p>
+          </div>
         </div>
 
         <div id="politica-privacidade">
-          <h4 className={styles.margin}>Política de Privacidade e Cookies</h4>
+          <h4 className={`${styles.margin} ${styles.titlePrincipal}`}>Política de Privacidade e Cookies</h4>
           <div>
-          <p className={styles.margin}>Fidentia corretora de seguros LTDA. (“Fidentia” ou nós) entendemos as preocupações sobre privacidade e trabalhamos duro para cumprir as leis de proteção de dados relevantes.</p>
+          <p className={styles.margin}>FIDENTIA CAPITAL CONSULTORIA E ASSESSORIA EM SEGUROS E RESSEGUROS LTDA. (“Fidentia” ou nós) entendemos as preocupações sobre privacidade e trabalhamos duro para cumprir as leis de proteção de dados relevantes.</p>
 
           <p className={styles.margin}>Este aviso de privacidade do site é fornecido para explicar:</p>
           <ul>
@@ -333,7 +334,7 @@ export default function politics() {
         </div>
 
         <div id="etica-compliance">
-          <h3>Ética e Compliance</h3>
+          <h3 className={styles.titlePrincipal}>Ética e Compliance</h3>
           <p className={styles.margin}>
             Levamos a sério nossos compromissos para com a sociedade, indivíduos
             e instituições com quem nos relacionamos. Respeito às crenças,

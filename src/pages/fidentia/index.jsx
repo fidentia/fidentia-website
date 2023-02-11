@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function fidentia() {
   return (
     <section className={styles.container}>
-      <h1 className={styles.title}>A fidentia</h1>
+      <h1 className={styles.title}>A Fidentia</h1>
       <div className={styles.container_arrow_back}>
         <button>
           <Link href="/">
