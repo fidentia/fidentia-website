@@ -18,16 +18,19 @@ import Head from "next/head";
 
 const iconsFooter = [
   {
+    name: "Instagran",
     src: "/images/instagranIcon.svg",
     alt: "instagran do ícone",
     link: "https://www.instagram.com/fidentiaseguros/",
   },
   {
+    name: "Facebook",
     src: "/images/facebookIcon.svg",
     alt: "facebook do ícone",
     link: "https://www.facebook.com/Fidentia-Insurance-Group-102406679286320",
   },
   {
+    name: "Linkedin",
     src: "/images/linkedinIcon.svg",
     alt: "linkedin do ícone",
     link: "https://www.linkedin.com/company/fidentiainsurance/",
@@ -226,7 +229,7 @@ export default function Home({ postsPagination }) {
             </div>
 
             <div className={styles.downarrow}>
-              <button onClick={() => scrollTo(section2)}></button>
+              <button id="downArrow" aria-label="downArrow"  aria-labelledby="downArrow" onClick={() => scrollTo(section2)}></button>
             </div>
           </div>
         </section>
@@ -581,12 +584,11 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
-        <footer className={styles.footer} id="footer">
+        <footer className={styles.footer} id="footer" ref={sectionFooter}>
           <div
             className={`${styles.content} ${
               sectionFooterVisible && styles.fade
             }`}
-            ref={sectionFooter}
           >
             <div>
               <h2>A Fidentia</h2>
@@ -621,7 +623,7 @@ export default function Home({ postsPagination }) {
               <div className={styles.iconsWrapper}>
                 <div className={styles.iconsWrapper}>
                 {iconsFooter.map((icon) => (
-                  <button key={icon.src}>
+                  <button aria-label={icon.name}  aria-labelledby={icon.name} key={icon.src}>
                     <Link href={icon.link} target="_blank">
                       <Image
                         src={icon.src}
