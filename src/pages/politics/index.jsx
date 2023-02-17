@@ -139,7 +139,7 @@ export default function politics() {
           <div>
             <h4 className={styles.margin}>COOKIES - SUAS ESCOLHAS</h4>
             <p>
-            Na medida exigida pela lei aplicável, obteremos seu consentimento antes de colocar cookies ou tecnologias semelhantes em seu computador. Você pode ajustar suas configurações de cookies a qualquer momento enviando um e-mail para felipe.pereira@fidentia.com.br. Além disso, você pode impedir que certos tipos de cookies sejam baixados em seu computador selecionando as configurações apropriadas em seu navegador da web. A maioria dos navegadores da web lhe dirá como parar de aceitar novos cookies do navegador, como ser notificado quando você receber um novo cookie do navegador e como desativar os cookies existentes. Você pode descobrir como fazer isso para seu navegador específico clicando em ajuda no menu do seu navegador ou visitando http://www.allaboutcookies.org.
+            Na medida exigida pela lei aplicável, obteremos seu consentimento antes de colocar cookies ou tecnologias semelhantes em seu computador. Você pode ajustar suas configurações de cookies a qualquer momento enviando um e-mail para contato@fidentia.com.br. Além disso, você pode impedir que certos tipos de cookies sejam baixados em seu computador selecionando as configurações apropriadas em seu navegador da web. A maioria dos navegadores da web lhe dirá como parar de aceitar novos cookies do navegador, como ser notificado quando você receber um novo cookie do navegador e como desativar os cookies existentes. Você pode descobrir como fazer isso para seu navegador específico clicando em ajuda no menu do seu navegador ou visitando http://www.allaboutcookies.org.
             </p>
 
             <p className={styles.margin}>O site não foi projetado para responder a sinais de “não rastrear” recebidos de navegadores ou nosso site pode não ser projetado para responder a sinais de “não rastrear” recebidos de navegadores. Observe que, sem cookies ou outras ferramentas automatizadas, talvez você não consiga usar todos os recursos do nosso site.</p>
@@ -269,7 +269,7 @@ export default function politics() {
             
             <div>
               <p>Por e-mail</p>
-              <p>felipe.pereira@fidentia.com.br</p>
+              <p>contato@fidentia.com.br</p>
             </div>
           </div>
 

@@ -15,7 +15,7 @@ export default async (req, res) => {
   try {
     await transporter.sendMail({
       from: "fidentiaseguros@gmail.com",
-      to: "felipe.pereira@fidentia.com.br",
+      to: "contato@fidentia.com.br",
       subject: `Nova conversa formulário fidentia: ${name}`,
       html: `<p><strong>Nome: </strong>${name}</p><br>
         <p><strong>Email: </strong> ${email}</p><br>
