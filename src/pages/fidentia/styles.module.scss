@@ -29,6 +29,15 @@
         -webkit-filter:initial;
         filter: initial;
         
+        figure{
+            width: 80%;
+            margin: auto;
+            margin-bottom: 50px;
+            
+            img{
+                width: 100%;
+            }
+        }
         >div{
             width: 80%;
             margin: auto;

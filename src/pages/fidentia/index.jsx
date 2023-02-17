@@ -20,7 +20,7 @@ export default function fidentia() {
       <div className={styles.subContainer}>
         <figure>
           <img
-          src={"/images/bannerFidentia.svg"}
+          src={"/images/bannerFidentia.png"}
           alt="ícone para sair da seção de artigos"
           loading="lazy"
           title="Voltar para página principal"/>
