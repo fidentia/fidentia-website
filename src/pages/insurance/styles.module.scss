@@ -15,8 +15,7 @@
     height: 100vh;
     overflow: hidden;
     padding-top: 20px;
-    background: #FCF8ED;
-    padding: 3rem;
+    background: var(--wh);
     .subContainer{
         width: 100%;
         height: 91%;
@@ -31,6 +30,16 @@
         -webkit-filter:initial;
         filter: initial;
         
+
+        .subTitle{
+            display: flex;
+            gap: 50px;
+            margin-bottom: 50px; 
+            h3{
+                font-size: 2.3rem; 
+            }
+
+        }
         >div{
             width: 80%;
             margin: auto;
@@ -41,8 +50,8 @@
         }
 
         h3{
-            margin-top: 30px;
             font-weight: 600;
+            margin-bottom: 30px;
         }
         /* Chrome, Edge, and Safari */
         &::-webkit-scrollbar {
@@ -124,6 +133,19 @@
     .title{
         padding: 3rem;
         font-size: 2.6rem;
+    }
+
+    .subTitle{
+        flex-direction: column;
+
+        h3{
+            font-size: 2rem !important;
+        }
+
+        figure img{
+            margin-top: 50px;
+            width:100%;
+        }
     }
 }
 
