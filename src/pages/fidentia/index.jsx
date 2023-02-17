@@ -18,6 +18,14 @@ export default function fidentia() {
         </button>
       </div>
       <div className={styles.subContainer}>
+        <figure>
+          <img
+          src={"/images/bannerFidentia.png"}
+          alt="ícone para sair da seção de artigos"
+          loading="lazy"
+          title="Voltar para página principal"/>
+        </figure>
+
         <div id="email-mensagem">
           <p>
           Somos a Fidentia, um agente de seguros dedicado à prática e ao incentivo às pesquisas clínicas. Apoiamos a todos que as desenvolvem ou contribuem, oferecendo uma extensa suíte de serviços em consultoria com foco em gestão de riscos, seguros, resseguros, subscrição, educação e pesquisa.

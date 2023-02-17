@@ -13,7 +13,7 @@
     height: 100vh;
     overflow: hidden;
     padding-top: 20px;
-    background: #FCF8ED;
+    background: var(--white);
     padding: 3rem;
     .subContainer{
         width: 100%;
@@ -29,6 +29,15 @@
         -webkit-filter:initial;
         filter: initial;
         
+        figure{
+            width: 80%;
+            margin: auto;
+            margin-bottom: 50px;
+            
+            img{
+                width: 100%;
+            }
+        }
         >div{
             width: 80%;
             margin: auto;
