@@ -1,14 +1,13 @@
-import Script from "next/script";
+
 
 export default function Analytics(){
     return(
         <>
-            <Script
-            strategy="afterInteractive"
+            <script
+            async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
             />
-            <Script
-            strategy="afterInteractive"
+            <script
             dangerouslySetInnerHTML={{
                 __html: `
                     window.dataLayer = window.dataLayer || [];
