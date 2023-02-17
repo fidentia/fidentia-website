@@ -65,7 +65,7 @@ export default function Carrousel(){
                 </S.Card>
                 <S.Card>
                     <h3>ORPC</h3>
-                      <p>Cubra as lacunas nos MSAs/CTAs, projeta-se contra falhas profissionais e amplie a oferta de serviços aos patrocinadores. Veja o que mais seu seguro pode fazer</p>
+                      <p>Cubra as lacunas nos MSAs/CTAs, proteja-se contra falhas profissionais e amplie a oferta de serviços aos patrocinadores. Veja o que mais seu seguro pode fazer</p>
                       <Link href="insurance/#orpc"><button>Saiba mais</button></Link>
                 </S.Card>
                 <S.Card>

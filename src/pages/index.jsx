@@ -266,11 +266,11 @@ export default function Home({ postsPagination }) {
                   <p>Pesquisas Clínicas</p>
                   <p>Profissionais de saúde</p>
                   <p>Transporte de insumos</p>
-                  <p>Seguro de vida para pacientes</p>
+                  <p>Seguro de vida para participantes</p>
                   <p>Soluções customizadas</p>
                 </div>
                 <div className={styles.button}>
-                <Link href="/#cotacao"><button>Saiba mais</button></Link>
+                <Link href="/#contato"><button>Saiba mais</button></Link>
                 </div>
               </div>
 
@@ -284,7 +284,7 @@ export default function Home({ postsPagination }) {
                   <p>Cursos in-company</p>
                 </div>
                 <div className={styles.button}>
-                <Link href="/#cotacao"><button>Saiba mais</button></Link>
+                <Link href="/#contato"><button>Saiba mais</button></Link>
                 </div>
               </div>
 
@@ -298,7 +298,7 @@ export default function Home({ postsPagination }) {
                   <p>Suporte técnico e comercial</p>
                 </div>
                 <div className={styles.button}>
-                <Link href="/#cotacao"><button>Saiba mais</button></Link>
+                <Link href="/#contato"><button>Saiba mais</button></Link>
                 </div>
               </div>
             </div>
@@ -343,7 +343,7 @@ export default function Home({ postsPagination }) {
                     0
                   )}
                 </h2>
-                <p>De capital sob nossa gestão</p>
+                <p>De capital segurado sob nossa gestão</p>
               </div>
               <div>
                 <h2
@@ -359,7 +359,7 @@ export default function Home({ postsPagination }) {
                     0
                   )}
                 </h2>
-                <p>Pacientes cobertos</p>
+                <p>Participantes cobertos</p>
               </div>
               <div>
                 <h2
@@ -514,7 +514,7 @@ export default function Home({ postsPagination }) {
               <h3>Vamos bater um papo?</h3>
               <p>
                 Conte-nos mais sobre você e <br />
-                como nós podemos auxiliá-lo.
+                como nós podemos ajudar.
               </p>
             </div>
             <div>
