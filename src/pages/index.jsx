@@ -13,6 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Carrousel from "../components/Carrousel";
 import CarrouselArticles from "../components/CarrouselArticles";
+import CarrouselDepoimentes from "../components/CarrouselDepoiments"
 import { useForm } from "react-hook-form";
 import Head from "next/head";
 
@@ -193,6 +194,7 @@ export default function Home({ postsPagination }) {
           property="og:title"
           content="Fidentia soluções completas em seguros para pesquisas clínicas."
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.fidentia.com.br/" />
         <meta
@@ -215,17 +217,24 @@ export default function Home({ postsPagination }) {
             alt="Imagem ilustrativa de fundo para primeira seção"
           />
           <div className={`${styles.content} ${styles.fade}`} ref={sectionOne}>
-            <div className={styles.title}>
-              <h2>
-                Apoiando você, <span>sempre</span>
-              </h2>
-            </div>
+            <div className={styles.contentWrapper}>
+              <div className={styles.title}>
+                <h2>
+                  Apoiando você, <span>sempre</span>
+                </h2>
+              </div>
 
-            <div className={styles.subtitle}>
-              <p>
-                Soluções <br />
-                completas em seguros para pesquisas clínicas
-              </p>
+              <div className={styles.subtitle}>
+                <p>
+                  Soluções completas em seguros para pesquisas clínicas
+                </p>
+                <p className={styles.subtitleSmall}>
+                  Tudo que você precisa dominar seguros para o setor de pesquisas clínicas.
+                </p>
+                <p className={styles.subtitleSmall}>
+                  Destaque-se em ambientes competitivos, blindar seu negócio e alavancar seu sucesso profissional.
+                </p>
+              </div>
             </div>
 
             <div className={styles.downarrow}>
@@ -445,47 +454,7 @@ export default function Home({ postsPagination }) {
 
               <h2>Leia os depoimentos de alguns de nossos parceiros</h2>
             </div>
-
-            <div className={styles.deposition}>
-              <div className={styles.photo}>
-                <Image
-                  src={"/images/man.jpeg"}
-                  width={168}
-                  height={168}
-                  alt="Foto de perfil Rafael Abad"
-                />
-              </div>
-              <div className={styles.info}>
-                <h3>Rafael Abad</h3>
-                <p>CFO na KNW Brokers</p>
-              </div>
-              <article className={styles.text}>
-                <p>
-              "Sou fã do trabalho da Fidentia, Felipe e equipe. Gostaria de salientar a importância da Fidentia e equipe não ficarem "somente" no mundo do seguro, e sim se preocuparem entender e estar ao lado do cliente final, investindo anos e anos de seu tempo e expertise em desenvolver um mercado tão importante e nobre quanto o de Testes Clinicos, utilizando o seguro como meio de fomentar a indústria como um todo. Esse tipo de atuação e preocupação é um exemplo para minha atuação profissional e espero que também inspirem outros profissionais e empresas de nosso mercado."
-                </p>
-              </article>
-            </div>
-
-            <div className={styles.deposition}>
-              <div className={styles.photo}>
-                <Image
-                  src={"/images/woman.jpeg"}
-                  width={168}
-                  height={168}
-                  alt="Foto de perfil Sofia Banuls Scatena"
-                />
-              </div>
-
-              <div className={styles.info}>
-                <h3>Sofia Banuls Scatena</h3>
-                <p>CCO na Sanyuu</p>
-              </div>
-              <article className={styles.text}>
-                <p>
-                "A Fidentia é uma empresa com grande reconhecimento no mercado de clinical trial e através do Diretor Felipe, a Sanyuu pôde ter o privilégio de galgar uma comparticipação. Isso possibilitou que pudéssemos ter mais conhecimento sobre as capacitações do Felipe e a responsabilidade e dedicação que ele tem junto a Fidentia/HDI para com os seus clientes e parceiros. Com isso, fica muito claro o quão sólido e valoroso é o trabalho feito por eles."
-                </p>
-              </article>
-            </div>
+            <CarrouselDepoimentes/>
           </div>
         </section>
 

@@ -46,10 +46,16 @@
     grid-template-columns: 1fr;
     align-items: center;
     margin-top: 10rem;
+
+    .contentWrapper{
+      display: flex;
+      justify-content: center;
+      margin-top: 80px;
+    }
     .title {
       position: relative;
       width: 35rem;
-      font-size: 3rem;
+      font-size: 2.5rem;
       h2 {
         color: var(--purple-800);
         span {
@@ -58,14 +64,20 @@
       }
     }
     .subtitle {
-      margin-top: 5rem;
+      margin-left: 1rem;
       position: relative;
       text-align: left;
       width: 20rem;
       p {
-        font-size: 1.7rem;
+        max-width: 300px;
+        font-size: 1.3rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
         font-weight: 500;
         color: var(--purple-800);
+      }
+      .subtitleSmall{
+        font-size: 1rem;
       }
     }
     .downarrow {
@@ -478,43 +490,6 @@
         }
       }
     }
-    .deposition {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-
-      .photo {
-        margin-bottom: 1rem;
-        img{
-          border-radius: 50%;
-        }
-      }
-
-      .info {
-        h3 {
-          font-size: 1.68rem;
-          color: var(--purple-800);
-          font-weight: 500;
-        }
-        p {
-          font-size: 1.5rem;
-          color: var(--coral-300);
-          font-weight: 400;
-          font-family: Helvetica;
-        }
-      }
-      .text {
-        margin-top: 1.5rem;
-        width: 21rem;
-        height: 300px;
-        p {
-          font-family: Arial, Helvetica, sans-serif;
-          font-size: 1.125rem;
-          font-weight: 300;
-        }
-      }
-    }
   }
   .downarrow {
     background: none;
@@ -727,8 +702,10 @@
 
 .footer {
   min-height: 100vh;
-  scroll-snap-align: center;
-  padding: 143px 108px 0;
+  
+  //border: 10px solid red;
+  scroll-snap-align: start;
+  padding: 103px 108px 100px;
   .logoMobile{
     display: none;
    
