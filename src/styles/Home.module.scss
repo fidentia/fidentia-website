@@ -32,10 +32,8 @@
 .section1 {
   min-height: 100vh;
   width: 100%;
-
   justify-content: center;
   align-items: center;
-  scroll-snap-align: center;
   position: relative;
 
   .content {
@@ -105,7 +103,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: start;
   position: relative;
   img {
     position: relative;
@@ -227,7 +224,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: center;
   position: relative;
 
   .content {
@@ -296,7 +292,6 @@
   justify-content: center;
   background: #ffffff;
   align-items: center;
-  scroll-snap-align: center;
   position: relative;
   .content {
     width: 100%;
@@ -406,7 +401,6 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: center;
   position: relative;
   .content {
     display: flex;
@@ -463,7 +457,6 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  scroll-snap-align: start;
   position: relative;
   .content {
     width: 100%;
@@ -514,7 +507,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: center;
   position: relative;
   background: #fcf8ed;
   .content {
@@ -603,7 +595,6 @@
   display: flex;
   padding: 5rem;
   align-items: center;
-  scroll-snap-align: start;
   position: relative;
   .content {
     display: grid;
@@ -704,7 +695,6 @@
   min-height: 100vh;
   
   //border: 10px solid red;
-  scroll-snap-align: start;
   padding: 103px 108px 100px;
   .logoMobile{
     display: none;
