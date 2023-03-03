@@ -74,12 +74,12 @@ const depoiments = [
 
 export default function CarrouselDepoiments() {
   const carouselRef = useRef(null);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [itemsPerPage, setItemsPerPage] = useState(2);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 820) {
         setItemsPerPage(1);
-      } else {
+      }else {
         setItemsPerPage(2);
       }
     };
@@ -134,28 +134,26 @@ export default function CarrouselDepoiments() {
       renderArrow={myArrow}
       className={styles.container}
       enableAutoPlay
-      autoPlaySpeed={2000}
+      autoPlaySpeed={5000}
       onNextEnd={({ index }) => {
         const totalPages = Math.ceil(depoiments.length / itemsPerPage);
         let resetTimeout;
 
         clearTimeout(resetTimeout);
         resetTimeout = setTimeout(() => {
-          if (index + 1 === totalPages) {
+          if (index === totalPages) {
             carouselRef.current.goTo(0);
           } else carouselRef.current.goTo(index + 1);
-          console.log(`index: ${index}, resetTimeout ${resetTimeout}`);
-        }, 2000);
-      }
-    }
+        }, 5000);
+      }}
     >
       {depoiments.map((depoiment) => (
         <div className={styles.deposition} key={depoiment.name}>
           <div className={styles.photo}>
             <Image
               src={depoiment.photo}
-              width={168}
-              height={168}
+              width={158}
+              height={158}
               alt={depoiment.alt}
             />
           </div>

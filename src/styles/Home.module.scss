@@ -463,8 +463,7 @@
     padding-left: 5rem;
     height: 100%;
     display: flex;
-    flex-wrap: wrap;
-    gap: 9%;
+
     .title {
       display: flex;
       flex-direction: column;
@@ -482,6 +481,11 @@
           font-size: 3rem;
         }
       }
+    }
+    
+    .carrouselWrapper {
+      width: 70%;
+      height: 400px;
     }
   }
   .downarrow {
@@ -1103,7 +1107,12 @@
 .section6{
   padding-bottom: 50px;
   .content {
-  padding: 0rem;
+    flex-wrap: wrap;
+    padding: 0rem;
+    .carrouselWrapper {
+      width: 98%;
+      height: 500px;
+    }
   .title {
     width: 85% !important;
     margin-left: 3rem !important;
@@ -1254,6 +1263,10 @@
     }
   }
   .section6 {
+    .carrouselWrapper {
+      width: 70%;
+      height: 400px;
+    }
     .content {
       padding: 0.1rem;
       .title {
