@@ -13,30 +13,10 @@ import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Carrousel from "../components/Carrousel";
 import CarrouselArticles from "../components/CarrouselArticles";
-import CarrouselDepoimentes from "../components/CarrouselDepoiments"
+import CarrouselDepoimentes from "../components/CarrouselDepoiments";
 import { useForm } from "react-hook-form";
 import Head from "next/head";
-
-const iconsFooter = [
-  {
-    name: "Instagran",
-    src: "/images/instagranIcon.svg",
-    alt: "instagran do ícone",
-    link: "https://www.instagram.com/fidentiaseguros/",
-  },
-  {
-    name: "Facebook",
-    src: "/images/facebookIcon.svg",
-    alt: "facebook do ícone",
-    link: "https://www.facebook.com/Fidentia-Insurance-Group-102406679286320",
-  },
-  {
-    name: "Linkedin",
-    src: "/images/linkedinIcon.svg",
-    alt: "linkedin do ícone",
-    link: "https://www.linkedin.com/company/fidentiainsurance/",
-  },
-];
+import { Footer } from "../components/Footer";
 
 const politics = [{ uid: "politica-de-privacidade", title: "A" }];
 
@@ -194,7 +174,7 @@ export default function Home({ postsPagination }) {
           property="og:title"
           content="Fidentia soluções completas em seguros para pesquisas clínicas."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.fidentia.com.br/" />
         <meta
@@ -225,20 +205,25 @@ export default function Home({ postsPagination }) {
               </div>
 
               <div className={styles.subtitle}>
-                <p>
-                  Soluções completas em seguros para pesquisas clínicas
+                <p>Soluções completas em seguros para pesquisas clínicas</p>
+                <p className={styles.subtitleSmall}>
+                  Tudo que você precisa dominar seguros para o setor de
+                  pesquisas clínicas.
                 </p>
                 <p className={styles.subtitleSmall}>
-                  Tudo que você precisa dominar seguros para o setor de pesquisas clínicas.
-                </p>
-                <p className={styles.subtitleSmall}>
-                  Destaque-se em ambientes competitivos, blindar seu negócio e alavancar seu sucesso profissional.
+                  Destaque-se em ambientes competitivos, blindar seu negócio e
+                  alavancar seu sucesso profissional.
                 </p>
               </div>
             </div>
 
             <div className={styles.downarrow}>
-              <button id="downArrow" aria-label="downArrow"  aria-labelledby="downArrow" onClick={() => scrollTo(section2)}></button>
+              <button
+                id="downArrow"
+                aria-label="downArrow"
+                aria-labelledby="downArrow"
+                onClick={() => scrollTo(section2)}
+              ></button>
             </div>
           </div>
         </section>
@@ -279,7 +264,9 @@ export default function Home({ postsPagination }) {
                   <p>Soluções customizadas</p>
                 </div>
                 <div className={styles.button}>
-                <Link href="/#contato"><button>Saiba mais</button></Link>
+                  <Link href="/#contato">
+                    <button>Saiba mais</button>
+                  </Link>
                 </div>
               </div>
 
@@ -293,7 +280,9 @@ export default function Home({ postsPagination }) {
                   <p>Cursos in-company</p>
                 </div>
                 <div className={styles.button}>
-                <Link href="/#contato"><button>Saiba mais</button></Link>
+                  <Link href="/#contato">
+                    <button>Saiba mais</button>
+                  </Link>
                 </div>
               </div>
 
@@ -307,7 +296,9 @@ export default function Home({ postsPagination }) {
                   <p>Suporte técnico e comercial</p>
                 </div>
                 <div className={styles.button}>
-                <Link href="/#contato"><button>Saiba mais</button></Link>
+                  <Link href="/#contato">
+                    <button>Saiba mais</button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -437,7 +428,12 @@ export default function Home({ postsPagination }) {
               <h2>Faça sua cotação online conosco</h2>
             </div>
             <div className={styles.button}>
-              <Link href="https://podio.com/webforms/28192878/2229964" target="_blank"><button>Cote agora</button></Link>
+              <Link
+                href="https://podio.com/webforms/28192878/2229964"
+                target="_blank"
+              >
+                <button>Cote agora</button>
+              </Link>
             </div>
           </div>
         </section>
@@ -455,7 +451,7 @@ export default function Home({ postsPagination }) {
               <h2>Leia os depoimentos de alguns de nossos parceiros</h2>
             </div>
             <div className={styles.carrouselWrapper}>
-              <CarrouselDepoimentes/>
+              <CarrouselDepoimentes />
             </div>
           </div>
         </section>
@@ -555,102 +551,7 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
-        <footer className={styles.footer} id="footer" ref={sectionFooter}>
-          <div
-            className={`${styles.content} ${
-              sectionFooterVisible && styles.fade
-            }`}
-          >
-            <div>
-              <h2>A Fidentia</h2>
-              <div className={styles.border}></div>
-              <Link href="/#solucoes" onClick={() => scrollTo(section2)}>
-                Soluções
-              </Link>
-              <Link href="/fidentia" onClick={() => scrollTo(section6)}>
-                A Fidentia
-              </Link>
-              <Link href="/#cotacao" onClick={() => scrollTo(section5)}>
-                Cote agora
-              </Link>
-              <Link href="#artigos" onClick={() => scrollTo(section7)}>
-                Artigos
-              </Link>
-            </div>
-
-            <div>
-              <h2>Contato</h2>
-              <div className={styles.border}></div>
-              <p>Rua Wanderley, 929</p>
-              <p>Perdizes, São Paulo/SP,</p>
-              <p>Brasil, 05011-011</p>
-              <p>+55 11 3164 4031</p>
-              <p>contato@fidentia.com.br</p>
-            </div>
-
-            <div>
-              <h2>Redes sociais</h2>
-              <div className={styles.border}></div>
-              <div className={styles.iconsWrapper}>
-                <div className={styles.iconsWrapper}>
-                {iconsFooter.map((icon) => (
-                  <button aria-label={icon.name}  aria-labelledby={icon.name} key={icon.src}>
-                    <Link href={icon.link} target="_blank">
-                      <Image
-                        src={icon.src}
-                        width={45}
-                        height={45}
-                        alt={icon.alt}
-                      />
-                    </Link>
-                  </button>
-                ))}
-
-                </div>
-                <figure className={styles.logoMobile}>
-                <Link href="/#home" onClick={() => scrollTo(section1)}>
-                  <Image
-                    src="/images/logo.svg"
-                    width={45}
-                    height={45}
-                    alt="logo fidentia"
-                  />
-                </Link>
-              </figure>
-              </div>
-            </div>
-            <div className={styles.copyrightWrapper}>
-              <div>
-                <span className={styles.copyContent}>
-                  Copyright @ 2023 Fidentia. Todos os direitos reservados.
-                </span>
-                <div className={styles.copyImageContent}>
-                  <div className={styles.copyContent}>
-                    <Link href={`politics/#email-mensagem`}>
-                      Política de privacidade
-                    </Link>
-                    <Link href={`politics/#politica-privacidade`}>
-                      Política de Cookies
-                    </Link>
-                    <Link href={`politics/#etica-compliance`}>
-                      Ética e Compliance
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <figure >
-                <Link href="/#home" onClick={() => scrollTo(section1)}>
-                  <Image
-                    src="/images/logo.svg"
-                    width={85}
-                    height={85}
-                    alt="logo fidentia"
-                  />
-                </Link>
-              </figure>
-            </div>
-          </div>
-        </footer>
+        <Footer pageRef={sectionFooter} visibleState={sectionFooterVisible} section2 section5 section6 section7 />
       </main>
     </>
   );

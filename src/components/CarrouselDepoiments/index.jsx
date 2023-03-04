@@ -3,32 +3,6 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Carousel, { consts } from "react-elastic-carousel";
 
-<div className={styles.deposition}>
-  <div className={styles.photo}>
-    <Image
-      src={"/images/woman.jpeg"}
-      width={168}
-      height={168}
-      alt="Foto de perfil Sofia Banuls Scatena"
-    />
-  </div>
-
-  <div className={styles.info}>
-    <h3>Sofia Banuls Scatena</h3>
-    <p>CCO na Sanyuu</p>
-  </div>
-  <article className={styles.text}>
-    <p>
-      "A Fidentia é uma empresa com grande reconhecimento no mercado de clinical
-      trial e através do Diretor Felipe, a Sanyuu pôde ter o privilégio de
-      galgar uma comparticipação. Isso possibilitou que pudéssemos ter mais
-      conhecimento sobre as capacitações do Felipe e a responsabilidade e
-      dedicação que ele tem junto a Fidentia/HDI para com os seus clientes e
-      parceiros. Com isso, fica muito claro o quão sólido e valoroso é o
-      trabalho feito por eles."
-    </p>
-  </article>
-</div>;
 const depoiments = [
   {
     name: "Rafael Abad",
