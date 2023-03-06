@@ -36,3 +36,35 @@ section {
     }
   }
 }
+
+@media (max-width: 1368px) {
+  .container {
+    .deposition {
+      .info{
+        h3{
+          font-size: 1.4rem !important; 
+        }
+        p {
+          max-width: 350px !important;
+          font-size: 1rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    .deposition {
+      .info{
+        h3{
+          font-size: 1.3rem !important; 
+        }
+        p {
+          max-width: 350px !important;
+          font-size: 0.9rem !important;
+        }
+      }
+    }
+  }
+}

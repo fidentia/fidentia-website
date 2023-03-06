@@ -71,8 +71,8 @@ export default function CarrouselText({arrayContent}) {
         clearTimeout(resetTimeout);
         resetTimeout = setTimeout(() => {
           if (index === totalPages) {
-            carouselRef.current.goTo(0);
-          } else carouselRef.current.goTo(index + 1);
+            carouselRef.current?.goTo(0);
+          } else carouselRef.current?.goTo(index + 1);
         }, 5000);
       }}
     >
