@@ -58,15 +58,15 @@ export default function fidentia() {
   return (
     <section>
       <section className={styles.section1}>
-        <Link href="/">
-          <figure>
+        <figure>
+          <Link href="/">
             <img
               style={{ width: `${screenMobile ? "30" : "50"}px` }}
               src="/images/logo.svg"
               alt="ir para a pagina inicial"
             />
-          </figure>
-        </Link>
+          </Link>
+        </figure>
         <div className={styles.contantWrapper}>
           <div>
             <h1>Somos a Fidentia.</h1>

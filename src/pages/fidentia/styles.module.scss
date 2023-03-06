@@ -177,6 +177,7 @@ section {
 
 @media (max-width: 450px) {
   .section1 {
+    background-image: url("/images/fidentia_section1_mobile.svg") !important;
     padding: 0 40px 0 10px !important;
 
     figure {
@@ -215,6 +216,7 @@ section {
   }
 
   .section3 {
+    background-image: url("/images/fidentia_section3_mobile.svg") !important;
     .contantWrapper {
       padding: 20px 40px 0 10px !important;
       ul {
