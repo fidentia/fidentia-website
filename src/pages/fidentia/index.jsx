@@ -48,7 +48,7 @@ const servicesList = [
 ];
 
 export default function fidentia() {
-  const [screenMobile, setScreenMobile] = useState(false);
+  const [mobileScreen, setMobileScreen] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth < 630) {
@@ -61,7 +61,7 @@ export default function fidentia() {
         <figure>
           <Link href="/">
             <img
-              style={{ width: `${screenMobile ? "30" : "50"}px` }}
+              style={{ width: `${mobileScreen ? "30" : "50"}px` }}
               src="/images/logo.svg"
               alt="ir para a pagina inicial"
             />
