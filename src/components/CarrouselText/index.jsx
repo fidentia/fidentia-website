@@ -4,7 +4,7 @@ import Carousel, { consts } from "react-elastic-carousel";
 
 export default function CarrouselText({arrayContent}) {
   const carouselRef = useRef(null);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [itemsPerPage, setItemsPerPage] = useState(2);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 820) {
@@ -23,13 +23,13 @@ export default function CarrouselText({arrayContent}) {
     };
   }, []);
 
-  const breakPoints = [
-    { width: 500, itemsToShow: 1 },
-    { width: 500, itemsToShow: 2 },
-    { width: 1200, itemsToShow: 3 },
-    { width: 1500, itemsToShow: 3 },
-    { width: 1800, itemsToShow: 3 },
-  ];
+  // const breakPoints = [
+  //   { width: 500, itemsToShow: 1 },
+  //   { width: 500, itemsToShow: 2 },
+  //   { width: 1200, itemsToShow: 3 },
+  //   { width: 1500, itemsToShow: 3 },
+  //   { width: 1800, itemsToShow: 3 },
+  // ];
 
   const myArrow = ({ type, onClick, isEdge }) => {
     const pointer =
@@ -59,9 +59,10 @@ export default function CarrouselText({arrayContent}) {
     <Carousel
       ref={carouselRef}
       itemsToShow={itemsPerPage}
-      breakPoints={breakPoints}
+      // breakPoints={breakPoints}
       showArrows={false}
       className={styles.container}
+      showEmptySlots={false}
       enableAutoPlay
       autoPlaySpeed={5000}
       onNextEnd={({ index }) => {
@@ -78,11 +79,16 @@ export default function CarrouselText({arrayContent}) {
     >
       {arrayContent.map((content) => (
         
-          <div className={styles.deposition} key={content.title}>
+          <div className={styles.deposition} key={content.name}>
+            <div className={styles.title}>
+              <h3>{content.title}</h3>
+            </div>
             <div className={styles.info}>
             <article className={styles.text}>
-              <h3>{content.title}</h3>
-              <p>{content.description}</p>
+              <p>{content.description1 ?? ""}</p>
+              <p>{content.description2 ?? ""}</p>
+              <p>{content.description3 ?? ""}</p>
+              <p>{content.description4 ?? ""}</p>
             </article>
             </div>
           </div>

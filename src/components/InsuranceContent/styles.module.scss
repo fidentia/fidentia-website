@@ -1,0 +1,42 @@
+.container{
+    margin-left: 120px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    figure{
+        img{
+            width: 32rem;
+            height: 45rem;
+        }
+    }
+}
+.content {
+    justify-content: center;
+    justify-items: center;
+    
+    
+    .title {
+       align-content: center;
+        justify-content: center;
+        align-self: center;
+        h2 {
+            color: var(--coral-300);
+            font-weight: 800;
+            line-height: 10px;
+            font-size: 2.6rem;
+            margin-bottom: 32px;
+        }
+        p{
+            color: var(--purple-800);
+            line-height: 26px;
+            font-weight: 500;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+    }
+    .subtitle{
+        justify-content: center;
+        margin: 35px auto;
+    }
+}
+
