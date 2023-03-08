@@ -296,7 +296,9 @@ export default function insurance() {
      {sections.map((section) => (
        <section className={styles.container} key={section.title}>
        <div className={styles.header}>
-         <h2>{mainTitle}</h2>
+          <div>
+            <h2>{mainTitle}</h2>
+          </div>
          <figure>
            <img src="/images/logo.svg" alt="ir para a pagina inicial" />
          </figure>

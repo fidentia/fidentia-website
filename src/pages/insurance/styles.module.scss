@@ -1,13 +1,12 @@
 .container{
     min-height: 100vh;
-    background-image: url("/images/s1_ins.svg");
-    background-size: 100% auto;
-    background-repeat: no-repeat;
+
 }
 
 .header{
+    margin-left: 20px;
     width: 100%;
-    padding: 6.6rem 4.9rem 0 8.2rem;
+    padding: 6rem 5.9rem 0 8.2rem;
     display: flex;
     justify-content: space-between;
     h2{

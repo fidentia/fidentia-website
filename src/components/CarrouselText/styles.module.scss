@@ -1,8 +1,9 @@
-section {
   .container {
-    min-height: 500px;
+    // background: red;
+    // min-width: 1200px !important;
+    // margin: 0 auto !important;
     .rec-item-wrapper{
-      
+      background: red;
       border: 1px solid red !important;
     }
 
@@ -44,4 +45,4 @@ section {
       }
     }
   }
-}
+
