@@ -1,15 +1,28 @@
 .container{
     min-height: 100vh;
-    // background-image: url("/images/s1_insurance.svg");
-    // background-position: center;
-    // background-size: 100% auto;
-    // background-repeat: no-repeat;
+    background-image: url("/images/s1_ins.svg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 
+.header{
+    width: 100%;
+    padding: 6.6rem 4.9rem 0 8.2rem;
+    display: flex;
+    justify-content: space-between;
+    h2{
+        font-size: 3.25rem;
+        font-weight: 700;
+        line-height: 63px;
+        color: var(--purple-800);
+    }
+    img{
+        width: 4.0rem;
+    }
+}
 .title_main{
     position: relative;
     margin-left: 82px;
-    margin-top: 56px;
     h2{
         font-size: 3.25rem;
         font-weight: 700;
@@ -19,7 +32,7 @@
     
 }
 
-.container_s1 {
+.container_content {
     position: relative;
     margin-top: 32px;
 }

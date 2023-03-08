@@ -23,14 +23,6 @@ export default function CarrouselText({arrayContent}) {
     };
   }, []);
 
-  // const breakPoints = [
-  //   { width: 500, itemsToShow: 1 },
-  //   { width: 500, itemsToShow: 2 },
-  //   { width: 1200, itemsToShow: 3 },
-  //   { width: 1500, itemsToShow: 3 },
-  //   { width: 1800, itemsToShow: 3 },
-  // ];
-
   const myArrow = ({ type, onClick, isEdge }) => {
     const pointer =
       type === consts.PREV ? (
@@ -59,7 +51,6 @@ export default function CarrouselText({arrayContent}) {
     <Carousel
       ref={carouselRef}
       itemsToShow={itemsPerPage}
-      // breakPoints={breakPoints}
       showArrows={false}
       className={styles.container}
       showEmptySlots={false}
@@ -72,8 +63,8 @@ export default function CarrouselText({arrayContent}) {
         clearTimeout(resetTimeout);
         resetTimeout = setTimeout(() => {
           if (index === totalPages) {
-            carouselRef.current.goTo(0);
-          } else carouselRef.current.goTo(index + 1);
+            carouselRef.current?.goTo(0);
+          } else carouselRef.current?.goTo(index + 1);
         }, 5000);
       }}
     >
