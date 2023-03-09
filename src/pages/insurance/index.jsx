@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
 import Link from "next/link";
 import InsuranceContent from "../../components/InsuranceContent";
+import Image from "next/image";
 
 const contentSection1 = {
   title: "Investigador principal",
@@ -292,7 +293,8 @@ const mainTitle = "Como nossas soluções apoiam você";
 
 export default function insurance() {
   return (
-    <section>
+    <section className={styles.main}>
+      {/* <Image src="/images/s1_insurance.png" fill={true} className={styles.background_image} /> */}
      {sections.map((section) => (
        <section className={styles.container} key={section.title}>
        <div className={styles.header}>

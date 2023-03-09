@@ -4,12 +4,16 @@ import { useState } from 'react';
 import CarrouselText from '../CarrouselText';
 
 export default function InsuranceContent({content}){
-    // console.log(content.title);
     return(
         <section className={styles.container}>
+            <figure>
+                <img src='/images/person_doctor.svg'></img>
+            </figure>
             <section className={styles.content}>
                 <article className={styles.title}>
-                    <h2>{content.title}</h2>
+                    <div className={styles.title_main}>
+                        <h2>{content.title}</h2>
+                    </div>
                     <div className={styles.content_title}>
                         {content.contents.map(content => <p>{content}</p>)}
                     </div>
