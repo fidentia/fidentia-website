@@ -6,6 +6,8 @@ import CarrouselText from '../CarrouselText';
 export default function InsuranceContent({content}){
     return(
         <section className={styles.container}>
+
+            
             <figure>
                 <img src='/images/person_doctor.svg'></img>
             </figure>

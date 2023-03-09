@@ -9,6 +9,7 @@ const contentSection1 = {
     "Você está na fronte do desenvolvimento científico e é responsável, dentre muitas outras atribuições, por todo o projeto, pela segurança e bem-estar dos participantes de suas pesquisas clínica.",
     "O seguro é um instrumento chave para garantir um atendimento adequado aos participantes, prevenir interrupções ou cancelamentos de projeto e blindar seu patrimônio pessoal.",
   ],
+  pathBackground: "/images/s1_insurance.png",
   contentCarousel: [
     {
       name: "card1",
@@ -80,6 +81,7 @@ const contentSection2 = {
     "Você está na fronte do desenvolvimento científico e é responsável, dentre muitas outras atribuições, por todo o projeto, pela segurança e bem-estar dos participantes de suas pesquisas clínica.",
     "O seguro é um instrumento chave para garantir um atendimento adequado aos participantes, prevenir interrupções ou cancelamentos de projeto e blindar seu patrimônio pessoal.",
   ],
+  pathBackground: "/images/s2_insurance.png",
   contentCarousel: [
     {
       name: "card1",
@@ -151,6 +153,7 @@ const contentSection3 = {
     "Você está na fronte do desenvolvimento científico e é responsável, dentre muitas outras atribuições, por todo o projeto, pela segurança e bem-estar dos participantes de suas pesquisas clínica.",
     "O seguro é um instrumento chave para garantir um atendimento adequado aos participantes, prevenir interrupções ou cancelamentos de projeto e blindar seu patrimônio pessoal.",
   ],
+  pathBackground: "/images/s3_insurance.png",
   contentCarousel: [
     {
       name: "card1",
@@ -222,6 +225,7 @@ const contentSection4 = {
     "Você está na fronte do desenvolvimento científico e é responsável, dentre muitas outras atribuições, por todo o projeto, pela segurança e bem-estar dos participantes de suas pesquisas clínica.",
     "O seguro é um instrumento chave para garantir um atendimento adequado aos participantes, prevenir interrupções ou cancelamentos de projeto e blindar seu patrimônio pessoal.",
   ],
+  pathBackground: "/images/s4_insurance.png",
   contentCarousel: [
     {
       name: "card1",
@@ -294,9 +298,9 @@ const mainTitle = "Como nossas soluções apoiam você";
 export default function insurance() {
   return (
     <section className={styles.main}>
-      {/* <Image src="/images/s1_insurance.png" fill={true} className={styles.background_image} /> */}
      {sections.map((section) => (
        <section className={styles.container} key={section.title}>
+         <Image src={section.pathBackground} fill={true} className={styles.background_image} />
        <div className={styles.header}>
           <div>
             <h2>{mainTitle}</h2>

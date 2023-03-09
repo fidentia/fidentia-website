@@ -1,17 +1,20 @@
 .main {
-    background: pink;
+   width: 100vw;
+   overflow: none;
 
 }
 
 .background_image{}
 
 .container{
-    width: 100%;
+    width: 100vw;
+    position: relative;
+    // background: red;
 
 }
 
 .header{
-    // background: red;
+    position: relative;
     margin-left: 20px;
     width: 100%;
     padding: 6rem 5.9rem 0 8.2rem;
@@ -42,4 +45,76 @@
 .container_content {
     position: relative;
     margin-top: 32px;
+}
+@media (max-width: 1100px) {
+    .container{
+        width: 120vw;
+    }
+}
+
+@media (max-width: 860px) {
+    .container{
+        width: 130vw;
+    }
+}
+
+@media (max-width: 795px) {
+    .container{
+        width: 140vw;
+    }
+}
+
+@media (max-width: 750px) {
+    .container{
+        width: 150vw;
+    }
+}
+
+
+@media (max-width: 660px) {
+    .container{
+        width: 155vw;
+    }
+}
+
+@media (max-width: 630px) {
+    .container{
+        width: 165vw;
+    }
+}
+
+@media (max-width: 597px) {
+    .container{
+        width: 170vw;
+    }
+}
+
+@media (max-width: 579px) {
+    .container{
+        width: 180vw;
+    }
+}
+
+@media (max-width: 543px) {
+    .container{
+        width: 185vw;
+    }
+}
+
+@media (max-width: 535px) {
+    .container{
+        width: 190vw;
+    }
+}
+
+@media (max-width: 513px) {
+    .container{
+        width: 195vw;
+    }
+}
+
+@media (max-width: 505px) {
+    .container{
+        width: 200vw;
+    }
 }
