@@ -7,7 +7,7 @@ export default function CarrouselText({arrayContent}) {
   const [itemsPerPage, setItemsPerPage] = useState(2);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 820) {
+      if (window.innerWidth < 1060) {
         setItemsPerPage(1);
       }else {
         setItemsPerPage(2);
@@ -69,7 +69,6 @@ export default function CarrouselText({arrayContent}) {
       }}
     >
       {arrayContent.map((content) => (
-        
           <div className={styles.deposition} key={content.name}>
             <div className={styles.title}>
               <h3>{content.title}</h3>

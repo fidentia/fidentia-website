@@ -1,10 +1,7 @@
   .container {
-    // background: red;
-    // min-width: 1200px !important;
-    // margin: 0 auto !important;
+ 
     .rec-item-wrapper{
-      background: red;
-      border: 1px solid red !important;
+      
     }
 
     .deposition {
@@ -14,6 +11,7 @@
       flex-direction: column;
       justify-content: flex-start;
       gap: 1px;
+      width: 70%;
 
       .title{
         h3{
@@ -28,6 +26,10 @@
           color: var(--purple-800);
           font-weight: 600;
         }
+      
+      }
+      .text {
+        margin-top: 1.3rem;
         p {
           max-width: 400px;
           font-size: 1.3rem;
@@ -35,14 +37,74 @@
           font-weight: 400;
         }
       }
-      .text {
-        margin-top: 1.3rem;
-        p {
-          margin-top: 25px;
-          font-size: 22px;
-          font-weight: 400;
+    }
+  }
+
+  @media (max-width: 1015px) {
+    .container{
+      .deposition {
+       .title{
+          h3{
+            font-size: 1.20rem;
+            color: var(--purple-800);
+          }
+        }
+        .info {
+  
+          cursor: grab;
+          h3 {
+            font-size: 1.7rem;
+            color: var(--purple-800);
+            font-weight: 600;
+          }
+        
+        }
+        .text {
+          width: 80%;
+          margin-top: 1.3rem;
+          p {
+            max-width: 400px;
+            font-size: 1.1rem;
+            color: var(--purple-800);
+            font-weight: 400;
+          }
         }
       }
     }
+    
+  }
+
+  @media (max-width: 965px) {
+    .container{
+      .deposition {
+       .title{
+        width: 70%;
+          h3{
+            font-size: 1.10rem;
+            color: var(--purple-800);
+          }
+        }
+        .info {
+          cursor: grab;
+          h3 {
+            font-size: 1.7rem;
+            color: var(--purple-800);
+            font-weight: 600;
+          }
+        
+        }
+        .text {
+          width: 80%;
+          margin-top: 1.3rem;
+          p {
+            max-width: 400px;
+            font-size: 1rem;
+            color: var(--purple-800);
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    
   }
 
