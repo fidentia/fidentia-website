@@ -291,29 +291,40 @@ const contentSection4 = {
     },
   ],
 };
-const sections = [contentSection1, contentSection2, contentSection3, contentSection4]
+const sections = [
+  contentSection1,
+  contentSection2,
+  contentSection3,
+  contentSection4,
+];
 
 const mainTitle = "Como nossas soluções apoiam você";
 
 export default function insurance() {
   return (
     <section className={styles.main}>
-     {sections.map((section) => (
-       <section className={styles.container} key={section.title}>
-         <Image src={section.pathBackground} fill={true} className={styles.background_image} />
-       <div className={styles.header}>
-          <div>
-            <h2>{mainTitle}</h2>
+      {sections.map((section) => (
+        <section className={styles.container} key={section.title}>
+          <Image
+            src={section.pathBackground}
+            fill={true}
+            className={styles.background_image}
+          />
+          <div className={styles.header}>
+            <div>
+              <h2>{mainTitle}</h2>
+            </div>
+            <Link href="/">
+              <figure>
+                <img src="/images/logo.svg" alt="ir para a pagina inicial" />
+              </figure>
+            </Link>
           </div>
-         <figure>
-           <img src="/images/logo.svg" alt="ir para a pagina inicial" />
-         </figure>
-       </div>
-       <section className={styles.container_content}>
-         <InsuranceContent content={section} />
-       </section>
-     </section>
-     ))}
+          <section className={styles.container_content}>
+            <InsuranceContent content={section} />
+          </section>
+        </section>
+      ))}
     </section>
   );
 }
