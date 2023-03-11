@@ -1,13 +1,11 @@
 .main {
-   width: 100vw;
-   
-
+   width: 100%;
 }
 
 .background_image{}
 
 .container{
-    width: 100vw;
+    width: 100%;
     position: relative; 
     overflow-x: hidden;
     @media (max-width: 1100px) {
@@ -21,7 +19,7 @@
 .header{
     position: relative;
     width: 100%;
-    padding: 6rem 5.9rem 0 8.2rem;
+    padding: 3rem 5.9rem 0 8.2rem;
     display: flex;
     gap: 25px;
     justify-content: space-between;
@@ -53,7 +51,7 @@
 }
 @media (max-width: 1100px) {
     .container{
-        width: 120vw;
+        width: 100%;
     }
 }
 
