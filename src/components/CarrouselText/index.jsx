@@ -75,6 +75,7 @@ export default function CarrouselText({arrayContent}) {
             </div>
             <div className={styles.info}>
             <article className={styles.text}>
+              <p>{content.description ?? ""}</p>
               <p>{content.description1 ?? ""}</p>
               <p>{content.description2 ?? ""}</p>
               <p>{content.description3 ?? ""}</p>

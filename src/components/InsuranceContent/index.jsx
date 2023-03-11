@@ -7,7 +7,7 @@ export default function InsuranceContent({content}){
     return(
         <section className={styles.container}>   
             <figure>
-                <img src='/images/person_doctor.svg'></img>
+                <img src={content.personImg}></img>
             </figure>
             <section className={styles.content}>
                 <article className={styles.title}>
