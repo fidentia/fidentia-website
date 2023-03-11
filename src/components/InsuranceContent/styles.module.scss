@@ -139,4 +139,42 @@
     }
 }
 
+@media (max-width: 465px) {
+    .container{
+        .title{
+            .title_main{
+               h2{
+                font-size: 1.8rem;
+               }
+            }
+        }
+    }
+}
+
+@media (max-width: 340px) {
+    .container{
+        .title{
+            .title_main{
+               h2{
+                font-size: 1.6rem;
+               }
+            }
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    .container{
+        .title{
+            .title_main{
+               h2{
+                line-height: 30px;
+                font-size: 1.6rem;
+               }
+            }
+        }
+    }
+}
+
+
 
