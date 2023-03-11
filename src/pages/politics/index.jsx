@@ -838,6 +838,45 @@ export default function politics() {
             utilizando os canais disponíveis de contato.
           </p>
         </div>
+        <div className={styles.marginBottom}>
+          <h3>Créditos de imagens</h3>
+          <p>
+            <a href="https://www.freepik.com/free-photo/stylish-young-handsome-man-white-shirt-black-jacket-with-tablet-smiling-achieve-success-great-work-expressing-true-positive-emotions-businessman-smart-worker_10208782.htm#query=homem moreno com tablet&position=8&from_view=search&track=popular">
+              Image by lookstudio
+            </a>
+            on Freepik
+          </p>
+          <p>
+            <a href="https://www.freepik.com/free-photo/smiling-confident-businesswoman-posing-with-arms-folded_5546285.htm#&position=3&from_view=undefined">
+              Image by katemangostar
+            </a>
+            on Freepik
+          </p>
+          <p>
+            Image by
+            <a href="https://www.freepik.com/free-photo/front-view-female-scientist-with-test-tube-copy-space_11705976.htm#&position=11&from_view=undefined">
+              Freepik
+            </a>
+          </p>
+          <p>
+            <a href="https://www.freepik.com/free-photo/young-tender-curly-girl-holding-documents_7514317.htm#&position=15&from_view=undefined">
+              Image by cookie_studio
+            </a>
+            on Freepik
+          </p>
+          <p>
+            <a href="https://www.freepik.com/free-photo/smiling-man-white-shirt-typing-text-message-scrolling-feed-social-network-using-smartphone-gray_6514175.htm#&position=17&from_view=undefined">
+              Image by drobotdean
+            </a>
+            on Freepik
+          </p>
+          <p>
+            Image by
+            <a href="https://www.freepik.com/free-photo/close-up-doctor-getting-ready-work_19867877.htm#&position=23&from_view=undefined">
+              Freepik
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );
