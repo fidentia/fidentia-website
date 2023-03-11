@@ -1,7 +1,7 @@
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 import Image from "next/image";
-import { useState } from 'react';
-import CarrouselText from '../CarrouselText';
+import { useState, useRef } from "react";
+import CarrouselText from "../CarrouselText";
 
 export default function InsuranceContent({content}){
     return(
@@ -20,6 +20,16 @@ export default function InsuranceContent({content}){
                 </article>
                 <div className={styles.subtitle}>
                     <CarrouselText arrayContent={content.contentCarousel}/>
+                </div>
+                <div className={styles.buttons}>
+                    <button className={styles.button}>Saiba mais</button>
+                    <div className={styles.downarrow}>
+                    <button
+                    id="downArrow"
+                    aria-label="downArrow"
+                    aria-labelledby="downArrow"
+                    ></button>
+                </div>
                 </div>
             </section>
         </section>
