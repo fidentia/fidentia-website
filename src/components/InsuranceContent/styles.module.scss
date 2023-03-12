@@ -5,28 +5,24 @@
   position: relative;
   margin-top: 10px;
   figure {
-    border: 1px solid green;
-    width: 45rem;
-    height: 65rem;
+    display: flex;
+    margin-top: auto;
+    justify-content: center;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    
     img {
-        width: 100%;
-        height: 100%;
+        width: 33rem;
+        height: 42rem;
+        border: none;
         object-fit: cover
     }
   }
 }
 .content {
-    position: relative;
-    max-width: 1200px;
-    min-height: 100vh;
-    justify-content: end;
     .title {
         margin-bottom: 20px;
         align-items: center;
-        justify-content: center;
         .title_main{
             max-width: 740px;
             h2 {
@@ -166,6 +162,19 @@
                width: 70%;
                h2{
                 text-align: left;
+               }
+            }
+        }
+    }
+}
+
+@media (max-width: 510px) {
+    .container{
+        .title{
+            .title_main{
+            //    background: red;
+               h2{
+                font-size: 1.6rem;
                }
             }
         }

@@ -82,9 +82,19 @@
     }
 }
 
-@media (max-width: 510px) {
+@media (max-width: 554px) {
     .header{
         padding: 6rem 5.9rem 0 6rem;
+        h2{
+            font-size: 2rem;
+            line-height: 40px;
+        }
+    }
+}
+
+@media (max-width: 510px) {
+    .header{
+        padding: 6rem 5.9rem 0 5.5rem;
         h2{
             font-size: 1.6rem;
             line-height: 30px;
@@ -94,13 +104,10 @@
 
 @media (max-width: 465px) {
     .header{
-        padding: 6rem 5.9rem 0 6rem;
-        h2{
-
-        }
+        padding: 6rem 5.9rem 0 5.1rem;
         figure{
             img{
-                width: 40px;
+                width: 35px;
             }
         }
         
@@ -109,11 +116,8 @@
 
 @media (max-width: 420px) {
     .header{
-        // background: red;
-        padding: 6rem 5.9rem 0 5.7rem;
-        h2{
 
-        }
+        padding: 6rem 5.9rem 0 5.7rem;
         
     }
 }
@@ -132,7 +136,7 @@
 
 @media (max-width: 340px) {
     .header{
-        padding: 6rem 5.9rem 0 4rem;
+        padding: 6rem 5.9rem 0 3.7rem;
         figure{
             img{
                 width: 36px;

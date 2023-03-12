@@ -12,14 +12,17 @@
       justify-content: flex-start;
       gap: 1px;
       width: 70%;
-
       .title{
+        width: 100%;
+
         h3{
           font-size: 1.37rem;
           color: var(--purple-800);
         }
       }
       .info {
+        // background: red;
+        align-items: center;
         cursor: grab;
         h3 {
           font-size: 1.7rem;
