@@ -44,11 +44,12 @@
     grid-template-columns: 1fr;
     align-items: center;
     margin-top: 10rem;
-
+    
     .contentWrapper{
       display: flex;
+      flex-direction: row;
+      align-items: center;
       justify-content: center;
-      margin-top: 80px;
     }
     .title {
       position: relative;
@@ -866,6 +867,21 @@
     .content {
       gap: 5rem;
       grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 940px) {
+  .section1{
+    .content{
+      .contentWrapper{
+        flex-direction: column;
+        .subtitle{
+          margin-left: 0;
+          margin-top: 20px;
+          margin-right: auto;
+        }
+      }
     }
   }
 }
