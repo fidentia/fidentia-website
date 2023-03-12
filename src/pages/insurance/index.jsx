@@ -418,9 +418,11 @@ export default function insurance() {
           <Image
             src={section.pathBackground}
             fill={true}
+            priority={true}
+            alt="Imagem de fundo para ilustração"
             className={styles.background_image}
           />
-          <div className={styles.header}>
+          <div className={styles.header} key={section.title}>
             <div>
               <h2>{mainTitle}</h2>
             </div>

@@ -119,6 +119,7 @@ export default function Home({ postsPagination }) {
           console.log(data);
           const formattedData = data.results.map((post) => {
             return {
+              key: post.uid,
               uid: post.uid,
               first_publication_date: format(
                 new Date(post.first_publication_date),
@@ -573,6 +574,7 @@ export async function getStaticProps() {
 
   const posts = postsResponse.results.map((post) => {
     return {
+      key: post.uid,
       uid: post.uid,
       first_publication_date: format(
         new Date(post.first_publication_date),

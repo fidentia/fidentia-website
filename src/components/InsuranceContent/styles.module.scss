@@ -153,6 +153,14 @@
 @media (max-width: 795px) {
     .container{
         flex-direction: column-reverse;
+        figure {
+            img {
+                width: 33rem;
+                height: 42rem;
+                border: none;
+                object-fit: cover
+            }
+        }
         .title{
             display: flex;
             flex-direction: column;
@@ -172,10 +180,19 @@
     .container{
         .title{
             .title_main{
-            //    background: red;
                h2{
                 font-size: 1.6rem;
                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        figure {
+            img {
+                height: 35rem;
             }
         }
     }
@@ -188,6 +205,17 @@
                h2{
                 font-size: 1.8rem;
                }
+            }
+        }
+    }
+}
+
+@media (max-width: 380px) {
+    .container{
+        figure{
+            img{
+                width: 25;
+                height: 28rem;
             }
         }
     }
