@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef } from "react";
 import CarrouselText from "../CarrouselText";
 
@@ -22,7 +23,9 @@ export default function InsuranceContent({content}){
                     <CarrouselText arrayContent={content.contentCarousel}/>
                 </div>
                 <div className={styles.buttons}>
+                <Link href="/#contato">
                     <button className={styles.button}>Saiba mais</button>
+                </Link>
                     <div className={styles.downarrow}>
                     <button
                     id="downArrow"
