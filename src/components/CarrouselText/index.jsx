@@ -41,7 +41,7 @@ export default function CarrouselText({ arrayContent, border = false, numberCard
       className={styles.container}
       showEmptySlots={false}
       enableAutoPlay
-      autoPlaySpeed={5000}
+      autoPlaySpeed={10000}
     >
       {arrayContent.map((content) => (
         <div className={`${border && styles.border} ${styles.deposition}`} key={content.name}>

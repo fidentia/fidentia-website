@@ -38,7 +38,6 @@ section {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
 
         > div {
           max-width: 600px;
@@ -171,6 +170,15 @@ section {
         text-align: justify;
         font-size: 2.4rem !important;
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .contantWrapper{
+    > div {
+      width: 80%;
+      flex-wrap: wrap; 
     }
   }
 }
