@@ -66,7 +66,6 @@ export default function CarrouselArticles({posts, nextPage}){
 
           {posts.map((post =>{
             return(
-
                 <S.Card key={post.uid}>
                   <S.ImageBanner src={post.data?.banner?.url ?? ""} loading="lazy" alt={post.uid} />
                   <h3>{post.data.title}</h3>
