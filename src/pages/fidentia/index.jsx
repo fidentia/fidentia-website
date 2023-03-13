@@ -43,7 +43,7 @@ const servicesList = [
   {
     title: "Nossa visão",
     description:
-      "Ser a melhor consultoria em seguros, veículo de conhecimento e hub de negócios para seus parceiros contribuindo continuamente para o desenvolvimento e o bem-estar da sociedade.",
+      "Ser a melhor consultoria em seguros, veículo de conhecimento e hub de negócios para seus parceiros contribuindo continuamente para o desenvolvimento e o bem-estar da sociedade. ",
   },
 ];
 
