@@ -52,7 +52,7 @@ export default function fidentia() {
 
   useEffect(() => {
     if (window.innerWidth < 630) {
-      setScreenMobile(true);
+      setMobileScreen(true);
     }
   }, []);
   return (
