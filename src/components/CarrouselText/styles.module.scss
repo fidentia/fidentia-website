@@ -3,7 +3,10 @@
     .rec-item-wrapper{
       
     }
-
+    .button_pagination{
+      background-color: transparent;
+      border: 0;
+    }
     .deposition {
       justify-content: center;
       justify-items: center;
@@ -38,6 +41,10 @@
           font-weight: 400;
         }
       }
+    }
+    .arrowIcon{
+      width: 1.4rem;
+      height: 1.4rem;
     }
   }
 
