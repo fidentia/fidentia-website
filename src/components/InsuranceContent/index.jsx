@@ -4,7 +4,7 @@ import CarrouselText from "../CarrouselText";
 
 export default function InsuranceContent({ content }) {
   return (
-    <section className={styles.container} key={content.title}>
+    <section className={styles.container}>
       <figure>
         <img src={content.personImg}></img>
       </figure>
@@ -15,7 +15,7 @@ export default function InsuranceContent({ content }) {
           </div>
           <div className={styles.content_title}>
             {content.contents.map((content) => (
-              <p key={content.title_main}>{content}</p>
+              <p>{content}</p>
             ))}
           </div>
         </article>

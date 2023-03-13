@@ -44,7 +44,7 @@ export default function CarrouselText({ arrayContent, border = false }) {
       autoPlaySpeed={5000}
     >
       {arrayContent.map((content) => (
-        <div className={`${border && styles.border} ${styles.deposition}`} key={content.title}>
+        <div className={`${border && styles.border} ${styles.deposition}`} key={content.name}>
           <div className={styles.title}>
             <h3>{content.title}</h3>
           </div>
