@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 import { useEffect, useRef, useState } from "react";
 import Carousel, { consts } from "react-elastic-carousel";
 
-export default function CarrouselText({ arrayContent }) {
+export default function CarrouselText({ arrayContent, border = false }) {
   const carouselRef = useRef(null);
   const [itemsPerPage, setItemsPerPage] = useState(2);
 
@@ -44,7 +44,7 @@ export default function CarrouselText({ arrayContent }) {
       autoPlaySpeed={5000}
     >
       {arrayContent.map((content) => (
-        <div className={styles.deposition} key={content.name}>
+        <div className={`${border && styles.border} ${styles.deposition}`} key={content.name}>
           <div className={styles.title}>
             <h3>{content.title}</h3>
           </div>

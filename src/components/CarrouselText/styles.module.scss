@@ -1,13 +1,15 @@
   .container {
- 
-    .rec-item-wrapper{
-      
-    }
     .button_pagination{
       background-color: transparent;
       border: 0;
     }
+    .border{
+      border: 0.4px solid rgba(22, 5, 69, 0.15);
+      border-radius: 24px;
+      padding: 20px;
+    }
     .deposition {
+      height: 300px;
       justify-content: center;
       justify-items: center;
       display: flex;
