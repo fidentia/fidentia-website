@@ -88,7 +88,7 @@ export default function fidentia() {
       <section className={styles.section2}>
         <div className={styles.contantWrapper}>
           <h2>Na Fidentia oferecemos uma suíte com serviços de:</h2>
-          <CarrouselText arrayContent={servicesList} border/>
+          <CarrouselText arrayContent={servicesList} border numberCards={3}/>
         </div>
       </section>
 

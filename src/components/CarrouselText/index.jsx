@@ -2,16 +2,16 @@ import styles from "./styles.module.scss";
 import { useEffect, useRef, useState } from "react";
 import Carousel, { consts } from "react-elastic-carousel";
 
-export default function CarrouselText({ arrayContent, border = false }) {
+export default function CarrouselText({ arrayContent, border = false, numberCards = 2}) {
   const carouselRef = useRef(null);
-  const [itemsPerPage, setItemsPerPage] = useState(2);
+  const [itemsPerPage, setItemsPerPage] = useState(numberCards);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1060) {
         setItemsPerPage(1);
       } else {
-        setItemsPerPage(2);
+        setItemsPerPage(numberCards);
       }
     };
 
