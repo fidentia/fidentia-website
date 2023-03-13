@@ -1,108 +1,100 @@
 import styles from "./styles.module.scss";
 import Link from "next/link";
+import CarrouselText from "../../components/CarrouselText";
+import { Footer } from "../../components/Footer";
+import { useEffect, useState } from "react";
+
+const servicesList = [
+  {
+    title: "Consultoria",
+    description:
+      "Consultoria é a alma de tudo que fazemos. Todos os nossos serviços foram concebidos de forma a prestar consultoria individualizada, garantindo aos nossos clientes e parceiros compreensão e gestão sobre seus riscos.",
+  },
+  {
+    title: "Assessoria",
+    description:
+      "Prestamos assessoria completa em gestão de riscos e seguros para o segurado, intermediadores de seguros e resseguros e cias seguradoras e resseguradoras, nacionais ou internacionais.",
+  },
+  {
+    title: "Subscrição",
+    description:
+      "Nossa especialidade. A subscrição de risco de pesquisas clínicas no Brasil e no mundo é a base técnica para todas as nossas soluções.",
+  },
+  {
+    title: "Resseguro",
+    description:
+      "Oferecemos programas de resseguros, viabilizando a cobertura de seguro para qualquer tipo de pesquisa, em qualquer lugar do mundo.",
+  },
+  {
+    title: "Research",
+    description:
+      "Realizamos continuamente pesquisas de mercado nos setores em que atuamos, fornecendo aos nossos clientes e parceiros dados confiáveis e precisos contribuindo em suas tomadas de decisão e atuação em seus setores.",
+  },
+  {
+    title: "Educação",
+    description:
+      "Promovemos palestras, cursos, cursos in-company, estudos e artigos, além de gerarmos conteúdo oferecendo atualização contínua aos entusiastas de pesquisas clínicas.",
+  },
+  {
+    title: "Nossa missão",
+    description:
+      "Cuidar de pessoas unindo o mercado segurador aos demais setores da economia, garantindo e apoiando o desenvolvimento socioeconômico através de soluções em seguros e perseguindo os mais elevados padrões de qualidade técnica, ética, transparência, clareza, honestidade, agilidade e empatia.",
+  },
+  {
+    title: "Nossa visão",
+    description:
+      "Ser a melhor consultoria em seguros, veículo de conhecimento e hub de negócios para seus parceiros contribuindo continuamente para o desenvolvimento e o bem-estar da sociedade.",
+  },
+];
 
 export default function fidentia() {
+  const [mobileScreen, setMobileScreen] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 630) {
+      setMobileScreen(true);
+    }
+  }, []);
   return (
-    <section className={styles.container}>
-      <h1 className={styles.title}>A Fidentia</h1>
-      <div className={styles.container_arrow_back}>
-        <button>
-          <Link href="/">
-            <img
-              src={"/images/closeArrow.png"}
-              alt="ícone para sair da seção de artigos"
-              loading="lazy"
-              title="Voltar para página principal"
-            />
-          </Link>
-        </button>
-      </div>
-      <div className={styles.subContainer}>
-        <figure>
-          <img
-          src={"/images/bannerFidentia.png"}
-          alt="ícone para sair da seção de artigos"
-          loading="lazy"
-          title="Voltar para página principal"/>
-        </figure>
+    <section>
+      <section className={styles.section1}>
 
-        <div id="email-mensagem">
-          <p>
-          Somos a Fidentia, um agente de seguros dedicado à prática e ao incentivo às pesquisas clínicas. Apoiamos a todos que as desenvolvem ou contribuem, oferecendo uma extensa suíte de serviços em consultoria com foco em gestão de riscos, seguros, resseguros, subscrição, educação e pesquisa.
-          </p>
-
-          <p className={styles.mt30}>
-          Acreditamos que podemos cuidar de pessoas ao mesmo tempo em que lutamos para unir o mercado segurador aos demais setores da economia. Neste caminho, buscamos contribuir para um melhor ambiente socioeconômico em prol do bem-estar das pessoas e desenvolvimento da ciência, oferecendo aos nossos clientes e parceiros o que há de melhor e mais inovador em gestão de riscos com soluções únicas em seguros, perseguindo os mais elevados padrões de qualidade técnica, ética, transparência, clareza, honestidade e empatia.
-          </p>
-
-          <p className={styles.mt30}>
-          Atuando como um verdadeiro hub de novas oportunidades, almejamos a excelência e reconhecimento por oferecermos a melhor consultoria individualizada em seguros para aqueles que a buscam. 
-          </p>
-
-          <p className={styles.mt30}>Apoiamos você, sempre.</p>
-
-          <p className={styles.mt30}>Na Fidentia oferecemos uma suíte com serviços de:</p>
-
+        <Link href="/">
+          <figure>
+            <img src="/images/logo.svg" alt="ir para a pagina inicial" />
+          </figure>
+        </Link>
+        <div className={styles.contantWrapper}>
+          <div>
+            <h1>Somos a Fidentia.</h1>
+            <div>
+              <p>
+                A Fidentia é um agente de seguros que oferece soluções globais
+                para pesquisas clínicas.
+              </p>
+              <p>
+                Fundada em 2017 com a missão de ser vetor entre os mercados de
+                pesquisa clínica e segurador, oferecemos soluções em seguros
+                para todos os interessados em desenvolver e apoiar pesquisas
+                clinicas através de risk assessment, estruturação de programas
+                de seguros e capacitação em gestão de riscos.
+              </p>
+              <span>Apoiando seu você, sempre.</span>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div>
-          <h3>Consultoria</h3>
-          <p>
-          Consultoria é a alma de tudo que fazemos. Todos os nossos serviços foram concebidos de forma a prestar consultoria individualizada, garantindo aos nossos clientes e parceiros compreensão e gestão sobre seus riscos.
-          </p>
+      <section className={styles.section2}>
+        <div className={styles.contantWrapper}>
+          <h2>Na Fidentia oferecemos uma suíte com serviços de:</h2>
+          <CarrouselText arrayContent={servicesList} />
         </div>
+      </section>
 
-        <div>
-          <h3>Assessoria</h3>
-          <p>
-          Prestamos assessoria completa em gestão de riscos e seguros para o segurado, intermediadores de seguros e resseguros e cias seguradoras e resseguradoras, nacionais ou internacionais.
-          </p>
-        </div>
-
-        <div>
-          <h3>Subscrição</h3>
-          <p>
-          Nossa especialidade. A subscrição de risco de pesquisas clínicas no Brasil e no mundo é a base técnica para todas as nossas soluções.
-          </p>
-        </div>
-
-        <div>
-          <h3>Resseguro</h3>
-          <p>
-          Oferecemos programas de resseguros, viabilizando a cobertura de seguro para qualquer tipo de pesquisa, em qualquer lugar do mundo.
-          </p>
-        </div>
-
-        <div>
-          <h3>Research</h3>
-          <p>
-          Realizamos continuamente pesquisas de mercado nos setores em que atuamos, fornecendo aos nossos clientes e parceiros dados confiáveis e precisos contribuindo em suas tomadas de decisão e atuação em seus setores.
-          </p>
-        </div>
-
-        <div>
-          <h3>Educação</h3>
-          <p>
-          Promovemos palestras, cursos, cursos in-company, estudos e artigos, além de gerarmos conteúdo oferecendo atualização contínua aos entusiastas de pesquisas clínicas.
-          </p>
-        </div>
-
-        <div>
-          <h3>Nossa missão</h3>
-          <p>
-          Cuidar de pessoas unindo o mercado segurador aos demais setores da economia, garantindo e apoiando o desenvolvimento socioeconômico através de soluções em seguros e perseguindo os mais elevados padrões de qualidade técnica, ética, transparência, clareza, honestidade, agilidade e empatia.
-          </p>
-        </div>
-
-        <div>
-          <h3>Nossa visão</h3>
-          <p>
-          Ser a melhor consultoria em seguros, veículo de conhecimento e hub de negócios para seus parceiros contribuindo continuamente para o desenvolvimento e o bem-estar da sociedade.
-          </p>
-        </div>
-
-        <div>
-          <h3>Nossa valores</h3>
+      <section className={styles.section3}>
+        <div className={styles.contantWrapper}>
+          <h2>Nossos valores</h2>
           <ul>
             <li>Ética</li>
             <li>Honestidade</li>
@@ -113,8 +105,8 @@ export default function fidentia() {
             <li>Empatia</li>
           </ul>
         </div>
-
-      </div>
+      </section>
+      <Footer/>
     </section>
   );
 }

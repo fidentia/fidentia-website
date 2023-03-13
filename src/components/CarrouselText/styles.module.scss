@@ -1,0 +1,142 @@
+  .container {
+ 
+    .rec-item-wrapper{
+      
+    }
+
+    .deposition {
+      justify-content: center;
+      justify-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 1px;
+      width: 70%;
+      .title{
+        width: 100%;
+        h3{
+          font-size: 1.37rem;
+          color: var(--purple-800);
+        }
+      }
+      .info {
+        align-items: center;
+        cursor: grab;
+        h3 {
+          font-size: 1.7rem;
+          color: var(--purple-800);
+          font-weight: 600;
+        }
+      
+      }
+      .text {
+        margin-top: 1.3rem;
+        p {
+          max-width: 400px;
+          font-size: 1.3rem;
+          color: var(--purple-800);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1015px) {
+    .container{
+      .deposition {
+       .title{
+          h3{
+            font-size: 1.20rem;
+            color: var(--purple-800);
+          }
+        }
+        .info {
+  
+          cursor: grab;
+          h3 {
+            font-size: 1.7rem;
+            color: var(--purple-800);
+            font-weight: 600;
+          }
+        
+        }
+        .text {
+          width: 80%;
+          margin-top: 1.3rem;
+          p {
+            max-width: 400px;
+            font-size: 1.1rem;
+            color: var(--purple-800);
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    
+  }
+
+  @media (max-width: 965px) {
+    .container{
+      .deposition {
+       .title{
+        width: 70%;
+          h3{
+            font-size: 1.10rem;
+            color: var(--purple-800);
+          }
+        }
+        .info {
+          cursor: grab;
+          h3 {
+            font-size: 1.7rem;
+            color: var(--purple-800);
+            font-weight: 600;
+          }
+        
+        }
+        .text {
+          width: 80%;
+          margin-top: 1.3rem;
+          p {
+            max-width: 400px;
+            font-size: 1rem;
+            color: var(--purple-800);
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    
+  }
+
+@media (max-width: 1368px) {
+  .container {
+    .deposition {
+      .info{
+        h3{
+          font-size: 1.4rem !important; 
+        }
+        p {
+          max-width: 350px !important;
+          font-size: 1rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    .deposition {
+      .info{
+        h3{
+          font-size: 1.3rem !important; 
+        }
+        p {
+          max-width: 350px !important;
+          font-size: 0.9rem !important;
+        }
+      }
+    }
+  }
+}

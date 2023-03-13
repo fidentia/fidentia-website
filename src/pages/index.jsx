@@ -13,29 +13,10 @@ import { ToastContainer, toast } from "react-toastify";
 import Image from "next/image";
 import Carrousel from "../components/Carrousel";
 import CarrouselArticles from "../components/CarrouselArticles";
+import CarrouselDepoimentes from "../components/CarrouselDepoiments";
 import { useForm } from "react-hook-form";
 import Head from "next/head";
-
-const iconsFooter = [
-  {
-    name: "Instagran",
-    src: "/images/instagranIcon.svg",
-    alt: "instagran do ícone",
-    link: "https://www.instagram.com/fidentiaseguros/",
-  },
-  {
-    name: "Facebook",
-    src: "/images/facebookIcon.svg",
-    alt: "facebook do ícone",
-    link: "https://www.facebook.com/Fidentia-Insurance-Group-102406679286320",
-  },
-  {
-    name: "Linkedin",
-    src: "/images/linkedinIcon.svg",
-    alt: "linkedin do ícone",
-    link: "https://www.linkedin.com/company/fidentiainsurance/",
-  },
-];
+import { Footer } from "../components/Footer";
 
 const politics = [{ uid: "politica-de-privacidade", title: "A" }];
 
@@ -138,6 +119,7 @@ export default function Home({ postsPagination }) {
           console.log(data);
           const formattedData = data.results.map((post) => {
             return {
+              key: post.uid,
               uid: post.uid,
               first_publication_date: format(
                 new Date(post.first_publication_date),
@@ -193,6 +175,7 @@ export default function Home({ postsPagination }) {
           property="og:title"
           content="Fidentia soluções completas em seguros para pesquisas clínicas."
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.fidentia.com.br/" />
         <meta
@@ -203,7 +186,6 @@ export default function Home({ postsPagination }) {
       </Head>
       <main className={`container ${styles.container}`}>
         <section className={styles.section1} id="home" ref={section1}>
-          <Header />
           <Image
             src={`${
               mobileWidth
@@ -214,22 +196,35 @@ export default function Home({ postsPagination }) {
             priority={true}
             alt="Imagem ilustrativa de fundo para primeira seção"
           />
+          <Header />
           <div className={`${styles.content} ${styles.fade}`} ref={sectionOne}>
-            <div className={styles.title}>
-              <h2>
-                Apoiando você, <span>sempre</span>
-              </h2>
-            </div>
+            <div className={styles.contentWrapper}>
+              <div className={styles.title}>
+                <h2>
+                  Apoiando você, <span>sempre</span>
+                </h2>
+              </div>
 
-            <div className={styles.subtitle}>
-              <p>
-                Soluções <br />
-                completas em seguros para pesquisas clínicas
-              </p>
+              <div className={styles.subtitle}>
+                <p>Soluções completas em seguros para pesquisas clínicas</p>
+                <p className={styles.subtitleSmall}>
+                  Tudo que você precisa dominar seguros para o setor de
+                  pesquisas clínicas.
+                </p>
+                <p className={styles.subtitleSmall}>
+                  Destaque-se em ambientes competitivos, blindar seu negócio e
+                  alavancar seu sucesso profissional.
+                </p>
+              </div>
             </div>
 
             <div className={styles.downarrow}>
-              <button id="downArrow" aria-label="downArrow"  aria-labelledby="downArrow" onClick={() => scrollTo(section2)}></button>
+              <button
+                id="downArrow"
+                aria-label="downArrow"
+                aria-labelledby="downArrow"
+                onClick={() => scrollTo(section2)}
+              ></button>
             </div>
           </div>
         </section>
@@ -270,7 +265,9 @@ export default function Home({ postsPagination }) {
                   <p>Soluções customizadas</p>
                 </div>
                 <div className={styles.button}>
-                <Link href="/#contato"><button>Saiba mais</button></Link>
+                  <Link href="/#contato">
+                    <button>Saiba mais</button>
+                  </Link>
                 </div>
               </div>
 
@@ -284,7 +281,9 @@ export default function Home({ postsPagination }) {
                   <p>Cursos in-company</p>
                 </div>
                 <div className={styles.button}>
-                <Link href="/#contato"><button>Saiba mais</button></Link>
+                  <Link href="/#contato">
+                    <button>Saiba mais</button>
+                  </Link>
                 </div>
               </div>
 
@@ -298,7 +297,9 @@ export default function Home({ postsPagination }) {
                   <p>Suporte técnico e comercial</p>
                 </div>
                 <div className={styles.button}>
-                <Link href="/#contato"><button>Saiba mais</button></Link>
+                  <Link href="/#contato">
+                    <button>Saiba mais</button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -428,7 +429,12 @@ export default function Home({ postsPagination }) {
               <h2>Faça sua cotação online conosco</h2>
             </div>
             <div className={styles.button}>
-              <Link href="https://podio.com/webforms/28192878/2229964" target="_blank"><button>Cote agora</button></Link>
+              <Link
+                href="https://podio.com/webforms/28192878/2229964"
+                target="_blank"
+              >
+                <button>Cote agora</button>
+              </Link>
             </div>
           </div>
         </section>
@@ -445,46 +451,8 @@ export default function Home({ postsPagination }) {
 
               <h2>Leia os depoimentos de alguns de nossos parceiros</h2>
             </div>
-
-            <div className={styles.deposition}>
-              <div className={styles.photo}>
-                <Image
-                  src={"/images/man.jpeg"}
-                  width={168}
-                  height={168}
-                  alt="Foto de perfil Rafael Abad"
-                />
-              </div>
-              <div className={styles.info}>
-                <h3>Rafael Abad</h3>
-                <p>CFO na KNW Brokers</p>
-              </div>
-              <article className={styles.text}>
-                <p>
-              "Sou fã do trabalho da Fidentia, Felipe e equipe. Gostaria de salientar a importância da Fidentia e equipe não ficarem "somente" no mundo do seguro, e sim se preocuparem entender e estar ao lado do cliente final, investindo anos e anos de seu tempo e expertise em desenvolver um mercado tão importante e nobre quanto o de Testes Clinicos, utilizando o seguro como meio de fomentar a indústria como um todo. Esse tipo de atuação e preocupação é um exemplo para minha atuação profissional e espero que também inspirem outros profissionais e empresas de nosso mercado."
-                </p>
-              </article>
-            </div>
-
-            <div className={styles.deposition}>
-              <div className={styles.photo}>
-                <Image
-                  src={"/images/woman.jpeg"}
-                  width={168}
-                  height={168}
-                  alt="Foto de perfil Sofia Banuls Scatena"
-                />
-              </div>
-
-              <div className={styles.info}>
-                <h3>Sofia Banuls Scatena</h3>
-                <p>CCO na Sanyuu</p>
-              </div>
-              <article className={styles.text}>
-                <p>
-                "A Fidentia é uma empresa com grande reconhecimento no mercado de clinical trial e através do Diretor Felipe, a Sanyuu pôde ter o privilégio de galgar uma comparticipação. Isso possibilitou que pudéssemos ter mais conhecimento sobre as capacitações do Felipe e a responsabilidade e dedicação que ele tem junto a Fidentia/HDI para com os seus clientes e parceiros. Com isso, fica muito claro o quão sólido e valoroso é o trabalho feito por eles."
-                </p>
-              </article>
+            <div className={styles.carrouselWrapper}>
+              <CarrouselDepoimentes />
             </div>
           </div>
         </section>
@@ -584,102 +552,7 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
-        <footer className={styles.footer} id="footer" ref={sectionFooter}>
-          <div
-            className={`${styles.content} ${
-              sectionFooterVisible && styles.fade
-            }`}
-          >
-            <div>
-              <h2>A Fidentia</h2>
-              <div className={styles.border}></div>
-              <Link href="/#solucoes" onClick={() => scrollTo(section2)}>
-                Soluções
-              </Link>
-              <Link href="/fidentia" onClick={() => scrollTo(section6)}>
-                A Fidentia
-              </Link>
-              <Link href="/#cotacao" onClick={() => scrollTo(section5)}>
-                Cote agora
-              </Link>
-              <Link href="#artigos" onClick={() => scrollTo(section7)}>
-                Artigos
-              </Link>
-            </div>
-
-            <div>
-              <h2>Contato</h2>
-              <div className={styles.border}></div>
-              <p>Rua Wanderley, 929</p>
-              <p>Perdizes, São Paulo/SP,</p>
-              <p>Brasil, 05011-011</p>
-              <p>+55 11 3164 4031</p>
-              <p>contato@fidentia.com.br</p>
-            </div>
-
-            <div>
-              <h2>Redes sociais</h2>
-              <div className={styles.border}></div>
-              <div className={styles.iconsWrapper}>
-                <div className={styles.iconsWrapper}>
-                {iconsFooter.map((icon) => (
-                  <button aria-label={icon.name}  aria-labelledby={icon.name} key={icon.src}>
-                    <Link href={icon.link} target="_blank">
-                      <Image
-                        src={icon.src}
-                        width={45}
-                        height={45}
-                        alt={icon.alt}
-                      />
-                    </Link>
-                  </button>
-                ))}
-
-                </div>
-                <figure className={styles.logoMobile}>
-                <Link href="/#home" onClick={() => scrollTo(section1)}>
-                  <Image
-                    src="/images/logo.svg"
-                    width={45}
-                    height={45}
-                    alt="logo fidentia"
-                  />
-                </Link>
-              </figure>
-              </div>
-            </div>
-            <div className={styles.copyrightWrapper}>
-              <div>
-                <span className={styles.copyContent}>
-                  Copyright @ 2023 Fidentia. Todos os direitos reservados.
-                </span>
-                <div className={styles.copyImageContent}>
-                  <div className={styles.copyContent}>
-                    <Link href={`politics/#email-mensagem`}>
-                      Política de privacidade
-                    </Link>
-                    <Link href={`politics/#politica-privacidade`}>
-                      Política de Cookies
-                    </Link>
-                    <Link href={`politics/#etica-compliance`}>
-                      Ética e Compliance
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <figure >
-                <Link href="/#home" onClick={() => scrollTo(section1)}>
-                  <Image
-                    src="/images/logo.svg"
-                    width={85}
-                    height={85}
-                    alt="logo fidentia"
-                  />
-                </Link>
-              </figure>
-            </div>
-          </div>
-        </footer>
+        <Footer pageRef={sectionFooter} visibleState={sectionFooterVisible} section2 section5 section6 section7 />
       </main>
     </>
   );
@@ -701,6 +574,7 @@ export async function getStaticProps() {
 
   const posts = postsResponse.results.map((post) => {
     return {
+      key: post.uid,
       uid: post.uid,
       first_publication_date: format(
         new Date(post.first_publication_date),
