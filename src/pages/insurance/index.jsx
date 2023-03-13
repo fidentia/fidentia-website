@@ -447,7 +447,7 @@ export default function insurance() {
             src={ mobileScreen ? section.pathBackgroundMobile : section.pathBackground}
             fill={true}
             priority={true}
-            alt="Imagem de fundo para ilustração"
+            alt="Imagem de fundo para ilustração "
             className={styles.background_image}
           />
           <div className={styles.header} key={section.title}>
