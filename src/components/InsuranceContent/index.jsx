@@ -30,11 +30,6 @@ export default function InsuranceContent({ content }) {
           </Link>
             <Link href={`#${content.nextPage}`}>
           <div className={styles.downarrow}>
-              <button
-                id="downArrow"
-                aria-label="downArrow"
-                aria-labelledby="downArrow"
-              ></button>
           </div>
             </Link>
         </div>
