@@ -79,7 +79,7 @@ export const Footer = ({pageRef, visibleState, section2, section5, section6, sec
               ))}
             </div>
             <figure className={styles.logoMobile}>
-              <Link href="/#home" onClick={() => scrollTo(section1)}>
+              <Link href="/" onClick={() => scrollTo(section1)}>
                 <Image
                   src="/images/logo.svg"
                   width={45}

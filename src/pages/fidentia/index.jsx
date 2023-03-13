@@ -2,6 +2,7 @@ import styles from "./styles.module.scss";
 import Link from "next/link";
 import CarrouselText from "../../components/CarrouselText";
 import { Footer } from "../../components/Footer";
+import { useEffect, useState } from "react";
 
 const servicesList = [
   {
@@ -47,9 +48,17 @@ const servicesList = [
 ];
 
 export default function fidentia() {
+  const [mobileScreen, setMobileScreen] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 630) {
+      setMobileScreen(true);
+    }
+  }, []);
   return (
     <section>
       <section className={styles.section1}>
+
         <Link href="/">
           <figure>
             <img src="/images/logo.svg" alt="ir para a pagina inicial" />
