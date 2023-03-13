@@ -106,7 +106,7 @@ export default function fidentia() {
           </ul>
         </div>
       </section>
-      <Footer />
+      <Footer/>
     </section>
   );
 }

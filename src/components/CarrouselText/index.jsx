@@ -2,14 +2,15 @@ import styles from "./styles.module.scss";
 import { useEffect, useRef, useState } from "react";
 import Carousel, { consts } from "react-elastic-carousel";
 
-export default function CarrouselText({arrayContent}) {
+export default function CarrouselText({ arrayContent }) {
   const carouselRef = useRef(null);
   const [itemsPerPage, setItemsPerPage] = useState(2);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1060) {
         setItemsPerPage(1);
-      }else {
+      } else {
         setItemsPerPage(2);
       }
     };
@@ -39,10 +40,7 @@ export default function CarrouselText({arrayContent}) {
         />
       );
     return (
-      <button
-        onClick={onClick}
-        disabled={isEdge}
-      >
+      <button onClick={onClick} disabled={isEdge}>
         {pointer}
       </button>
     );
@@ -69,11 +67,11 @@ export default function CarrouselText({arrayContent}) {
       }}
     >
       {arrayContent.map((content) => (
-          <div className={styles.deposition} key={content.name}>
-            <div className={styles.title}>
-              <h3>{content.title}</h3>
-            </div>
-            <div className={styles.info}>
+        <div className={styles.deposition} key={content.name}>
+          <div className={styles.title}>
+            <h3>{content.title}</h3>
+          </div>
+          <div className={styles.info}>
             <article className={styles.text}>
               <p>{content.description ?? ""}</p>
               <p>{content.description1 ?? ""}</p>
@@ -81,8 +79,8 @@ export default function CarrouselText({arrayContent}) {
               <p>{content.description3 ?? ""}</p>
               <p>{content.description4 ?? ""}</p>
             </article>
-            </div>
           </div>
+        </div>
       ))}
     </Carousel>
   );

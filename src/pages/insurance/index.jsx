@@ -1,9 +1,13 @@
 import styles from "./styles.module.scss";
 import Link from "next/link";
 import InsuranceContent from "../../components/InsuranceContent";
+import { Footer } from "../../components/Footer";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const contentSection1 = {
+  id: "investigador",
+  nextPage: "patrocinador",
   title: "Investigador principal",
   personImg: "/images/person_section1_fidentia.png",
   contents: [
@@ -11,6 +15,7 @@ const contentSection1 = {
     "O seguro é um instrumento chave para garantir um atendimento adequado aos participantes, prevenir interrupções ou cancelamentos de projeto e blindar seu patrimônio pessoal.",
   ],
   pathBackground: "/images/s1_insurance.png",
+  pathBackgroundMobile: "/images/s10_insurance_mobile.png",
   contentCarousel: [
     {
       name: "card1",
@@ -77,6 +82,8 @@ const contentSection1 = {
   ],
 };
 const contentSection2 = {
+  id: "patrocinador",
+  nextPage: "orpc",
   title: "Patrocinador",
   personImg: "/images/person_section2_fidentia.png",
   contents: [
@@ -84,6 +91,7 @@ const contentSection2 = {
     "Saiba que o seguro se faz um instrumento financeiro imprescindível, custeando a assistência médica necessária aos participantes de suas pesquisas, reduzindo as exposições financeiras de seus projetos e ampliando a previsibilidade dos resultados.",
   ],
   pathBackground: "/images/s2_insurance.png",
+  pathBackgroundMobile: "/images/s20_insurance_mobile.png",
   contentCarousel: [
     {
       name: "card1",
@@ -146,6 +154,8 @@ const contentSection2 = {
   ],
 };
 const contentSection3 = {
+  id: "orpc",
+  nextPage: "centro",
   title: "ORPC",
   personImg: "/images/person_section3_fidentia.png",
   contents: [
@@ -153,6 +163,7 @@ const contentSection3 = {
     "Saiba como o seguro apoia suas atividades, cobrindo todas as áreas de atuação da ORPC.",
   ],
   pathBackground: "/images/s3_insurance.png",
+  pathBackgroundMobile: "/images/s30_insurance_mobile.png",
   contentCarousel: [
     {
       name: "card1",
@@ -210,6 +221,8 @@ const contentSection3 = {
   ],
 };
 const contentSection4 = {
+  id: "centro",
+  nextPage: "intermediadores",
   title: "Centros de Pesquisa",
   personImg: "/images/person_section4_fidentia.png",
   contents: [
@@ -217,6 +230,7 @@ const contentSection4 = {
     "Descubra como o seguro auxiliará no atendimento ao seu paciente e participantes de pesquisas em seu centro além de como ele ampliará o relacionamento com os patrocinadores.   ",
   ],
   pathBackground: "/images/s40_insurance.png",
+  pathBackgroundMobile: "/images/s40_insurance_mobile.png",
   contentCarousel: [
     {
       name: "card1",
@@ -276,6 +290,8 @@ const contentSection4 = {
   ],
 };
 const contentSection5 = {
+  id: "intermediadores",
+  nextPage: "cias",
   title: "Intermediadores de seguros",
   personImg: "/images/person_section5_fidentia.png",
   contents: [
@@ -283,6 +299,7 @@ const contentSection5 = {
     "O Brasil já é uma potência em pesquisas clínicas no cenário global. Esse setor representa uma grande oportunidade de investimento para o profissional de seguro que deseja crescer e se estabelecer num segmento sólido.",
   ],
   pathBackground: "/images/s50_insurance.png",
+  pathBackgroundMobile: "/images/s50_insurance_mobile.png",
   contentCarousel: [
     {
       name: "card1",
@@ -339,12 +356,15 @@ const contentSection5 = {
   ],
 };
 const contentSection6 = {
+  id: "cias",
+  nextPage: "footer",
   title: "Cias Seguradoras & Resseguradoras",
   personImg: "/images/person_section6_fidentia.png",
   contents: [
     "A Fidentia é o maior player do setor do mercado segurador brasileiro de pesquisas clínicas. Conte com a nossa expertise em análise de risco e underwriting para ampliar os resultados da carteira de Responsabilidade Civil.",
   ],
   pathBackground: "/images/s60_insurance.png",
+  pathBackgroundMobile: "/images/s60_insurance_mobile.png",
   contentCarousel: [
     {
       name: "card1",
@@ -411,12 +431,20 @@ const sections = [
 const mainTitle = "Como nossas soluções apoiam você";
 
 export default function insurance() {
+  const [mobileScreen, setMobileScreen] = useState(false);
+
+  useEffect(() => {
+      if (window.innerWidth < 630) {
+        setMobileScreen(true);
+      }
+    }, []);
+
   return (
     <section className={styles.main}>
       {sections.map((section) => (
-        <section className={styles.container} key={section.title}>
+        <section className={styles.container} key={section.title} id={section.id}>
           <Image
-            src={section.pathBackground}
+            src={ mobileScreen ? section.pathBackgroundMobile : section.pathBackground}
             fill={true}
             priority={true}
             alt="Imagem de fundo para ilustração"
@@ -437,6 +465,7 @@ export default function insurance() {
           </section>
         </section>
       ))}
+      <Footer id="footer"/>
     </section>
   );
 }
