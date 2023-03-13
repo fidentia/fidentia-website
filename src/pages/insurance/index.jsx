@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const contentSection1 = {
   title: "Investigador principal",
-  personImg: "/images/person_section1_fidentia.svg",
+  personImg: "/images/person_section1_fidentia.png",
   contents: [
     "Você está na fronte do desenvolvimento científico e é responsável, dentre muitas outras atribuições, por todo o projeto, pela segurança e bem-estar dos participantes de suas pesquisas clínica.",
     "O seguro é um instrumento chave para garantir um atendimento adequado aos participantes, prevenir interrupções ou cancelamentos de projeto e blindar seu patrimônio pessoal.",
@@ -78,7 +78,7 @@ const contentSection1 = {
 };
 const contentSection2 = {
   title: "Patrocinador",
-  personImg: "/images/person_section2_fidentia.svg",
+  personImg: "/images/person_section2_fidentia.png",
   contents: [
     "Você é quem viabiliza as pesquisas clínicas e garante a oferta dos melhores tratamentos às pessoas, responsável pela segurança e bem-estar dos participantes de pesquisa clínica.",
     "Saiba que o seguro se faz um instrumento financeiro imprescindível, custeando a assistência médica necessária aos participantes de suas pesquisas, reduzindo as exposições financeiras de seus projetos e ampliando a previsibilidade dos resultados.",
@@ -147,7 +147,7 @@ const contentSection2 = {
 };
 const contentSection3 = {
   title: "ORPC",
-  personImg: "/images/person_section3_fidentia.svg",
+  personImg: "/images/person_section3_fidentia.png",
   contents: [
     "Você é a ponte que permite o Brasil a acessar os tratamentos mais promissores em desenvolvimento globalmente.",
     "Saiba como o seguro apoia suas atividades, cobrindo todas as áreas de atuação da ORPC.",
@@ -211,7 +211,7 @@ const contentSection3 = {
 };
 const contentSection4 = {
   title: "Centros de Pesquisa",
-  personImg: "/images/person_section4_fidentia.svg",
+  personImg: "/images/person_section4_fidentia.png",
   contents: [
     "Você é o elo entre o paciente e seus médicos. O meio para viabilizar o atendimento adequado ao paciente e garantir que os melhores e mais promissores tratamentos cheguem aos pacientes e participantes de pesquisa clínica.",
     "Descubra como o seguro auxiliará no atendimento ao seu paciente e participantes de pesquisas em seu centro além de como ele ampliará o relacionamento com os patrocinadores.   ",
@@ -277,7 +277,7 @@ const contentSection4 = {
 };
 const contentSection5 = {
   title: "Intermediadores de seguros",
-  personImg: "/images/person_section5_fidentia.svg",
+  personImg: "/images/person_section5_fidentia.png",
   contents: [
     "O setor de pesquisas clínicas está em constante expansão e o contrato de seguro é um instrumento que apoia seu crescimento de maneira sustentável.",
     "O Brasil já é uma potência em pesquisas clínicas no cenário global. Esse setor representa uma grande oportunidade de investimento para o profissional de seguro que deseja crescer e se estabelecer num segmento sólido.",
@@ -340,7 +340,7 @@ const contentSection5 = {
 };
 const contentSection6 = {
   title: "Cias Seguradoras & Resseguradoras",
-  personImg: "/images/person_section6_fidentia.svg",
+  personImg: "/images/person_section6_fidentia.png",
   contents: [
     "A Fidentia é o maior player do setor do mercado segurador brasileiro de pesquisas clínicas. Conte com a nossa expertise em análise de risco e underwriting para ampliar os resultados da carteira de Responsabilidade Civil.",
   ],
