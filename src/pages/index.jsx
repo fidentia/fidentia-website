@@ -212,8 +212,8 @@ export default function Home({ postsPagination }) {
                   pesquisas clínicas.
                 </p>
                 <p className={styles.subtitleSmall}>
-                  Destaque-se em ambientes competitivos, blindar seu negócio e
-                  alavancar seu sucesso profissional.
+                  Destaque-se em ambientes competitivos, blinde seu negócio e
+                  alavanque seu sucesso profissional.
                 </p>
               </div>
             </div>
