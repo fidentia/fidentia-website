@@ -35,16 +35,6 @@ const servicesList = [
     description:
       "Promovemos palestras, cursos, cursos in-company, estudos e artigos, além de gerarmos conteúdo oferecendo atualização contínua aos entusiastas de pesquisas clínicas.",
   },
-  {
-    title: "Nossa missão",
-    description:
-      "Cuidar de pessoas unindo o mercado segurador aos demais setores da economia, garantindo e apoiando o desenvolvimento socioeconômico através de soluções em seguros e perseguindo os mais elevados padrões de qualidade técnica, ética, transparência, clareza, honestidade, agilidade e empatia.",
-  },
-  {
-    title: "Nossa visão",
-    description:
-      "Ser a melhor consultoria em seguros, veículo de conhecimento e hub de negócios para seus parceiros contribuindo continuamente para o desenvolvimento e o bem-estar da sociedade. ",
-  },
 ];
 
 export default function fidentia() {
@@ -58,7 +48,6 @@ export default function fidentia() {
   return (
     <section>
       <section className={styles.section1}>
-
         <Link href="/">
           <figure>
             <img src="/images/logo.svg" alt="ir para a pagina inicial" />
@@ -88,7 +77,7 @@ export default function fidentia() {
       <section className={styles.section2}>
         <div className={styles.contantWrapper}>
           <h2>Na Fidentia oferecemos uma suíte com serviços de:</h2>
-          <CarrouselText arrayContent={servicesList} border numberCards={3}/>
+          <CarrouselText arrayContent={servicesList} border numberCards={3} />
         </div>
       </section>
 
@@ -106,7 +95,26 @@ export default function fidentia() {
           </ul>
         </div>
       </section>
-      <Footer/>
+
+      <section className={styles.section4}>
+        <div className={styles.contantWrapper}>
+          <div>
+            <h2>Nossa visão</h2>
+            <p>
+            Ser a melhor consultoria em seguros, veículo de conhecimento e hub de negócios para seus parceiros contribuindo continuamente para o desenvolvimento e o bem-estar da sociedade.
+            </p>
+          </div>
+
+          <div>
+            <h2>Nossa missão</h2>
+            <p>
+            Cuidar de pessoas unindo o mercado segurador aos demais setores da economia, garantindo e apoiando o desenvolvimento socioeconômico através de soluções em seguros e perseguindo os mais elevados padrões de qualidade técnica, ética, transparência, clareza, honestidade, agilidade e empatia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </section>
   );
 }
