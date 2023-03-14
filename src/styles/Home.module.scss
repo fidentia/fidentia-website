@@ -1133,9 +1133,13 @@
       padding: 2.6rem;
       margin: 5rem auto;
       .title {
+        width: 100%;
         h2 {
           font-size: 2.5rem;
         }
+      }
+      .subtitle{
+        width: 100%;
       }
     }
   }
@@ -1299,10 +1303,13 @@
       padding: 1rem;
       margin: 5rem auto;
       .title {
-        width: 28rem;
+        width: 100%;
         h2 {
           font-size: 3rem;
         }
+      }
+      .subtitle{
+        width: 100%;
       }
     }
   }
@@ -1380,10 +1387,13 @@
   .section1 {
     .content {
       .title {
-        width: 25rem;
+        width: 100%;
         h2 {
           font-size: 2.4rem;
         }
+      }
+      .subtitle{
+        width: 100%;
       }
     }
   }
