@@ -35,11 +35,20 @@
       }
       .text {
         margin-top: 1.3rem;
-        p {
+        p, li {
           max-width: 400px;
           font-size: 1.1rem;
           color: var(--purple-800);
           font-weight: 400;
+        }
+
+        ul{
+          list-style-position: outside;
+        }
+        li{
+          margin-bottom: 10px;
+          list-style-type: disc;
+          
         }
       }
     }

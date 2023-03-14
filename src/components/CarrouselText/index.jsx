@@ -51,10 +51,12 @@ export default function CarrouselText({ arrayContent, border = false, numberCard
           <div className={styles.info}>
             <article className={styles.text}>
               <p>{content.description ?? ""}</p>
-              <p>{content.description1 ?? ""}</p>
-              <p>{content.description2 ?? ""}</p>
-              <p>{content.description3 ?? ""}</p>
-              <p>{content.description4 ?? ""}</p>
+              <ul>
+                <li>{content.description1 ?? ""}</li>
+                <li>{content.description2 ?? ""}</li>
+                <li>{content.description3 ?? ""}</li>
+              </ul>
+              
             </article>
           </div>
         </div>
