@@ -23,7 +23,7 @@ export default function CookieBanner(){
               </div>
               <div>
                 <span>
-                Este é um aviso sobre <Link href="/">cookies</Link> usados neste site para melhorar a navegação e fornecer informações aos proprietários. Ao continuar navegando, você concorda com o uso de cookies.
+                Este é um aviso sobre <Link href="/politics#politica-privacidade">cookies</Link> usados neste site para melhorar a navegação e fornecer informações aos proprietários. Ao continuar navegando, você concorda com o uso de cookies.
                 </span>
               </div>
               <button onClick={handleAcceptCookies}>Aceitar cookies</button>
