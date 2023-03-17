@@ -1,5 +1,6 @@
 .main {
    width: 100%;
+   background-color: #EEFEFD;
 }
 
 .container{
@@ -11,13 +12,12 @@
             width: 120vw;
         }
     }
-
 }
 
 .header{
     position: relative;
     width: 100%;
-    padding: 3rem 5.9rem 0 8.2rem;
+    padding: 3rem 5.9rem 0 5rem;
     display: flex;
     gap: 25px;
     justify-content: space-between;

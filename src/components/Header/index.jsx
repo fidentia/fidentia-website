@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useContextHeader } from "../../Context/ContextHeader";
 import styles from "./header.module.scss";
 
 export default function Header() {
   const [activeMenu, setActiveMenu] = useState(false);
   const [activeHover, setActiveHover] = useState(true);
+  const { checkIsActive, setCheckIsActive } = useContextHeader();
+
   const handleToggle = () => {
     setActiveMenu(!activeMenu);
   };
@@ -52,10 +55,17 @@ export default function Header() {
             </div>
           ) : null}
           <Link href="/#home">
-            <li className={activeHover && styles.hoverActive}>início</li>
+            <li
+              className={checkIsActive === "home" && styles.hoverActive}
+              onClick={() => setCheckIsActive("home")}
+            >
+              início
+            </li>
           </Link>
           <Link href="/insurance">
             <li
+              className={checkIsActive === "insurance" && styles.hoverActive}
+              onClick={() => setCheckIsActive("insurance")}
               onMouseEnter={() => setActiveHover(false)}
               onMouseLeave={() => setActiveHover(true)}
             >
@@ -81,6 +91,8 @@ export default function Header() {
           </Link>
           <Link href="/fidentia">
             <li
+              className={checkIsActive === "fidentia" && styles.hoverActive}
+              onClick={() => setCheckIsActive("fidentia")}
               onMouseEnter={() => setActiveHover(false)}
               onMouseLeave={() => setActiveHover(true)}
             >
@@ -90,20 +102,29 @@ export default function Header() {
           {activeMenu ? (
             <section className={styles.social_medias_logos}>
               <figure>
-                <Link href="https://www.instagram.com/fidentiaseguros/" target="_blank">
+                <Link
+                  href="https://www.instagram.com/fidentiaseguros/"
+                  target="_blank"
+                >
                   <img src="/images/instagramLogo.svg" alt="instagram logo" />
                 </Link>
               </figure>
 
               <figure>
-                <Link href="https://www.facebook.com/fidentiaseguros1" target="_blank">
+                <Link
+                  href="https://www.facebook.com/fidentiaseguros1"
+                  target="_blank"
+                >
                   <img src="/images/facebookLogo.svg" alt="facebook logo" />
                 </Link>
               </figure>
 
               <figure>
-                <Link href="https://www.linkedin.com/company/fidentiainsurance/" target="_blank">
-                  <img src="/images/linkedinLogo.svg" alt="linkedin logo"/>
+                <Link
+                  href="https://www.linkedin.com/company/fidentiainsurance/"
+                  target="_blank"
+                >
+                  <img src="/images/linkedinLogo.svg" alt="linkedin logo" />
                 </Link>
               </figure>
             </section>

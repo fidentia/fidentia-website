@@ -186,16 +186,7 @@ export default function Home({ postsPagination }) {
       </Head>
       <main className={`container ${styles.container}`}>
         <section className={styles.section1} id="home" ref={section1}>
-          <Image
-            src={`${
-              mobileWidth
-                ? "/images/section1_mobile.png"
-                : "/images/section1.png"
-            }`}
-            fill={true}
-            priority={true}
-            alt="Imagem ilustrativa de fundo para primeira seção"
-          />
+        
           <Header />
           <div className={`${styles.content} ${styles.fade}`} ref={sectionOne}>
             <div className={styles.contentWrapper}>
