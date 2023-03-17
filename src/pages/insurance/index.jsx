@@ -4,6 +4,7 @@ import InsuranceContent from "../../components/InsuranceContent";
 import { Footer } from "../../components/Footer";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import Header from "../../components/Header";
 
 const contentSection1 = {
   id: "investigador",
@@ -429,6 +430,7 @@ export default function insurance() {
 
   return (
     <section className={styles.main}>
+      <Header/>
       {sections.map((section) => (
         <section className={styles.container} key={section.title} id={section.id}>
           <Image
@@ -442,11 +444,6 @@ export default function insurance() {
             <div>
               <h2>{mainTitle}</h2>
             </div>
-            <Link href="/">
-              <figure>
-                <img src="/images/logo.svg" alt="ir para a pagina inicial" />
-              </figure>
-            </Link>
           </div>
           <section className={styles.container_content}>
             <InsuranceContent content={section} />

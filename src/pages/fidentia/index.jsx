@@ -3,6 +3,7 @@ import Link from "next/link";
 import CarrouselText from "../../components/CarrouselText";
 import { Footer } from "../../components/Footer";
 import { useEffect, useState } from "react";
+import Header from "../../components/Header";
 
 const servicesList = [
   {
@@ -47,12 +48,8 @@ export default function fidentia() {
   }, []);
   return (
     <section>
+      <Header />
       <section className={styles.section1}>
-        <Link href="/">
-          <figure>
-            <img src="/images/logo.svg" alt="ir para a pagina inicial" />
-          </figure>
-        </Link>
         <div className={styles.contantWrapper}>
           <div>
             <h1>Somos a Fidentia.</h1>
