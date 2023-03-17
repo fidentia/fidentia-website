@@ -1,10 +1,13 @@
 import styles from "./styles.module.scss";
 import Link from "next/link";
 import CarrouselText from "../CarrouselText";
+import { useInView } from "react-intersection-observer";
+
 
 export default function InsuranceContent({ content }) {
+  const { ref: refContainer, inView: containerIsVisible } = useInView();
   return (
-    <section className={styles.container}>
+    <section className={styles.container} >
       <figure>
         <img src={content.personImg}></img>
       </figure>
@@ -19,17 +22,17 @@ export default function InsuranceContent({ content }) {
             ))}
           </div>
         </article>
-        <div className={styles.subtitle}>
-          <CarrouselText arrayContent={content.contentCarousel}/>
+        <div className={styles.subtitle} ref={refContainer}>
+          <CarrouselText runCarrousel={containerIsVisible} arrayContent={content.contentCarousel}/>
         </div>
         <div className={styles.buttons}>
           <Link href="/#contato">
             <button className={styles.button}>Saiba mais</button>
           </Link>
-            <Link href={`#${content.nextPage}`}>
-          <div className={styles.downarrow}>
-          </div>
-            </Link>
+          <Link href={`#${content.nextPage}`}>
+            <div className={styles.downarrow}>
+            </div>
+          </Link>
         </div>
       </section>
     </section>

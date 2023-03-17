@@ -2,11 +2,7 @@ import styles from "./styles.module.scss";
 import { useEffect, useRef, useState } from "react";
 import Carousel, { consts } from "react-elastic-carousel";
 
-export default function CarrouselText({
-  arrayContent,
-  border = false,
-  numberCards = 2,
-}) {
+export default function CarrouselText({ arrayContent, border = false, numberCards = 2, runCarrousel}) {
   const carouselRef = useRef(null);
   const [itemsPerPage, setItemsPerPage] = useState(numberCards);
 
@@ -61,8 +57,8 @@ export default function CarrouselText({
       showArrows
       className={styles.container}
       showEmptySlots={false}
-      enableAutoPlay
-      autoPlaySpeed={10000}
+      enableAutoPlay={runCarrousel}
+      autoPlaySpeed={5000}
     >
       {arrayContent.map((content) => (
         <div
