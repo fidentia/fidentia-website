@@ -6,8 +6,14 @@ import { useInView } from "react-intersection-observer";
 
 export default function InsuranceContent({ content }) {
   const { ref: refContainer, inView: containerIsVisible } = useInView();
+  function scrollTo(section) {
+    section.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+ 
   return (
-    <section className={styles.container} >
+    <section className={styles.container} ref={content.ref}>
       <figure>
         <img src={content.personImg}></img>
       </figure>
@@ -25,16 +31,16 @@ export default function InsuranceContent({ content }) {
         <div className={styles.subtitle} ref={refContainer}>
           <CarrouselText runCarrousel={containerIsVisible} arrayContent={content.contentCarousel}/>
         </div>
-        <div className={styles.buttons}>
+        <div className={styles.buttons} >
           <Link href="/#contato">
             <button className={styles.button}>Saiba mais</button>
           </Link>
-          <Link href={`#${content.nextPage}`}>
+          <button onClick={() => scrollTo(content.nextRef)} className={`${content.id == "cias" ? styles.hidden : styles.buttonDown}`}>
             <div className={styles.downarrow}>
             </div>
-          </Link>
+          </button>
         </div>
       </section>
-    </section>
+    </section >
   );
 }
