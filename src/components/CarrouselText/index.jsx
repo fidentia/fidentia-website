@@ -75,13 +75,11 @@ export default function CarrouselText({
           <div className={styles.info}>
             <article className={styles.text}>
               <p>{content.description ?? ""}</p>
-              {content.description1 && (
                 <ul>
-                  <li>{content.description1}</li>
-                  <li>{content.description2}</li>
-                  <li>{content.description3}</li>
+                  {content.description1 && <li>{content.description1}</li>}
+                  {content.description2 && <li>{content.description2}</li>}
+                  {content.description3 && <li>{content.description3}</li>}
                 </ul>
-              )}
             </article>
           </div>
         </div>
