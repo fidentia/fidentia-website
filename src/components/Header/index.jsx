@@ -40,7 +40,7 @@ export default function Header() {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} style={  {position: checkIsActive === "fidentia" ? "relative" : "absolute"}}>
       <Link href="/">
         <figure className={styles.logo}>
           <Image
