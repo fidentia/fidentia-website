@@ -190,7 +190,7 @@ export default function Home({ postsPagination }) {
             src={`${
               mobileWidth
                 ? "/images/section1_mobile.png"
-                : "/images/section1.png"
+                : "/images/section01.png"
             }`}
             fill={true}
             priority={true}
@@ -234,7 +234,7 @@ export default function Home({ postsPagination }) {
             src={`${
               mobileWidth
                 ? "/images/section2_mobile.png"
-                : "/images/section2.png"
+                : "/images/section02.png"
             }`}
             fill={true}
             priority={true}
@@ -311,7 +311,7 @@ export default function Home({ postsPagination }) {
             src={`${
               mobileWidth
                 ? "/images/section3_mobile.png"
-                : "/images/section3.png"
+                : "/images/section03.png"
             }`}
             priority={true}
             fill={true}
