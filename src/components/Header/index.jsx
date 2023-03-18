@@ -1,6 +1,7 @@
+import { set } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useContextHeader } from "../../Context/ContextHeader";
 import styles from "./header.module.scss";
 
@@ -8,6 +9,28 @@ export default function Header() {
   const [activeMenu, setActiveMenu] = useState(false);
   const [activeHover, setActiveHover] = useState(true);
   const { checkIsActive, setCheckIsActive } = useContextHeader();
+  
+  useEffect(() => {
+    const url = window.location.href;
+    const urlSplt = url.split('/');
+    const dir = urlSplt[3];
+
+    switch (dir) {
+      case "insurance":
+        setCheckIsActive("insurance")
+        break;
+
+      case "fidentia":
+        setCheckIsActive("fidentia")
+        break;
+
+      default:
+        setCheckIsActive("home")
+        break;
+    }
+
+  }, [])
+  
 
   const handleToggle = () => {
     setActiveMenu(!activeMenu);
@@ -57,7 +80,6 @@ export default function Header() {
           <Link href="/#home">
             <li
               className={checkIsActive === "home" && styles.hoverActive}
-              onClick={() => setCheckIsActive("home")}
             >
               início
             </li>
@@ -65,7 +87,6 @@ export default function Header() {
           <Link href="/insurance">
             <li
               className={checkIsActive === "insurance" && styles.hoverActive}
-              onClick={() => setCheckIsActive("insurance")}
               onMouseEnter={() => setActiveHover(false)}
               onMouseLeave={() => setActiveHover(true)}
             >
@@ -92,7 +113,6 @@ export default function Header() {
           <Link href="/fidentia">
             <li
               className={checkIsActive === "fidentia" && styles.hoverActive}
-              onClick={() => setCheckIsActive("fidentia")}
               onMouseEnter={() => setActiveHover(false)}
               onMouseLeave={() => setActiveHover(true)}
             >
