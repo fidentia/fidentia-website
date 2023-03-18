@@ -1,8 +1,11 @@
 import styles from "./styles.module.scss";
 import Link from "next/link";
 import CarrouselText from "../CarrouselText";
+import { useInView } from "react-intersection-observer";
 
-export default function InsuranceContent({ content, containerIsVisible }) {
+
+export default function InsuranceContent({ content }) {
+  const { ref: refContainer, inView: containerIsVisible } = useInView();
   function scrollTo(section) {
     section.current?.scrollIntoView({
       behavior: "smooth",
@@ -10,7 +13,7 @@ export default function InsuranceContent({ content, containerIsVisible }) {
   }
  
   return (
-    <section className={styles.container}>
+    <section className={styles.container} ref={content.ref}>
       <figure>
         <img src={content.personImg}></img>
       </figure>
@@ -25,7 +28,7 @@ export default function InsuranceContent({ content, containerIsVisible }) {
             ))}
           </div>
         </article>
-        <div className={styles.subtitle}>
+        <div className={styles.subtitle} ref={refContainer}>
           <CarrouselText runCarrousel={containerIsVisible} arrayContent={content.contentCarousel}/>
         </div>
         <div className={styles.buttons} >

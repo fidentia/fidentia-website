@@ -4,7 +4,6 @@ import { Footer } from "../../components/Footer";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import Header from "../../components/Header";
-import { useInView } from "react-intersection-observer";
 
 export default function insurance() {
   const mainTitle = "Como nossas soluções apoiam você";
@@ -438,8 +437,6 @@ export default function insurance() {
     contentSection6,
   ];
 
-  const { ref: refContainer, inView: containerIsVisible } = useInView();
-
   useEffect(() => {
       if (window.innerWidth < 630) {
         setMobileScreen(true);
@@ -450,21 +447,21 @@ export default function insurance() {
     <section className={styles.main}>
       <Header/>
       {sections.map((section) => (
-        <section className={styles.container} key={section.title} id={section.id} ref={refContainer}>
+        <section className={styles.container} key={section.title} id={section.id}>
           <Image
             src={ mobileScreen ? section.pathBackgroundMobile : section.pathBackground}
             fill={true}
             priority={true}
-            alt="Imagem de fundo para ilustração"
+            alt="Imagem de fundo para ilustração "
             className={styles.background_image}
           />
-          <div className={styles.header} key={section.title} ref={section.ref}>
+          <div className={styles.header} key={section.title}>
             <div>
               <h2>{mainTitle}</h2>
             </div>
           </div>
           <section className={styles.container_content}>
-            <InsuranceContent content={section} containerIsVisible={containerIsVisible}/>
+            <InsuranceContent content={section} />
           </section>
         </section>
       ))}

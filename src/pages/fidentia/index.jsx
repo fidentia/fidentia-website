@@ -47,9 +47,8 @@ export default function fidentia() {
     }
   }, []);
   return (
-    <>
+    <section>
       <Header />
-    <section >
       <section className={styles.section1}>
         <div className={styles.contantWrapper}>
           <div>
@@ -114,6 +113,5 @@ export default function fidentia() {
 
       <Footer />
     </section>
-    </>
   );
 }

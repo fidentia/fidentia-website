@@ -28,6 +28,7 @@ export default function Home({ postsPagination }) {
   const [countFinish, setCountFinish] = useState(false);
   const [loadingSubmitForm, setLoadingSubmitForm] = useState(false);
 
+
   const { ref: sectionOne, inView: sectionOneVisible } = useInView();
   const { ref: sectionTwo, inView: sectionTwoVisible } = useInView();
   const { ref: sectionThree, inView: sectionThreeVisible } = useInView();
@@ -116,7 +117,6 @@ export default function Home({ postsPagination }) {
       fetch(nextPage)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           const formattedData = data.results.map((post) => {
             return {
               key: post.uid,
@@ -184,20 +184,10 @@ export default function Home({ postsPagination }) {
         />
         <meta property="og:site_name" content="Fidentia" />
       </Head>
-      <main className={`container ${styles.container}`} id="home">
-        <Header />
-        <section className={styles.section1}ref={section1}>
-        <Image
-            src={`${
-              mobileWidth
-                ? "/images/section1_mobile.png"
-                : "/images/section01.png"
-            }`}
-            fill={true}
-            priority={true}
-            alt="Imagem ilustrativa de fundo para primeira seção"
-          />
-   
+      <main className={`container ${styles.container}`}>
+        <section className={styles.section1} id="home" ref={section1}>
+        
+          <Header />
           <div className={`${styles.content} ${styles.fade}`} ref={sectionOne}>
             <div className={styles.contentWrapper}>
               <div className={styles.title}>
@@ -235,7 +225,7 @@ export default function Home({ postsPagination }) {
             src={`${
               mobileWidth
                 ? "/images/section2_mobile.png"
-                : "/images/section02.png"
+                : "/images/section2.png"
             }`}
             fill={true}
             priority={true}
@@ -312,11 +302,11 @@ export default function Home({ postsPagination }) {
             src={`${
               mobileWidth
                 ? "/images/section3_mobile.png"
-                : "/images/section03.png"
+                : "/images/section3.png"
             }`}
             priority={true}
             fill={true}
-            alt="Imagem ilustrativa de fundo para terceira seção"
+            alt="Imagem ilustrativa de fundo para segunda seção"
           />
           <div
             className={`${styles.content} ${
@@ -539,13 +529,20 @@ export default function Home({ postsPagination }) {
                   ></textarea>
                 </div>
                 <div className={styles.container_submit_form}>
-                  <button
+                  {loadingSubmitForm ? (
+                    <div className={styles.loading_gif}> 
+                      <img src="/images/loading-gif.gif"></img>
+                    </div>
+                  ): (
+                    <button
                     type="submit"
                     disabled={loadingSubmitForm}
                     className={`${loadingSubmitForm ? styles.disabled : null}`}
                   >
                     Enviar mensagem
                   </button>
+                  )}
+                  
                 </div>
                 <ToastContainer autoClose={8000} />
               </form>
