@@ -1280,6 +1280,11 @@
 }
 
 @media (max-width: 480px) {
+  .section1{
+    .content{
+      padding: 2rem;
+    }
+  }
   .section8 {
     input {
       width: 100%;
@@ -1308,7 +1313,7 @@
 @media (max-width: 380px) {
   .section1 {
     .content {
-      padding: 1rem;
+      
       margin: 5rem auto;
       .title {
         width: 100%;
