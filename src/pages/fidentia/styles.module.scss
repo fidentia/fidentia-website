@@ -6,7 +6,7 @@ section {
     span {
       color: var(--purple-800);
     }
-    padding-left: 120px;
+    padding-left: 80px;
     min-height: 100vh;
     background-image: url("/images/fidentiaSection1.svg");
     background-size: 100% auto;
@@ -73,7 +73,7 @@ section {
     }
     min-height: 100vh;
     .contantWrapper {
-      padding: 120px 0 0 120px;
+      padding: 120px 0 0 80px;
       display: flex;
       flex-direction: column;
       gap: 200px;
@@ -100,7 +100,7 @@ section {
       color: var(--purple-800);
     }
     .contantWrapper {
-      padding: 120px 0 0 120px;
+      padding: 120px 0 0 80px;
 
       ul {
         list-style: disc;
@@ -128,7 +128,7 @@ section {
     background-image: url("/images/fidentiaSection4.svg");
     background-size: 90% auto;
     background-repeat: no-repeat;
-    padding: 120px 81px 0 120px;
+    padding: 120px 81px 0 80px;
     .contantWrapper {
       width: 100%;
       display: flex;
