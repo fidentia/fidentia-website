@@ -184,9 +184,9 @@ export default function Home({ postsPagination }) {
         />
         <meta property="og:site_name" content="Fidentia" />
       </Head>
-      <main className={`container ${styles.container}`}>
+      <main className={`container ${styles.container}`} id="home">
         <Header />
-        <section className={styles.section1} id="home" ref={section1}>
+        <section className={styles.section1}ref={section1}>
         <Image
             src={`${
               mobileWidth
