@@ -28,6 +28,7 @@ export default function Home({ postsPagination }) {
   const [countFinish, setCountFinish] = useState(false);
   const [loadingSubmitForm, setLoadingSubmitForm] = useState(false);
 
+
   const { ref: sectionOne, inView: sectionOneVisible } = useInView();
   const { ref: sectionTwo, inView: sectionTwoVisible } = useInView();
   const { ref: sectionThree, inView: sectionThreeVisible } = useInView();
@@ -116,7 +117,6 @@ export default function Home({ postsPagination }) {
       fetch(nextPage)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           const formattedData = data.results.map((post) => {
             return {
               key: post.uid,
@@ -529,13 +529,20 @@ export default function Home({ postsPagination }) {
                   ></textarea>
                 </div>
                 <div className={styles.container_submit_form}>
-                  <button
+                  {loadingSubmitForm ? (
+                    <div className={styles.loading_gif}> 
+                      <img src="/images/loading-gif.gif"></img>
+                    </div>
+                  ): (
+                    <button
                     type="submit"
                     disabled={loadingSubmitForm}
                     className={`${loadingSubmitForm ? styles.disabled : null}`}
                   >
                     Enviar mensagem
                   </button>
+                  )}
+                  
                 </div>
                 <ToastContainer autoClose={8000} />
               </form>

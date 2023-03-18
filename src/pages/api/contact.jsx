@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 export default async (req, res) => {
   const { name, phone, company, email, subject } = req.body;
   const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: "smtp.zoho.com",
     port: 465,
     secure: true,
     auth: {
@@ -14,7 +14,7 @@ export default async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: "fidentiaseguros@gmail.com",
+      from: "forms.fidentia@zohomail.com",
       to: "contato@fidentia.com.br",
       subject: `Nova conversa formulário fidentia: ${name}`,
       html: `<p><strong>Nome: </strong>${name}</p><br>
