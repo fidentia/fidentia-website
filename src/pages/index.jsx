@@ -185,19 +185,16 @@ export default function Home({ postsPagination }) {
         <meta property="og:site_name" content="Fidentia" />
       </Head>
       <main className={`container ${styles.container}`}>
-        <section className={styles.section1} id="home" ref={section1}>
+        <section className={`${styles.section1} ${!mobileWidth && styles.bgImg}`} id="home" ref={section1}>
         
           <Header />
+          {mobileWidth &&
           <Image
-            src={`${
-              mobileWidth
-                ? "/images/section1_mobile.png"
-                : "/images/section01.png"
-            }`}
+            src={"/images/section1_mobile.png"}
             fill={true}
             priority={true}
             alt="Imagem ilustrativa de fundo para segunda seção"
-          />
+          />}
           <div className={`${styles.content} ${styles.fade}`} ref={sectionOne}>
             <div className={styles.contentWrapper}>
               <div className={styles.title}>
@@ -230,17 +227,14 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
-        <section className={styles.section2} id="solucoes" ref={section2}>
+        <section className={`${styles.section2} ${!mobileWidth && styles.bgImg}`} id="solucoes" ref={section2}>
+        {mobileWidth &&
           <Image
-            src={`${
-              mobileWidth
-                ? "/images/section2_mobile.png"
-                : "/images/section2.png"
-            }`}
+            src={"/images/section2_mobile.png"}
             fill={true}
             priority={true}
             alt="Imagem ilustrativa de fundo para segunda seção"
-          />
+          />}
           <div
             className={`${styles.content} ${sectionTwoVisible && styles.fade}`}
             ref={sectionTwo}
@@ -307,17 +301,14 @@ export default function Home({ postsPagination }) {
           </div>
         </section>
 
-        <section className={styles.section3} ref={section3} id="especialidades">
+        <section className={`${styles.section3} ${!mobileWidth && styles.bgImg}`} ref={section3} id="especialidades">
+        {mobileWidth &&
           <Image
-            src={`${
-              mobileWidth
-                ? "/images/section3_mobile.png"
-                : "/images/section3.png"
-            }`}
-            priority={true}
+            src={"/images/section3_mobile.png"}
             fill={true}
+            priority={true}
             alt="Imagem ilustrativa de fundo para segunda seção"
-          />
+          />}
           <div
             className={`${styles.content} ${
               sectionThreeVisible && styles.fade
