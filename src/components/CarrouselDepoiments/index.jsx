@@ -46,7 +46,8 @@ const depoiments = [
   },
 ];
 
-export default function CarrouselDepoiments() {
+export default function CarrouselDepoiments({startView = false}) {
+
   const carouselRef = useRef(null);
   const [itemsPerPage, setItemsPerPage] = useState(2);
   useEffect(() => {
@@ -107,7 +108,7 @@ export default function CarrouselDepoiments() {
       breakPoints={breakPoints}
       renderArrow={myArrow}
       className={styles.container}
-      enableAutoPlay
+      enableAutoPlay={startView}
       autoPlaySpeed={5000}
     >
       {depoiments.map((depoiment) => (
