@@ -444,7 +444,7 @@ export default function Home({ postsPagination }) {
               <h2>Leia os depoimentos de alguns de nossos parceiros</h2>
             </div>
             <div className={styles.carrouselWrapper}>
-              <CarrouselDepoimentes />
+              <CarrouselDepoimentes startView={sectionSixVisible}/>
             </div>
           </div>
         </section>
