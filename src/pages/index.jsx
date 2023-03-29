@@ -21,6 +21,7 @@ import { Footer } from "../components/Footer";
 const politics = [{ uid: "politica-de-privacidade", title: "A" }];
 
 export default function Home({ postsPagination }) {
+  console.log(postsPagination)
   const [nextPage, setNextPage] = useState(postsPagination.next_page);
   const [posts, setPosts] = useState(postsPagination?.results);
 
