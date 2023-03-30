@@ -92,6 +92,7 @@ export const ImageBanner = styled.img`
       width: 100%;
       height: 100%;
       pointer-events: none;
+      object-fit: cover;
 
       user-drag: none;
       user-select: none;
