@@ -65,7 +65,7 @@ export default function fidentia() {
                 clinicas através de risk assessment, estruturação de programas
                 de seguros e capacitação em gestão de riscos.
               </p>
-              <span>Apoiando seu você, sempre.</span>
+              <span>Apoiando você, sempre.</span>
             </div>
           </div>
         </div>
