@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import Analytics from '../components/Analytics'
+import GoogleAds from '../components/GoogleAds'
 
 export default function Document() {
   return (
@@ -14,6 +15,7 @@ export default function Document() {
         <Main />
         <NextScript />
         <Analytics />
+        <GoogleAds />
       </body>
     </Html>
   )
