@@ -423,7 +423,7 @@ export default function Home({ postsPagination }) {
             </div>
             <div className={styles.button}>
               <Link
-                href="https://podio.com/webforms/28192878/2229964"
+                href="https://clinicaltrials.com.br/"
                 target="_blank"
               >
                 <button>Cote agora</button>
