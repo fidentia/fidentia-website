@@ -49,9 +49,9 @@ export const Footer = ({pageRef, visibleState, section2, section5, section6, sec
         <div>
           <h2>Contato</h2>
           <div className={styles.border}></div>
-          <p>Rua Wanderley, 929</p>
-          <p>Perdizes, São Paulo/SP,</p>
-          <p>Brasil, 05011-011</p>
+          <p>Av. Pres. Juscelino Kubitscheck 1327</p>
+          <p>São Paulo, São Paulo/SP,</p>
+          <p>Brasil, 04543-011</p>
           <p>+55 11 3164 4031</p>
           <p>contato@fidentia.com.br</p>
         </div>
@@ -93,7 +93,7 @@ export const Footer = ({pageRef, visibleState, section2, section5, section6, sec
         <div className={styles.copyrightWrapper}>
           <div>
             <span className={styles.copyContent}>
-              Copyright @ 2023 Fidentia. Todos os direitos reservados.
+              Copyright @ 2024 Fidentia. Todos os direitos reservados.
             </span>
             <div className={styles.copyImageContent}>
               <div className={styles.copyContent}>
