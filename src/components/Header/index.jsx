@@ -102,7 +102,7 @@ export default function Header() {
               fale conosco
             </li>
           </Link>
-          <Link href="/#cotacao">
+          <Link href="https://clinicaltrials.com.br">
             <li
               onMouseEnter={() => setActiveHover(false)}
               onMouseLeave={() => setActiveHover(true)}
